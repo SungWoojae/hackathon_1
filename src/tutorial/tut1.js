@@ -1,5 +1,5 @@
 import Header2 from "../components/Header2";
-import "./Tut1.css";
+import "./tut1.css";
 import Halfegg from "../images/halfegg.svg"
 
 function Tut1() {
