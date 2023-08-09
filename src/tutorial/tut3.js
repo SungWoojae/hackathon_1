@@ -1,9 +1,7 @@
 import React from 'react';
 import Header2 from '../components/Header2';
 import Guide from '../components/Guide';
-import Finger from './images/finger.svg';
-
-
+import Finger from '../images/finger.svg';
 
 const Tut3 = () => {
     const headerTitle = "지도 앱 배우기";
