@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import excercise_road1_inputlist from './images/excercise_road1_inputlist.svg';
-import excercise_road1_icon from './images/excercise_road1_icon.svg';
-import excercise_road1_bottom from './images/excercise_road1_bottom.svg';
+import excercise_road1_inputlist from '../images/excercise_road1_inputlist.svg';
+import excercise_road1_icon from '../images/excercise_road1_icon.svg';
+import excercise_road1_bottom from '../images/excercise_road1_bottom.svg';
 
 const InputBox = () => {
     const [inputText, setInputText] = useState('');
