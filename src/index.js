@@ -9,6 +9,5 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <App />
-    <Tut1 />
   </BrowserRouter>
 );
