@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import bottombox from './images/bottombox.svg';
+import excercise_road2_bottombox from '../images/excercise_road2_bottombox.svg';
 
 import { NavermapsProvider } from 'react-naver-maps';
 import { Container as MapDiv, NaverMap, Marker } from 'react-naver-maps';
+import { Link } from 'react-router-dom';
 
 const InputBox = () => {
     const [inputText, setInputText] = useState('');
@@ -69,7 +70,7 @@ const StyledBottomBox = styled.div`
     background: #fff;
     box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.1);
     position: relative;
-    background-image: url(${bottombox});
+    background-image: url(${excercise_road2_bottombox});
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
@@ -134,7 +135,9 @@ const BottomBox = () => {
                 <DepartText>출발</DepartText>
             </DepartBox>
             <ArrivalBox>
-                <ArrivalText>도착</ArrivalText>
+                <Link to="/exercise_road_3">
+                    <ArrivalText>도착</ArrivalText>
+                </Link>
             </ArrivalBox>
         </StyledBottomBox>
     );
@@ -142,8 +145,9 @@ const BottomBox = () => {
 
 
 
-const ExerciseBox = () => {
+const Exercise_road_2 = () => {
     return (
+        
         <div>
             <InputBox />
             <NavermapsProvider 
@@ -174,4 +178,4 @@ const ExerciseBox = () => {
     );
 };
 
-export default ExerciseBox;
+export default Exercise_road_2;

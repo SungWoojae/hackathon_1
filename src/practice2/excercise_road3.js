@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import excercise_road3_top from './images/excercise_road3_top.svg';
-import excercise_road3_top_icon from './images/excercise_road3_top_icon.svg';
-import excercise_road3_bottom_follow from './images/excercise_road3_bottom_follow.svg';
-import excercise_road3_bottom_detail from './images/excercise_road3_bottom_detail.svg';
+import excercise_road3_top from '../images/excercise_road3_top.svg';
+import excercise_road3_top_icon from '../images/excercise_road3_top_icon.svg';
+import excercise_road3_bottom_follow from '../images/excercise_road3_bottom_follow.svg';
+import excercise_road3_bottom_detail from '../images/excercise_road3_bottom_detail.svg';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { NavermapsProvider, Polyline } from 'react-naver-maps';
 import { Container as MapDiv, NaverMap, Marker } from 'react-naver-maps';
+import { Link } from 'react-router-dom';
+
+
 
 const Container = styled.div`
   display: flex;
@@ -77,27 +80,31 @@ const FollowUpImage = styled.img`
 
 
 const Exercise_road_3 = () => {
-    const routes = [{
-      lat: 286, 
-      lng: 56.102} , 
-      {
-        lat: 743, 
-        lng: 364.518}, 
+    const routes = [
+        {
+          lat: 286, 
+          lng: 56.102} , 
+        {
+          lat: 743, 
+          lng: 364.518}, 
         {
           lat: 245, 
           lng : 71.836}, 
         {
           lat : 106, 
           lng : 47.697}, 
-        {lat : 173, 
+        {
+          lat : 173, 
           lng : 56.617}, 
-        {lat : 90, 
+        {
+          lat : 90, 
           lng : 40.498}, 
-        {lat : 83, 
+        {
+          lat : 83, 
           lng : 42.685}];
     const departureRef = useRef({lat: 37.5603582, lng: 126.9367624});
     const arrivalRef = useRef({lat: 37.5567852, lng: 126.9355017});
-    console.log(routes)
+    
   
     return (
         <ExerciseRoad3Container>
@@ -107,7 +114,7 @@ const Exercise_road_3 = () => {
             </Road3Top>
             <Container>
               <NavermapsProvider
-                ncpClientId={process.env.REACT_APP_NAVER_CLOUD_CLIENT_ID} 
+                ncpClientId={process.env.REACT_APP_API_KEY}
                 error={<p>Maps Load Error</p>}
                 loading={<p>Maps Loading...</p>}
                 submodules={["geocoder"]}
@@ -154,7 +161,9 @@ const Exercise_road_3 = () => {
             </Container>
             <BottomImagesContainer>
                 <BottomDetailImage src={excercise_road3_bottom_detail} alt="Bottom Detail" />
-                <FollowUpImage src={excercise_road3_bottom_follow} alt="Bottom Follow" />
+                <Link to="/exercise_road_4">
+                  <FollowUpImage src={excercise_road3_bottom_follow} alt="Bottom Follow" />
+                </Link>
             </BottomImagesContainer>
         </ExerciseRoad3Container>
     );

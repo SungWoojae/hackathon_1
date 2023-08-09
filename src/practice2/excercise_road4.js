@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import excercise_road4_top from './images/excercise_road4_top.svg';
-import alert_success from './images/alert_success.svg';
+import excercise_road4_top from '../images/excercise_road4_top.svg';
+import alert_success from '../images/alert_success.svg';
 
 const Container = styled.div`
   display: flex;
