@@ -6,6 +6,8 @@ import { NavermapsProvider } from 'react-naver-maps';
 import { Container as MapDiv, NaverMap, Marker } from 'react-naver-maps';
 import { Link } from 'react-router-dom';
 
+
+
 const InputBox = () => {
     const [inputText, setInputText] = useState('');
 
