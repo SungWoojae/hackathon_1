@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Square = styled.div`
-    width: 390px;
+    width: 400px;
     height: 236px;
     background: #000;
     display: flex;
@@ -42,12 +42,12 @@ const Button = styled.button`
     line-height: 140%;
 `;
 
-const ExcerciseBox = () => {
+const ExcerciseBox = (props) => {
     return (
-        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}>
+        <div>
             <Square>
                 <SquareText>
-                    1. 휴대폰을 가고자하는 방향을 향해 들어주세요. 
+                    {props.text}
                 </SquareText>
                 <Button>다음</Button>
             </Square>

@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import Exercise_road_4 from './practice2/excercise_road4';
 // import Exercise_road_0 from './practice2/excercise_road0';
 // import Exercise_road_2 from './practice2/excercise_road2';
-import OrientationInfo from './practice1/exerciseDirection1';
+import Exercise_direction1 from './practice1/exercise_direction1';
 
 // import Tut2 from './tutorial/tut2';
 // import Maphome from './maphome';
@@ -31,7 +31,7 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
-      <OrientationInfo />
+      <Exercise_direction1 />
       {/* <Router>
         <Switch>
           <Route exact path="/"><Exercise_road_0/></Route> 
