@@ -6,10 +6,10 @@ import styled from 'styled-components';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Exercise_road_3 from './practice2/excercise_road3';
-import Exercise_road_4 from './practice2/excercise_road4';
-import Exercise_road_0 from './practice2/excercise_road0';
-import Exercise_road_2 from './practice2/excercise_road2';
+import Exercise_road_3 from './practice2/exercise_road3';
+import Exercise_road_4 from './practice2/exercise_road4';
+import Exercise_road_0 from './practice2/exercise_road0';
+import Exercise_road_2 from './practice2/exercise_road2';
 // import Tut2 from './tutorial/tut2';
 // import Maphome from './maphome';
 // import MapHomeBox from './MapHomeBox';

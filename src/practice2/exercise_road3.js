@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import excercise_road3_top from '../images/excercise_road3_top.svg';
-import excercise_road3_top_icon from '../images/excercise_road3_top_icon.svg';
-import excercise_road3_bottom_follow from '../images/excercise_road3_bottom_follow.svg';
-import excercise_road3_bottom_detail from '../images/excercise_road3_bottom_detail.svg';
+import exercise_road3_top from '../images/exercise_road3_top.svg';
+import exercise_road3_top_icon from '../images/exercise_road3_top_icon.svg';
+import exercise_road3_bottom_follow from '../images/exercise_road3_bottom_follow.svg';
+import exercise_road3_bottom_detail from '../images/exercise_road3_bottom_detail.svg';
 
 import { useState, useRef, useEffect } from 'react';
 import { NavermapsProvider, Polyline } from 'react-naver-maps';
@@ -109,8 +109,8 @@ const Exercise_road_3 = () => {
     return (
         <ExerciseRoad3Container>
             <Road3Top>
-                <TopImage src={excercise_road3_top} alt="Exercise Road 3 Top" />
-                <TopIconImage src={excercise_road3_top_icon} alt="Exercise Road 3 Top Icon" />
+                <TopImage src={exercise_road3_top} alt="Exercise Road 3 Top" />
+                <TopIconImage src={exercise_road3_top_icon} alt="Exercise Road 3 Top Icon" />
             </Road3Top>
             <Container>
               <NavermapsProvider
@@ -160,9 +160,9 @@ const Exercise_road_3 = () => {
               </NavermapsProvider>
             </Container>
             <BottomImagesContainer>
-                <BottomDetailImage src={excercise_road3_bottom_detail} alt="Bottom Detail" />
+                <BottomDetailImage src={exercise_road3_bottom_detail} alt="Bottom Detail" />
                 <Link to="/exercise_road_4">
-                  <FollowUpImage src={excercise_road3_bottom_follow} alt="Bottom Follow" />
+                  <FollowUpImage src={exercise_road3_bottom_follow} alt="Bottom Follow" />
                 </Link>
             </BottomImagesContainer>
         </ExerciseRoad3Container>

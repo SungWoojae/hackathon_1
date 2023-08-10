@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import excercise_road2_bottombox from '../images/excercise_road2_bottombox.svg';
+import exercise_road2_bottombox from '../images/exercise_road2_bottombox.svg';
 
 import { NavermapsProvider } from 'react-naver-maps';
 import { Container as MapDiv, NaverMap, Marker } from 'react-naver-maps';
@@ -70,7 +70,7 @@ const StyledBottomBox = styled.div`
     background: #fff;
     box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.1);
     position: relative;
-    background-image: url(${excercise_road2_bottombox});
+    background-image: url(${exercise_road2_bottombox});
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;

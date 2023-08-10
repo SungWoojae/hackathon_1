@@ -12,8 +12,8 @@ import location from "../images/location.svg";
 import { Link } from "react-router-dom";
 import { Container as MapDiv, NaverMap, NavermapsProvider } from 'react-naver-maps';
 import { NaverMapsProvider } from 'react-naver-maps';
-import excercise_road1_bottom from '../images/excercise_road1_bottom.svg'; // Import the image here
-import excercise_road0_alert from '../images/excercise_road0_alert.svg'; // Path to the image
+import exercise_road1_bottom from '../images/exercise_road1_bottom.svg'; // Import the image here
+import exercise_road0_alert from '../images/exercise_road0_alert.svg'; // Path to the image
 
 function Exercise_road_0() {
     const [showImage, setShowImage] = useState(true); // State to track whether to show the image or not
@@ -76,7 +76,7 @@ function Exercise_road_0() {
                     
                     {showImage && (
                         <img
-                            src={excercise_road0_alert}
+                            src={exercise_road0_alert}
                             alt=""
                             style={{ display: "block", margin: "0 auto", cursor: "pointer" }}
                             onClick={handleImageClick}
@@ -90,7 +90,7 @@ function Exercise_road_0() {
                 <NaverMap />
                 <Mission />
             </MapDiv>
-            <img src={excercise_road1_bottom} alt="" />
+            <img src={exercise_road1_bottom} alt="" />
 
             
         </div>
