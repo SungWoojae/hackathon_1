@@ -31,7 +31,8 @@ function App() {
     <Container>
       <Router>
         <Switch>
-          <Route exact path="/"><Exercise_road_2/></Route> 
+          <Route exact path="/"><Exercise_road_0/></Route> 
+          <Route exact path="/exercise_road_2"><Exercise_road_2/></Route> 
           <Route exact path="/exercise_road_3"><Exercise_road_3/></Route> 
           <Route exact path="/exercise_road_4"><Exercise_road_4/></Route> 
         </Switch>

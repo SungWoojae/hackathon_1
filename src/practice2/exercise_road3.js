@@ -5,7 +5,7 @@ import exercise_road3_top_icon from '../images/exercise_road3_top_icon.svg';
 import exercise_road3_bottom_follow from '../images/exercise_road3_bottom_follow.svg';
 import exercise_road3_bottom_detail from '../images/exercise_road3_bottom_detail.svg';
 
-import { useState, useRef, useEffect } from 'react';
+import {  useRef } from 'react';
 import { NavermapsProvider, Polyline } from 'react-naver-maps';
 import { Container as MapDiv, NaverMap, Marker } from 'react-naver-maps';
 import { Link } from 'react-router-dom';
@@ -114,7 +114,7 @@ const Exercise_road_3 = () => {
             </Road3Top>
             <Container>
               <NavermapsProvider
-                ncpClientId={process.env.REACT_APP_API_KEY}
+                ncpClientId={process.env.REACT_APP_NAVERMAP_API_KEY}
                 error={<p>Maps Load Error</p>}
                 loading={<p>Maps Loading...</p>}
                 submodules={["geocoder"]}
