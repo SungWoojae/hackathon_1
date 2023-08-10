@@ -11,6 +11,7 @@ import Exercise_road_4 from './practice2/excercise_road4';
 import Exercise_road_0 from './practice2/excercise_road0';
 import Exercise_road_2 from './practice2/excercise_road2';
 import OrientationInfo from './practice1/exerciseDirection1';
+
 // import Tut2 from './tutorial/tut2';
 // import Maphome from './maphome';
 // import MapHomeBox from './MapHomeBox';

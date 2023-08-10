@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import excercise_road1_inputlist from '../images/excercise_road1_inputlist.svg';
-import excercise_road1_icon from '../images/excercise_road1_icon.svg';
-import excercise_road1_bottom from '../images/excercise_road1_bottom.svg';
+import excercise_road1_inputlist from '../images/exercise_road1_inputlist.svg';
+import excercise_road1_icon from '../images/exercise_road1_icon.svg';
+import excercise_road1_bottom from '../images/exercise_road1_bottom.svg';
 
 const InputBox = () => {
     const [inputText, setInputText] = useState('');
@@ -30,7 +30,7 @@ const InputBox = () => {
 
             {/* Add the image on the left side */}
             <img
-                src={excercise_road1_inputlist}
+                src={exercise_road1_inputlist}
                 alt="Input List Icon"
                 style={{
                     width: '20px',
@@ -86,7 +86,7 @@ const BottomBox = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center', // 화면 아래에 맞추기 위해 추가
-                backgroundImage: `url(${excercise_road1_bottom})`, // 배경 이미지 추가
+                backgroundImage: `url(${exercise_road1_bottom})`, // 배경 이미지 추가
                 backgroundSize: '100% 100%', // 배경 이미지 크기 설정
                 borderRadius: '0 0 10px 10px',
                 marginTop: '10px',
