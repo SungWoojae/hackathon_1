@@ -153,7 +153,7 @@ const Exercise_road_2 = () => {
         <div>
             <InputBox />
             <NavermapsProvider 
-                ncpClientId='51ruhsam0c'
+                ncpClientId={process.env.REACT_APP_NAVERMAP_API_KEY}
                 error={<p>Maps Load Error</p>}
                 loading={<p>Maps Loading...</p>}
                 submodules={["geocoder"]}

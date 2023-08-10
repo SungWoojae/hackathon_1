@@ -80,31 +80,10 @@ const FollowUpImage = styled.img`
 
 
 const Exercise_road_3 = () => {
-    const routes = [
-        {
-          lat: 286, 
-          lng: 56.102} , 
-        {
-          lat: 743, 
-          lng: 364.518}, 
-        {
-          lat: 245, 
-          lng : 71.836}, 
-        {
-          lat : 106, 
-          lng : 47.697}, 
-        {
-          lat : 173, 
-          lng : 56.617}, 
-        {
-          lat : 90, 
-          lng : 40.498}, 
-        {
-          lat : 83, 
-          lng : 42.685}];
+   
     const departureRef = useRef({lat: 37.5603582, lng: 126.9367624});
     const arrivalRef = useRef({lat: 37.5567852, lng: 126.9355017});
-    
+    const navermaps=window.naver.maps;
   
     return (
         <ExerciseRoad3Container>
@@ -117,7 +96,7 @@ const Exercise_road_3 = () => {
                 ncpClientId={process.env.REACT_APP_NAVERMAP_API_KEY}
                 error={<p>Maps Load Error</p>}
                 loading={<p>Maps Loading...</p>}
-                submodules={["geocoder"]}
+                submodules={["geocoder","drawing"]}
               >
               <MapDiv
               style={{
@@ -135,16 +114,25 @@ const Exercise_road_3 = () => {
                 center={{lat: 37.5567852, lng: 126.9355017}}
               
               >    
-                {routes && (
-                  <Polyline 
-                    path={routes.map((route) => new window.naver.maps.LatLng(route.lat, route.lng))}
-                    // clickable // 사용자 인터랙션을 받기 위해 clickable을 true로 설정합니다.
-                    strokeColor={'#ff3344'}
-                    strokeStyle={'solid'}
-                    strokeOpacity={0.8}
-                    strokeWeight={4}        
-                  />
-                )}
+                <Polyline 
+                  clickable={true}
+                  strokeColor="blue"
+                  strokeStyle="solid"
+                  strokeOpacity={0.8}
+                  strokeWeight={1}  
+                  path= {[
+                    new navermaps.LatLng(286,56.102),
+                    new navermaps.LatLng(743,364.518),
+                    new navermaps.LatLng(245,71.836),
+                    new navermaps.LatLng(106,47.697),
+                    new navermaps.LatLng(173,56.617),
+                    new navermaps.LatLng(90,40.498),
+                    new navermaps.LatLng(83,42.685),
+                  ]}
+                  // clickable // 사용자 인터랙션을 받기 위해 clickable을 true로 설정합니다.
+                        
+                />
+             
                 {departureRef.current && (
                   <Marker 
                     position={departureRef.current}
@@ -170,4 +158,3 @@ const Exercise_road_3 = () => {
 };
 
 export default Exercise_road_3;
-

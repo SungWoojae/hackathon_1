@@ -87,20 +87,30 @@ const Exercise_road_4 = () => {
                 width: '100%',
                 height: '100%',
               }}
-              zoom={16}
-              center={{lat: 37.5567852, lng: 126.9355017}}
+              zoom={18}
+              center={{lat: 37.5603582, lng: 126.9367624}}
             
             >    
-              {routes && (
-                <Polyline 
-                  path={routes.map((route) => new window.naver.maps.LatLng(route.lat, route.lng))}
-                  // clickable // 사용자 인터랙션을 받기 위해 clickable을 true로 설정합니다.
-                  strokeColor={'#ff3344'}
-                  strokeStyle={'solid'}
-                  strokeOpacity={0.8}
-                  strokeWeight={4}        
-                />
-              )}
+
+
+              
+              <Polyline 
+                path= {[
+                  new window.naver.maps.LatLng(286,56.102),
+                  new window.naver.maps.LatLng(743,364.518),
+                  new window.naver.maps.LatLng(245,71.836),
+                  new window.naver.maps.LatLng(106,47.697),
+                  new window.naver.maps.LatLng(173,56.617),
+                  new window.naver.maps.LatLng(90,40.498),
+                  new window.naver.maps.LatLng(83,42.685),
+                ]}
+                // clickable // 사용자 인터랙션을 받기 위해 clickable을 true로 설정합니다.
+                strokeColor={'#ff3344'}
+                strokeStyle={'solid'}
+                strokeOpacity={0.8}
+                strokeWeight={4}        
+              />
+             
               {departureRef.current && (
                 <Marker 
                   position={departureRef.current}
