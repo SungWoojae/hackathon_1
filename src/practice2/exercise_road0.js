@@ -27,15 +27,15 @@ function Exercise_road_0() {
         setShowImage(false); // Hide the image when clicked
     }
 
-    // const handleSearch = (event) => {
-    //     event.preventDefault(); // Prevent form submission
-    //     const searchValue = event.target.elements.search.value;
+    const handleSearch = (event) => {
+        event.preventDefault(); // Prevent form submission
+        const searchValue = event.target.elements.search.value;
         
-    //     // Check if the search value matches "창천문화공원"
-    //     if (searchValue === "창천문화공원") {
-    //         history.push("/excercise_road_2"); // Navigate to the excercise2 route
-    //     }
-    // }
+        // Check if the search value matches "창천문화공원"
+        if (searchValue === "창천문화공원") {
+            history.push("/exercise_road_2"); // Navigate to the excercise2 route
+        }
+    }
 
     return (
         <div className="container">
@@ -49,22 +49,10 @@ function Exercise_road_0() {
             >
                 <div className="overlay">           
                     <div className="search-box">
-                        {/* <form onSubmit={handleSearch} name="searchform">    
-                            <input type="text" className="search" placeholder="장소, 버스, 지하철, 주소 검색" />
+                        <form onSubmit={handleSearch} name="searchform">    
+                            <input type="text" className="search" name="search" placeholder="장소, 버스, 지하철, 주소 검색" />
                             <img src={hamburger} alt="" className="search-image"></img>
-                        </form> */}
-                        <form
-                            onSubmit={(event) => {
-                                event.preventDefault();
-                                setSubmitted(true);
-
-                                if (searchValue === "창천문화공원") {
-                                    history.push("/excercise_road_2");
-                                }
-                            }}
-                            name="searchform"
-                        ><input type="text" className="search" placeholder="장소, 버스, 지하철, 주소 검색" />
-                        <img src={hamburger} alt="" className="search-image"></img></form>
+                        </form>
                     </div>
                     
                     <div className="tab-list">
