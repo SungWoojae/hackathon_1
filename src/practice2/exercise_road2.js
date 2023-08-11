@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import exercise_road2_bottombox from '../images/exercise_road2_bottombox.svg';
 
+import MarkerClick from '../components/markerlarge';  //marker
+
+
 import { NavermapsProvider } from 'react-naver-maps';
 import { Container as MapDiv, NaverMap, Marker } from 'react-naver-maps';
 import { Link } from 'react-router-dom';
@@ -58,7 +61,7 @@ const InputBox = () => {
                 }}
                 onClick={handleClearText}
             >
-                x
+                
             </div>
         </div>
     );
@@ -148,8 +151,7 @@ const BottomBox = () => {
 
 
 const Exercise_road_2 = () => {
-    return (
-        
+    return (        
         <div>
             <InputBox />
             <NavermapsProvider 
@@ -170,8 +172,8 @@ const Exercise_road_2 = () => {
                 zoom={17}
                 center={{ lat: 37.5567852, lng: 126.9355017 }}
                 >
-                <Marker defaultPosition={{ lat: 37.5567852, lng: 126.9355017 }} 
-                />
+                    <Marker defaultPosition={{ lat: 37.5567852, lng: 126.9355017 }} 
+                    />
                 </NaverMap>
                 </MapDiv>
             </NavermapsProvider>
