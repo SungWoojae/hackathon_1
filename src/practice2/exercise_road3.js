@@ -55,7 +55,7 @@ const BottomImagesContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  padding: 16px;
+  padding: 20px;
   margin-bottom: 16px;
 `;
 
@@ -110,10 +110,21 @@ const Exercise_road_3 = () => {
                   width: '100%',
                   height: '100%',
                 }}
-                zoom={16}
+                zoom={15}
                 center={{lat: 37.5567852, lng: 126.9355017}}
               
               >    
+                            
+                {departureRef.current && (
+                  <Marker 
+                    position={departureRef.current}
+                  />
+                )}
+                {arrivalRef.current && (
+                  <Marker 
+                    position={arrivalRef.current}
+                  />
+                )}
                 <Polyline 
                   clickable={true}
                   strokeColor="blue"
@@ -132,23 +143,14 @@ const Exercise_road_3 = () => {
                   // clickable // 사용자 인터랙션을 받기 위해 clickable을 true로 설정합니다.
                         
                 />
-             
-                {departureRef.current && (
-                  <Marker 
-                    position={departureRef.current}
-                  />
-                )}
-                {arrivalRef.current && (
-                  <Marker 
-                    position={arrivalRef.current}
-                  />
-                )}
               </NaverMap>
               </MapDiv>
               </NavermapsProvider>
             </Container>
             <BottomImagesContainer>
-                <BottomDetailImage src={exercise_road3_bottom_detail} alt="Bottom Detail" />
+                <Link to="/exercise_road_3">
+                  <BottomDetailImage src={exercise_road3_bottom_detail} alt="Bottom Detail"  />
+                </Link>
                 <Link to="/exercise_road_4">
                   <FollowUpImage src={exercise_road3_bottom_follow} alt="Bottom Follow" />
                 </Link>

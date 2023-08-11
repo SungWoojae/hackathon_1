@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './App.css';
-import mapMarkerImg from './images/mapmarker.png';
+import '../App.css';
+import mapMarkerImg from '../images/mapmarker.png';
 
 const Marker = () => {
   // 마커 클릭 상태를 관리하는 상태 변수

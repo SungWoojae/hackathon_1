@@ -42,28 +42,28 @@ const AlertSuccess = styled.div`
 `;
 
 const Exercise_road_4 = () => {
-    const routes = [
-      {
-        lat: 286, 
-        lng: 56.102} , 
-      {
-        lat: 743, 
-        lng: 364.518}, 
-      {
-        lat: 245, 
-        lng : 71.836}, 
-      {
-        lat : 106, 
-        lng : 47.697}, 
-      {
-        lat : 173, 
-        lng : 56.617}, 
-      {
-        lat : 90, 
-        lng : 40.498}, 
-      {
-        lat : 83, 
-        lng : 42.685}];
+    // const routes = [
+    //   {
+    //     lat: 286, 
+    //     lng: 56.102} , 
+    //   {
+    //     lat: 743, 
+    //     lng: 364.518}, 
+    //   {
+    //     lat: 245, 
+    //     lng : 71.836}, 
+    //   {
+    //     lat : 106, 
+    //     lng : 47.697}, 
+    //   {
+    //     lat : 173, 
+    //     lng : 56.617}, 
+    //   {
+    //     lat : 90, 
+    //     lng : 40.498}, 
+    //   {
+    //     lat : 83, 
+    //     lng : 42.685}];
     const departureRef = useRef({lat: 37.5603582, lng: 126.9367624});
     const arrivalRef = useRef({lat: 37.5567852, lng: 126.9355017});
     return (
@@ -77,7 +77,7 @@ const Exercise_road_4 = () => {
             >
             <MapDiv
             style={{
-              height: 600,
+              height: 700,
               width: '100%'
             }}
             >
