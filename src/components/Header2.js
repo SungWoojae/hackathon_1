@@ -17,6 +17,7 @@ const HeaderWrapper = styled.header`
   text-align: center;
   display: flex;
   flex-direction: column;
+  z-index : 1;
 `;
 
 // 제목
@@ -32,6 +33,7 @@ const Subtitle = styled.div`
   font-size: 20px;
   font-weight: normal;
   margin-top: 0px;
+  padding-bottom:10px;
 `;
 
 // X 버튼
@@ -43,7 +45,6 @@ const CloseButton = styled.button`
   position: absolute;
   top: 68px;
   left: 345px;
-  z-index : 1;
 `;
 
 
@@ -59,9 +60,6 @@ function Header2({ title, subtitle }) {
         {/* 소제목 */}
         <Subtitle>{subtitle}</Subtitle>
         {/* X 버튼 */}
-        {/* <CloseButton onClick={handleButtonClick}>
-          <img src={Header_X} alt="X" />
-        </CloseButton> */}
         <CloseButton>
         <Icon />
         </CloseButton>

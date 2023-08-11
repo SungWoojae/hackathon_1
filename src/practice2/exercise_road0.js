@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import NaverMapAPI from "../components/NaverMapApi";
-import Header from "../components/Header";
+import Header2 from "../components/Header2";
 import Tabs from "../components/Tabs";
 import Mission from '../components/Mission'
 import '../maphome.css'; 
@@ -39,7 +39,7 @@ function Exercise_road_0() {
 
     return (
         <div className="container">
-            <Header title="지도 연습해보기" subtitle="1. 길 검색해서 찾기" />
+            <Header2 title="지도 연습해보기" subtitle="1. 길 검색해서 찾기" />
             <MapDiv
                 className="map"
                 style={{
