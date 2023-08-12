@@ -6,17 +6,21 @@ import Mission from './components/Mission'
 import './maphome.css';
 import hamburger from "./images/hamburger.svg";
 import navigation from "./images/navigation.png";
-import sideicon from "./images/side_icon.svg";
 import location from "./images/location.svg";
 import { Link } from "react-router-dom";
 import { Container as MapDiv, NaverMap, NavermapsProvider } from 'react-naver-maps';
 import { NaverMapsProvider } from 'react-naver-maps';
+import Food from "./images/maphome_Food.svg";
+import Cup from "./images/maphome_Cup.svg";
+import Gas from "./images/maphome_Gas.svg";
+import Bedroom from "./images/maphome_Bedroom.svg";
 
 function Maphome() {
   const { naver } = window;
 
   return (
     <div className="container">
+<<<<<<< HEAD
       <Header2 title="지도 연습해보기" subtitle="1. 길 검색해서 찾기"/>  
         <MapDiv
           className="map"
@@ -39,10 +43,33 @@ function Maphome() {
               <Tabs name="펜션"></Tabs>
             </div>
             <img src={sideicon} alt="" className="side-icon"></img>
+=======
+      <Header title="지도 연습해보기" subtitle="1. 길 검색해서 찾기"/>  
+      <MapDiv
+        className="map"
+        style={{
+          width: '100%',
+          height: '800px',
+        }}
+      >
+        <div className="overlay">
+          <div className="search-box">
+            <form method="post" name="searchform">
+              <input type="text" className="search" placeholder="장소, 버스, 지하철, 주소 검색" /> 
+              <img src={hamburger} alt="" className="search-image"></img>
+            </form>
+>>>>>>> 59376de1fea2d75f907eb32f9b3ae313c5c31f1c
           </div>
-          <NaverMap />
-          <Mission />
-        </MapDiv>
+          <div className="tab-list">
+            <Tabs name="음식점" image={Food}></Tabs>
+            <Tabs name="카페" image={Cup}></Tabs>
+            <Tabs name="주유소" image={Gas}></Tabs>
+            <Tabs name="펜션" image={Bedroom}></Tabs>
+          </div>
+        </div>
+        <NaverMap />
+        <Mission />
+      </MapDiv>
       <img src={navigation} alt="" className="navigation"></img>
     </div>
   );

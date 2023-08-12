@@ -1,74 +1,73 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import exercise_road2_bottombox from '../images/exercise_road2_bottombox.svg';
-
+import Header2 from '../components/Header2';
 import { NavermapsProvider } from 'react-naver-maps';
 import { Container as MapDiv, NaverMap, Marker } from 'react-naver-maps';
 import { Link } from 'react-router-dom';
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 393px;
+  height: 852px;
+  margin: 0;
+  position: relative; /* 추가된 부분 */
+`;
 
+const TextBox = styled.div`
+    width: 393px;
+    height: 62px;
+    flex-shrink: 0;
+    background: #FFF;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.10);
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: normal;
+    color: #000;
+    
+`;
 
-const InputBox = () => {
-    const [inputText, setInputText] = useState('');
+const InnerBox = styled.div`
+    width: 328px;
+    height: 46px;
+    flex-shrink: 0;
+    stroke-width: 1px;
+    stroke: #D8D8D8;
+    position: relative;
+    border: 1px solid #D8D8D8; /* Optional: Add border for the inner box */
+    box-sizing: border-box;
+    border-radius: 10px; /* 모서리 둥글게 */
+    padding-top: 10px;
+    padding-left: 10px;
+   
+`;
 
-    const handleClearText = () => {
-        setInputText('');
-    };
-
-    return (
-        <div
-            className="box"
-            style={{
-                width: '393px',
-                height: '62px',
-                flexShrink: '0',
-                display: 'flex',
-                alignItems: 'center',
-                backgroundColor: '#fff',
-                borderRadius: '8px',
-                boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.1)',
-                overflow: 'hidden',
-                position: 'relative',
-            }}
-        >
-            <input
-                type="text"
-                style={{
-                    width: '328px',
-                    height: '46px',
-                    flexShrink: '0',
-                    border: 'none',
-                    backgroundColor: 'transparent',
-                    padding: '0 10px',
-                    fontSize: '16px',
-                    outline: 'none',
-                }}
-                placeholder="목적지를 입력해주세요"
-                value={inputText}
-                onChange={(e) => setInputText(e.target.value)}
-            />
-            <div
-                style={{
-                    position: 'absolute',
-                    right: '10px',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    fontSize: '24px',
-                    cursor: 'pointer',
-                }}
-                onClick={handleClearText}
-            >
-                x
-            </div>
-        </div>
-    );
-};
+const CloseIcon = styled.div`
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    cursor: pointer;
+    padding-left: 20px;
+`;
 
 const StyledBottomBox = styled.div`
-    width: 393px;
+    width: 404px; 
     height: 208px;
     flex-shrink: 0;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 20px 10px 0px 0px;
     background: #fff;
     box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -117,6 +116,8 @@ const ArrivalBox = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none; 
+    
 `;
 
 const ArrivalText = styled.p`
@@ -128,6 +129,9 @@ const ArrivalText = styled.p`
     font-weight: 400;
     line-height: normal;
     margin: 0;
+    text-decoration: none; 
+    border: none; 
+    
 `;
 
 const BottomBox = () => {
@@ -137,7 +141,7 @@ const BottomBox = () => {
                 <DepartText>출발</DepartText>
             </DepartBox>
             <ArrivalBox>
-                <Link to="/exercise_road_3">
+                <Link to="/exercise_road_3" style={{textDecoration:'none'}}>
                     <ArrivalText>도착</ArrivalText>
                 </Link>
             </ArrivalBox>
@@ -145,13 +149,16 @@ const BottomBox = () => {
     );
 };
 
-
-
 const Exercise_road_2 = () => {
     return (
-        
-        <div>
-            <InputBox />
+        <Container>
+            <Header2 title="실습2. 경로찾기" subtitle="도보: 현재위치 -> 창천문화공원" />
+            <TextBox>
+                <InnerBox>
+                    창천문화공원
+                </InnerBox>
+                <CloseIcon>x</CloseIcon>
+            </ TextBox>
             <NavermapsProvider 
                 ncpClientId={process.env.REACT_APP_NAVERMAP_API_KEY}
                 error={<p>Maps Load Error</p>}
@@ -170,13 +177,13 @@ const Exercise_road_2 = () => {
                 zoom={17}
                 center={{ lat: 37.5567852, lng: 126.9355017 }}
                 >
-                <Marker defaultPosition={{ lat: 37.5567852, lng: 126.9355017 }} 
-                />
+                <Marker defaultPosition={{ lat: 37.5567852, lng: 126.9355017 }}/>
+                
                 </NaverMap>
                 </MapDiv>
             </NavermapsProvider>
             <BottomBox />
-        </div>
+        </Container>
     );
 };
 

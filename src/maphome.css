@@ -1,13 +1,17 @@
 .container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+<<<<<<< HEAD
     background-color: #ffffff;
+=======
+    background-color: none;
+>>>>>>> 59376de1fea2d75f907eb32f9b3ae313c5c31f1c
     overflow-x: hidden;
     overflow-y: hidden;
     width: 393px;
-    height: 852px;
-    margin: 0;
+    height: 852px;   
 }
 
 .search-box {
@@ -24,7 +28,7 @@
     border-radius: 5px;
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
-    padding-left: 35px;
+    padding: 1px 1px 1px 35px;
 }
 
 .search::placeholder {
@@ -57,15 +61,17 @@
 
 .overlay {
     position: absolute; 
+<<<<<<< HEAD
     z-index: 3; 
+=======
+    z-index: 1;
+>>>>>>> 59376de1fea2d75f907eb32f9b3ae313c5c31f1c
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.side-icon {
-    align-self: flex-end;
+    margin : 0;
+    padding: 0;
 }
 
 .location {

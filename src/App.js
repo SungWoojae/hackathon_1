@@ -17,11 +17,13 @@ import Newmaphome from './newmaphome.js';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Exercise_road_3 from './practice2/exercise_road3';
-import Exercise_road_4 from './practice2/exercise_road4';
-import Exercise_road_0 from './practice2/exercise_road0';
-import Exercise_road_2 from './practice2/exercise_road2';
-// import Exercise_direction1 from './practice1/exercise_direction1';
+import ExerciseRoad3 from './practice2/exercise_road3';
+import ExerciseRoad4 from './practice2/exercise_road4';
+import ExerciseRoad0 from './practice2/exercise_road0+1';
+import ExerciseRoad2 from './practice2/exercise_road2';
+import ExerciseDirection1 from './practice1/exercise_direction_explanation';
+import ExerciseDirection1Acting from './practice1/exercise_direction_acting';
+import MapHome from './maphome';
 
 // import Tut2 from './tutorial/tut2';
 // import Maphome from './maphome';
@@ -44,11 +46,15 @@ function App() {
     <Container>
       {/* <Exercise_direction1 /> */}
       {/* <Router>
+      <Router>
         <Switch>
-          <Route exact path="/"><Exercise_road_0/></Route> 
-          <Route exact path="/exercise_road_2"><Exercise_road_2/></Route> 
-          <Route exact path="/exercise_road_3"><Exercise_road_3/></Route> 
-          <Route exact path="/exercise_road_4"><Exercise_road_4/></Route> 
+          <Route exact path="/"><ExerciseRoad0/></Route> 
+          <Route exact path="/exercise_road_2"><ExerciseRoad2/></Route> 
+          <Route exact path="/exercise_road_3"><ExerciseRoad3/></Route> 
+          <Route exact path="/exercise_road_4"><ExerciseRoad4/></Route> 
+          <Route exact path="/practice1"><ExerciseDirection1 /></Route>
+          <Route exact path="/practice1/acting"><ExerciseDirection1Acting /></Route>
+          <Route exact paht="/maphome"><MapHome /></Route>
         </Switch>
       </Router> */}
       <Tut2/>
