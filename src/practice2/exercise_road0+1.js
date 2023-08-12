@@ -7,13 +7,16 @@ import Mission from '../components/Mission'
 import '../maphome.css'; 
 import hamburger from "../images/hamburger.svg";
 
-import sideicon from "..//images/side_icon.svg";
 import location from "../images/location.svg";
 import { Link } from "react-router-dom";
 import { Container as MapDiv, NaverMap, NavermapsProvider } from 'react-naver-maps';
 import { NaverMapsProvider } from 'react-naver-maps';
 import exercise_road1_bottom from '../images/exercise_road1_bottom.svg'; // Import the image here
 import exercise_road0_alert from '../images/exercise_road0_alert.svg'; // Path to the image
+import Food from "../images/maphome_Food.svg";
+import Cup from "../images/maphome_Cup.svg";
+import Gas from "../images/maphome_Gas.svg";
+import Bedroom from "../images/maphome_Bedroom.svg";
 
 function Exercise_road_0() {
     const [showImage, setShowImage] = useState(true); // State to track whether to show the image or not
@@ -56,31 +59,26 @@ function Exercise_road_0() {
                     </div>
                     
                     <div className="tab-list">
-                        <Tabs name="음식점"></Tabs>
-                        <Tabs name="카페"></Tabs>
-                        <Tabs name="주유소"></Tabs>
-                        <Tabs name="펜션"></Tabs>
+                        <Tabs name="음식점" image={Food}></Tabs>
+                        <Tabs name="카페" image={Cup}></Tabs>
+                        <Tabs name="주유소" image={Gas}></Tabs>
+                        <Tabs name="펜션" image={Bedroom}></Tabs>
                     </div>
-                    
                     {showImage && (
                         <img
                             src={exercise_road0_alert}
                             alt=""
-                            style={{ display: "block", margin: "0 auto", cursor: "pointer" }}
+                            style={{ cursor: "pointer", zIndex: 4 }}
                             onClick={handleImageClick}
                         />
                     )}
-                    
-                    
-                    <img src={sideicon} alt="" className="side-icon"></img>
-                    
                 </div>
-                <NaverMap />
-                <Mission />
+                   
+                <NaverMap 
+                    center={{lat: 37.558, lng: 126.9368}}
+                />
             </MapDiv>
             <img src={exercise_road1_bottom} alt="" />
-
-            
         </div>
     );
 }

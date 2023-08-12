@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Ellipse from "../images/Ellipse.svg";
 
 const Tab = styled.div`
     display: flex;
@@ -11,7 +10,7 @@ const Tab = styled.div`
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
     margin: 10px;
-    padding: 0 5px;
+    padding: 0 7px;
 `
 
 const Image = styled.img`
@@ -28,13 +27,13 @@ const Text = styled.p`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    padding-left: 8px;
+    padding-left: 5px;
 `
 
 function Tabs(props) {
   return (
     <Tab className="container">
-        <Image src={Ellipse} alt=""></Image>
+        <Image src={props.image} alt=""></Image>
         <Text>{props.name}</Text>
     </Tab>
   );

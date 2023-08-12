@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import exercise_road2_bottombox from '../images/exercise_road2_bottombox.svg';
-
+import Header2 from '../components/Header2';
 import { NavermapsProvider } from 'react-naver-maps';
 import { Container as MapDiv, NaverMap, Marker } from 'react-naver-maps';
 import { Link } from 'react-router-dom';
@@ -141,7 +141,7 @@ const BottomBox = () => {
                 <DepartText>출발</DepartText>
             </DepartBox>
             <ArrivalBox>
-                <Link to="/exercise_road_3">
+                <Link to="/exercise_road_3" style={{textDecoration:'none'}}>
                     <ArrivalText>도착</ArrivalText>
                 </Link>
             </ArrivalBox>
@@ -149,12 +149,10 @@ const BottomBox = () => {
     );
 };
 
-
-
 const Exercise_road_2 = () => {
     return (
-        
         <Container>
+            <Header2 title="실습2. 경로찾기" subtitle="도보: 현재위치 -> 창천문화공원" />
             <TextBox>
                 <InnerBox>
                     창천문화공원
