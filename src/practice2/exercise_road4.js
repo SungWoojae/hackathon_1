@@ -33,8 +33,8 @@ const Road4Top = styled.div`
 const AlertSuccess = styled.div.withConfig({
   shouldForwardProp: (prop) => prop !== 'visible',
 })`
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   background-image: url(${alert_success});
   background-size: contain;
   background-repeat: no-repeat;
