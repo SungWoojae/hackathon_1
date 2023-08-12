@@ -1,5 +1,7 @@
 import React from 'react';
 import MapHomeBox from './components/MapHomeBox';
+import Header from './components/Header';
+import { Link } from 'react-router-dom';
 
 const BigBox = () => {
     const bigBoxStyle = {
@@ -51,15 +53,17 @@ const BigBox = () => {
 
     return (
         <div style={bigBoxStyle}>
+            <Header title="지도 연습해보기" />
             <div style={box}>
                 <div style={textStyle}>
                     <div style={boldText}>이론</div> 
                     <div style={subTitle}>차근차근 배워봐요</div>
                 </div>
-
-                <MapHomeBox title="이론 1. 목적지 설정하기" time="예상 소요 시간 : 20분"/>
-                <MapHomeBox title="이론 1. 목적지 설정하기" time="예상 소요 시간 : 20분"/>
-                <MapHomeBox title="이론 1. 목적지 설정하기" time="예상 소요 시간 : 20분"/>
+                <Link to="/tut1" style={{ textDecoration: "none" }}>
+                    <MapHomeBox title="이론 1. 길 검색해서 찾기" time="예상 소요 시간 : 10분"/>
+                </Link>
+                <MapHomeBox title="이론 2. 추후 공개" />
+                <MapHomeBox title="이론 3. 추후 공개" />
 
             </div>
             <div style={box}>
@@ -67,10 +71,13 @@ const BigBox = () => {
                     <div style={boldText}>실습</div> 
                     <div style={subTitle}>혼자 직접 해봐요</div>
                 </div>
-                
-                <MapHomeBox title="실습 1. 목적지 설정하기" time="예상 소요 시간 : 20분"/>
-                <MapHomeBox title="실습 1. 목적지 설정하기" time="예상 소요 시간 : 20분"/>
-                <MapHomeBox title="실습 1. 목적지 설정하기" time="예상 소요 시간 : 20분"/>
+                <Link to="/practice1" style={{ textDecoration: "none" }}>
+                    <MapHomeBox title="실습 1. 방향 찾기" time="예상 소요 시간 : 10분"/>
+                </Link>
+                <Link to="/exercise_road_1" style={{ textDecoration: "none" }}>
+                    <MapHomeBox title="실습 2. 경로 찾기" time="예상 소요 시간 : 5분"/>
+                </Link>
+                <MapHomeBox title="실습 3. 추후 공개"/>
 
             </div>
         </div>

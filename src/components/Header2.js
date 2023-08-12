@@ -33,6 +33,7 @@ const Subtitle = styled.div`
   font-size: 20px;
   font-weight: normal;
   margin-top: 0px;
+  margin-bottom: 5px;
   padding-bottom:10px;
 `;
 
