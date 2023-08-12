@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import styled from 'styled-components';
 // import Tut1 from './tutorial/tut1';
+import Tut0 from './tutorial/tut1_1';
 import Tut2 from './tutorial/tut2';
 import Tut3 from './tutorial/tut3';
 import Tut3_1 from './tutorial/tut3_error';
@@ -9,11 +10,8 @@ import Tut4 from './tutorial/tut4';
 import Tut4_1 from './tutorial/tut4_1';
 import Tut5 from './tutorial/tut5';
 import Tut3map from './tutorial/tut3';
-import Maphome from './maphome.js';
-import Newmaphome from './newmaphome.js';
-
-
-
+import Maphome from './maphome';
+import Newmaphome from './newmaphome';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -44,10 +42,10 @@ function App() {
   return (
     <Container>
       {/* <Exercise_direction1 /> */}
-      {/* <Router>
       <Router>
         <Switch>
           <Route exact path="/"><BigBox /></Route> 
+          <Route exact path="/tut1_1"><Tut0 /></Route> 
           <Route exact path="/exercise_road_1"><ExerciseRoad0 /></Route>
           <Route exact path="/exercise_road_2"><ExerciseRoad2/></Route> 
           <Route exact path="/exercise_road_3"><ExerciseRoad3/></Route> 
@@ -55,16 +53,9 @@ function App() {
           <Route exact path="/practice1"><ExerciseDirection1 /></Route>
           <Route exact path="/practice1/acting"><ExerciseDirection1Acting /></Route>
           <Route exact paht="/maphome"><MapHome /></Route>
-          <Route exact paht="/tut1"><Tut1 /></Route>
         </Switch>
-      </Router> */}
-
-      {/* <Router>
-        <Switch>
-          <Route exact path="/"><Tut1/></Route> 
-        </Switch>
-      </Router> */}
-      <Tut5/>
+      </Router>
+      {/* <Tut0/> */}
       {/* <Newmaphome/> */}
     </Container>
   );
