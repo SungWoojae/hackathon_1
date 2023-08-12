@@ -2,10 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Header2 from "../components/Header2";
 import Halfegg from "../images/halfegg.svg";
-<<<<<<< HEAD
-
-=======
->>>>>>> b6cbf818687d4afed0ccf3857e7636d58ac572f2
 import { Link } from "react-router-dom";
 
 const Container = styled.div`
@@ -79,7 +75,7 @@ const StartText = styled.p`
 `;
 
 
-function Tut0() {
+function Tut1() {
   return (
     <Container>
       <Header2 title="지도 연습해보기" subtitle="1. 길 검색해서 찾기" 
@@ -96,11 +92,7 @@ function Tut0() {
       </Body>
       <Image src={Halfegg}></Image>
       <StartBox>
-<<<<<<< HEAD
-        <Link to="/tut2" style={{textDecoration:'none'}}>
-=======
-        <Link to="/tut2" style={{ textDecoration: "none" }}>
->>>>>>> b6cbf818687d4afed0ccf3857e7636d58ac572f2
+        <Link to="/tut2" style={{textDecoration:"none"}}>
             <StartText>시작하기</StartText>
         </Link>
       </StartBox>
@@ -108,4 +100,4 @@ function Tut0() {
   );
 };
 
-export default Tut0;
+export default Tut1;
