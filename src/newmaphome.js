@@ -1,17 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import NaverMapAPI from "../components/NaverMapApi";
-import Header2 from "../components/Header2";
-import Mission from "../components/Mission";
-import hamburger from "../images/hamburger.svg";
+import NaverMapAPI from "./components/NaverMapApi";
+import Header2 from "./components/Header2";
+import Mission from "./components/Mission";
+import hamburger from "./images/hamburger.svg";
 // import navigation from "./images/navigation.png";
-import sideicon from "../images/side_icon.svg";
+import sideicon from "./images/side_icon.svg";
 import { Container as MapDiv, NaverMap } from "react-naver-maps";
-import exercise_road1_bottom from '../images/exercise_road1_bottom.svg';
-import Guide from '../components/Guide'
-import Finger from '../images/finger.svg';
-
-
 
 const Container = styled.div`
   display: flex;
@@ -23,25 +18,11 @@ const Container = styled.div`
   width: 393px;
   height: 852px;
   margin: 0;
-  position: relative;
-  z-index : 0;
 `;
-
-const Blackoverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* 검정색, 투명도 50% */
-  z-index: 1;
-`;
-
 
 const SearchBox = styled.div`
   position: relative;
   margin-top: 10px;
-  z-index: 2; // 더 높은 값으로 설정
 `;
 
 const SearchInput = styled.input`
@@ -78,30 +59,17 @@ const SideIcon = styled.img`
   margin-top : 20px;
 `;
 
-const GuideContainer = styled.div`
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-  position: absolute;
-  bottom: 0px; 
-  left: 0; 
-  width: 100%; 
-  z-index: 2;
-`;
+// const NavigationIcon = styled.img`
+//   position: fixed;
+//   bottom: 0;
+// `;
 
-const guideText = "당신은 어느 공원에 갈지\n아직 정하지 않았어요.\n그렇다면 그냥 ‘공원’이라고 검색을\n해볼까요?";
-
-
-function Tut3() {
+function Newmaphome() {
   const { naver } = window;
 
   return (
     <Container>
-      <Blackoverlay />
-      <Header2
-      title="지도 연습해보기"
-      subtitle="1. 길 검색해서 찾기"
-      />
+      <Header2 title="지도 연습해보기" subtitle="1. 길 검색해서 찾기"/>  
       <MapDiv
         style={{
           width: '100%',
@@ -112,35 +80,19 @@ function Tut3() {
       >
         <Overlay>
           <SearchBox>
-            <form method="post" name="searchform"
-            >
+            <form method="post" name="searchform">
               <Hamburger src={hamburger} alt="" />
               <SearchInput type="text"  placeholder="장소, 버스, 지하철, 주소 검색" /> 
             </form>
           </SearchBox>
           <SideIcon src={sideicon} alt=""/>
         </Overlay>
-        <img
-          src={Finger}
-          alt=""
-          style={{
-            zIndex : '2',
-            width : 100,
-            height :170,
-          }}
-        />
         <NaverMap />
         <Mission />
       </MapDiv>
-      <img
-          src={exercise_road1_bottom}
-          alt=""
-        />
-      <GuideContainer>
-        <Guide text={guideText}/>
-      </GuideContainer>
+      {/* <NavigationIcon src={navigation} alt=""/> */}
     </Container>
   );
 }
 
-export default Tut3;
+export default Newmaphome;

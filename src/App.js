@@ -30,6 +30,8 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
+      {/* <Exercise_direction1 /> */}
+      {/* <Router>
       <Router>
         <Switch>
           <Route exact path="/"><BigBox /></Route> 
@@ -42,7 +44,9 @@ function App() {
           <Route exact paht="/maphome"><MapHome /></Route>
           <Route exact paht="/tut1"><Tut1 /></Route>
         </Switch>
-      </Router>
+      </Router> */}
+      <Tut2/>
+      {/* <Newmaphome/> */}
     </Container>
   );
 }
