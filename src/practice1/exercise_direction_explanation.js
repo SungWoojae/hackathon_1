@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header2 from '../components/Header2';
 import ExerciseBox from '../components/exercise_direction_bottom';
-import Map from '../images/exercise_direction_1_mapfix.svg';
+import Map from '../images/exercise_direction_1_mapfix1.svg';
 import Alert1 from '../images/exercise_direction_1_alert_ing.svg';
 import Alert2 from '../images/exercise_direction_1_alert_end.svg'
 import styled from 'styled-components';
