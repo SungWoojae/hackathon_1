@@ -51,7 +51,6 @@ function Tut1() {
       </div>
       <img src={Halfegg} className="image"></img>
       <StartBox>
-        <Link to={"/tut2"}
         <StartText>시작하기</StartText>
       </StartBox>
     </div>
