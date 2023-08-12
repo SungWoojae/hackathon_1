@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Header2 from '../components/Header2';
 import ExerciseBox from '../components/exercise_direction_bottom';
-import Map from '../images/exercise_direction_1_mapfix1.svg';
+import mapfix1Image from '../images/exercise_direction_1_mapfix1.svg';
+import mapfix2Image from '../images/exercise_direction_1_mapfix2.svg'
 import CircleImage from '../images/exercise_direction_1_circle.svg'; // Import your circle image
 import styled from 'styled-components';
 import { useDeviceOrientation } from './useDeviceOrientation'; // Import the useDeviceOrientation hook
@@ -19,10 +20,18 @@ const Container = styled.div`
   position: relative;
 `;
 
-const CircleOverlay = styled.img`
+const CircleOverlay1 = styled.img`
   position: absolute;
-  top: 38%;
-  left: 59%;
+  top: 39%;
+  left: 64%;
+  transform: translate(-50%, -50%) rotate(${props => props.rotation}deg);
+  pointer-events: none;
+`;
+
+const CircleOverlay2 = styled.img`
+  position: absolute;
+  top: 29%;
+  left: 64%;
   transform: translate(-50%, -50%) rotate(${props => props.rotation}deg);
   pointer-events: none;
 `;
@@ -95,45 +104,59 @@ function Exercise_direction1() {
   };
 
   const calculateRotation = () => {
-    if (orientation) {
+    if (orientation && orientation.alpha != null) {
       return orientation.alpha;
     }
     return 0;
   };
 
-  console.log(orientation);
+console.log(orientation)
 
-  const [timer, setTimer] = useState(null);
-  const [shouldChangeImage, setShouldChangeImage] = useState(false);
+
+  const [timing, setTiming] = useState(0);
+  const [isActive, setIsActive] = useState(false);
+  const [shouldChangeImage, setShouldChangeImage]=useState(false);
+  
 
   useEffect(() => {
-    if (orientation) {
-      if (orientation.alpha <= 10 && orientation.alpha >= -10) {
-        // Start the timer if alpha value is around 0
-        const timerId = setTimeout(() => {
-          setShouldChangeImage(true);
-        }, 3000); // 3000 milliseconds (3 seconds)
+    if (orientation && ((orientation.alpha >= 300 && orientation.alpha <= 360) || (orientation.alpha >= 0 && orientation.alpha <= 50))) {
+      setIsActive(true);
+      setTiming(0);
 
-        setTimer(timerId);
-      } else {
-        // Clear the timer if alpha value is not around 0
-        clearTimeout(timer);
-        setTimer(null);
-        setShouldChangeImage(false);
-      }
+      const interval = setInterval(() => {
+        setTiming(prevTiming => prevTiming + 100);
+      }, 100);
+
+      return () => {
+        clearInterval(interval);
+      };
+    } else {
+      setIsActive(false);
+      setTiming(0);
     }
   }, [orientation]);
+
+  useEffect(() => {
+    if (isActive && timing === 3000) {
+      setShouldChangeImage(true);
+    }
+  }, [isActive, timing]);
+
 
   return (
     <Container>
       <Header2 title="실습1. 방향찾기" subtitle="1단계: ㄱ자 방향" />
-      <img src={Map} alt="" />
       {shouldChangeImage ? (
-        <img src={require('../images/exercise_direction_1_mapfix2.svg')} alt="" />
+        <img src={mapfix2Image} alt="" />
       ) : (
-        <img src={require('../images/exercise_direction_1_mapfix1.svg')} alt="" />
+        <img src={mapfix1Image} alt="" />
       )}
-      <CircleOverlay src={CircleImage} rotation={calculateRotation()} />
+      {shouldChangeImage ? (
+        <CircleOverlay2 src={CircleImage} rotation={calculateRotation()} />
+      ) : (
+        <CircleOverlay1 src={CircleImage} rotation={calculateRotation()} />
+      )}
+      
       <ExerciseBox text={textList[textIndex]} />
       {textIndex !== textList.length - 1 && <NextButton onClick={handleNextClick}>다음</NextButton>}
       {textIndex !== 0 && <PrevButton onClick={handlePreviousClick}>이전</PrevButton>} 

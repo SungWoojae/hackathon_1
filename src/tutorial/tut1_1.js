@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Header2 from "../components/Header2";
 import Halfegg from "../images/halfegg.svg";
-import styled from 'styled-components';
+
 import { Link } from "react-router-dom";
 
 const Container = styled.div`
@@ -91,9 +91,9 @@ function Tut1_1() {
           연습을 해 보아요.
         </Mission>
       </Body>
-      <img src={Halfegg}></img>
+      <Image src={Halfegg}></Image>
       <StartBox>
-        <Link to={"/tut2" style={{textDecoration="none"}}}>
+        <Link to="/tut2" style={{textDecoration:'none'}}>
             <StartText>시작하기</StartText>
         </Link>
       </StartBox>
