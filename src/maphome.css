@@ -3,11 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-<<<<<<< HEAD
-    background-color: #ffffff;
-=======
     background-color: none;
->>>>>>> 59376de1fea2d75f907eb32f9b3ae313c5c31f1c
     overflow-x: hidden;
     overflow-y: hidden;
     width: 393px;
@@ -61,11 +57,7 @@
 
 .overlay {
     position: absolute; 
-<<<<<<< HEAD
-    z-index: 3; 
-=======
     z-index: 1;
->>>>>>> 59376de1fea2d75f907eb32f9b3ae313c5c31f1c
     display: flex;
     flex-direction: column;
     justify-content: center;
