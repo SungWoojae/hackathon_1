@@ -77,7 +77,7 @@ const Exercise_road_4 = () => {
       >
         <MapDiv
           style={{
-            height: 700,
+            height: 800,
             width: '100%'
           }}
         >
