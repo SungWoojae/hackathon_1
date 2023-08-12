@@ -8,6 +8,7 @@ import Tut3 from './tutorial/tut3';
 import Tut3_1 from './tutorial/tut3_error';
 import Tut4 from './tutorial/tut4';
 import Tut4_1 from './tutorial/tut4_1';
+import Tut5 from './tutorial/tut5';
 import Tut3map from './tutorial/tut3';
 import Maphome from './maphome';
 import Newmaphome from './newmaphome';

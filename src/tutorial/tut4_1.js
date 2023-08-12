@@ -72,17 +72,6 @@ function Tut4_1() {
     }, []);
 
 
-    // 터치하면 요소 숨기기
-    const handleAreaTouch = (event) => {
-        const touchX = event.touches[0].clientX;
-        const touchY = event.touches[0].clientY;
-
-        if (touchY >= 225 && touchY <= 525) {
-            setHideElements(true);
-        }
-    };
-
-
     return (
         <Container>
             <Header2
@@ -120,7 +109,7 @@ function Tut4_1() {
 
 
         {/* 0.5초 지나고 */}
-        {showElements && !hideElements && (
+        {showElements && (
                 <div style={{zIndex:4}} className="overlay">
                     <div
                         style={{position: "absolute", top: 0, display: "flex", justifyContent: "center", width: "393px", height: "852px"}}
@@ -136,13 +125,6 @@ function Tut4_1() {
                     </div>
                 </div>
             )}
-
-            <div
-                style={{display: "flex", justifyContent: "center", zIndex: 5,}}
-                onTouchStart={handleAreaTouch}
-            >
-        {/* ... (이하 동일) */}
-        </div>
 
 
         </Container>
