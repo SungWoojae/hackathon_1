@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NaverMapAPI  from "./components/NaverMapApi";
-import Header2 from "./components/Header2";
+import Header from "./components/Header";
 import Tabs from "./components/Tabs";
 import Mission from './components/Mission'
 import './maphome.css';

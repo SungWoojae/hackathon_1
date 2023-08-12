@@ -1,6 +1,20 @@
 import React from 'react';
 import './App.css';
 import styled from 'styled-components';
+import Tut1 from './tutorial/tut1';
+import Tut2 from './tutorial/tut2';
+import Tut3 from './tutorial/tut3';
+import Tut3_1 from './tutorial/tut3_error';
+import Tut4 from './tutorial/tut4';
+import Tut4_1 from './tutorial/tut4_1';
+import Tut3map from './tutorial/tut3';
+import Maphome from './maphome.js';
+import Newmaphome from './newmaphome.js';
+import Tut1_1 from './tutorial/tut1_1';
+
+
+
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import BigBox from './home_map';
@@ -45,13 +59,16 @@ function App() {
           <Route exact paht="/tut1"><Tut1 /></Route>
         </Switch>
       </Router> */}
-      <Tut2/>
+
+      {/* <Router>
+        <Switch>
+          <Route exact path="/"><Tut1/></Route> 
+        </Switch>
+      </Router> */}
+      {/* <Tut1_1/> */}
       {/* <Newmaphome/> */}
     </Container>
   );
 }
 
 export default App;
-
-
-
