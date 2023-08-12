@@ -56,11 +56,7 @@ function Tut4_1() {
     const { naver } = window;
     // 요소 띄우기
     const [showElements, setShowElements] = useState(false);
-    // 요소 숨기기
-    const [hideElements, setHideElements] = useState(false);
 
-
-    // 요소 띄우기
     useEffect(() => {
         const elementsTimer = setTimeout(() => {
             setShowElements(true);

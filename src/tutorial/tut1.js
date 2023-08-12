@@ -92,7 +92,7 @@ function Tut1() {
       </Body>
       <Image src={Halfegg}></Image>
       <StartBox>
-        <Link to="/tut2" style={{textDecoration:"none"}}>
+        <Link to="/tut2" style={{ textDecoration: "none" }}>
             <StartText>시작하기</StartText>
         </Link>
       </StartBox>
