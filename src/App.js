@@ -1,7 +1,18 @@
 import React from 'react';
 import './App.css';
-import Tut1 from './tutorial/tut1';
 import styled from 'styled-components';
+import Tut1 from './tutorial/tut1';
+import Tut2 from './tutorial/tut2';
+import Tut3 from './tutorial/tut3';
+import Tut3_1 from './tutorial/tut3_error';
+import Tut4 from './tutorial/tut4';
+import Tut4_1 from './tutorial/tut4_1';
+import Tut3map from './tutorial/tut3';
+import Maphome from './maphome.js';
+import Newmaphome from './newmaphome.js';
+
+
+
 
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -33,6 +44,8 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
+      {/* <Exercise_direction1 /> */}
+      {/* <Router>
       <Router>
         <Switch>
           <Route exact path="/"><ExerciseRoad0/></Route> 
@@ -43,7 +56,9 @@ function App() {
           <Route exact path="/practice1/acting"><ExerciseDirection1Acting /></Route>
           <Route exact paht="/maphome"><MapHome /></Route>
         </Switch>
-      </Router>
+      </Router> */}
+      <Tut2/>
+      {/* <Newmaphome/> */}
     </Container>
   );
 }

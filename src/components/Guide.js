@@ -16,14 +16,19 @@ const TextBox = styled.div`
   color: white;
   font-size: 18px;
   font-weight: 400;
-  line-height: 140%;
+  line-height: 150%;
   text-align: center;
 `;
 
 function Guide({ text }) {
+  const TextContainer = styled.div`
+    white-space: pre-line; /* 줄바꿈 표시를 위한 스타일 */
+  `;
   return (
     <Container>
-      <TextBox>{text}</TextBox>
+      <TextBox>
+        <TextContainer>{text}</TextContainer>
+      </TextBox>
     </Container>
   );
 }
