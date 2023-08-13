@@ -5,7 +5,7 @@ import alert_success from '../images/alert_success.svg';
 import Header2 from '../components/Header2';
 import { NavermapsProvider, Polyline } from 'react-naver-maps';
 import { Container as MapDiv, NaverMap, Marker } from 'react-naver-maps';
-
+import { Link } from 'react-router-dom';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -55,7 +55,7 @@ const Exercise_road_4 = () => {
     const timer = setTimeout(() => {
       setShowAlert(true);
       
-    }, 2500);
+    }, 1500);
 
     // setIsImageLoaded(true);
 
@@ -67,7 +67,9 @@ const Exercise_road_4 = () => {
   return (
     <Container>
       <Header2 title="실습2. 경로찾기" subtitle="도보: 현재위치 -> 창천문화공원" className="overlay"/>      
+      <Link to="/">
       <AlertSuccess visible={showAlert} className='overlay'/>      
+      </Link>
       <Road4Top className='overlay'/>
       <NavermapsProvider
         ncpClientId={process.env.REACT_APP_NAVERMAP_API_KEY}

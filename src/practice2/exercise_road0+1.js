@@ -6,6 +6,7 @@ import Tabs from "../components/Tabs";
 import Mission from '../components/Mission'
 import '../maphome.css'; 
 import hamburger from "../images/hamburger.svg";
+import stt_icon from "../images/exercise0_mic.svg";
 
 import location from "../images/location.svg";
 import { Link } from "react-router-dom";
@@ -18,6 +19,11 @@ import Cup from "../images/maphome_Cup.svg";
 import Gas from "../images/maphome_Gas.svg";
 import Bedroom from "../images/maphome_Bedroom.svg";
 
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+
+
+
+
 function Exercise_road_0() {
     const [showImage, setShowImage] = useState(true); // State to track whether to show the image or not
     const history = useHistory();
@@ -25,6 +31,7 @@ function Exercise_road_0() {
     const [submitted, setSubmitted] = useState(false); // 양식 제출 여부를 저장할 상태
 
     const { naver } = window;
+    const { transcript } = useSpeechRecognition();
 
     const handleImageClick = () => {
         setShowImage(false); // Hide the image when clicked
@@ -36,13 +43,24 @@ function Exercise_road_0() {
         
         // Check if the search value matches "창천문화공원"
         if (searchValue === "창천문화공원") {
-            history.push("/practice2/exercise_road_2"); // Navigate to the excercise2 route
-        }
+            history.push("/exercise_road_2"); // Navigate to the excercise2 route
+        }  //else if (transcript) { // Check if there's a transcript from speech recognition
+        //     setSearchValue(transcript); // Set the transcript as the search value
+        // }
     }
+
+    // const voiceRecognition = () => {
+        
+        
+    
+    
+ 
+        
+        
 
     return (
         <div className="container">
-            <Header2 title="실습2. 경로찾기" subtitle="도보: 현재위치 -> 창천문화공원" />
+            <Header2 title="지도 연습해보기" subtitle="1. 길 검색해서 찾기" />
             <MapDiv
                 className="map"
                 style={{
@@ -53,8 +71,8 @@ function Exercise_road_0() {
                 <div className="overlay">           
                     <div className="search-box">
                         <form onSubmit={handleSearch} name="searchform">    
-                            <input type="text" className="search" name="search" placeholder="장소, 버스, 지하철, 주소 검색" />
-                            <img src={hamburger} alt="" className="search-image"></img>
+                            <input type="text" className="search" name="search" placeholder="장소, 버스, 지하철, 주소 검색" value={searchValue}/>                            <img src={hamburger} alt="" className="search-image"></img>
+                            <img src={stt_icon} alt="" className="stt" onClick={SpeechRecognition.startListening}></img>
                         </form>
                     </div>
                     
