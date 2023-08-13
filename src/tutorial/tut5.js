@@ -28,18 +28,6 @@ const Container = styled.div`
   z-index : 0;
 `;
 
-
-const GuideContainer = styled.div`
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-  position: absolute;
-  bottom: 0px; 
-  left: 0; 
-  width: 100%; 
-  z-index : 3;
-`;
-
 const Bold = styled.span`
   font-weight: bold;
 `;
@@ -96,7 +84,7 @@ function Tut5() {
             <NaverMap />
         </MapDiv>
         <div
-        style={{display: 'flex',justifyContent: 'center', zIndex:2,}}
+        style={{display: 'flex',justifyContent: 'center', zIndex:0,}}
         >
             <img
             src={SmallList}
@@ -108,15 +96,7 @@ function Tut5() {
 
         {/* 0.5초 지나고 */}
         {showElements && (
-            <div style={{zIndex:4}} className="overlay">
-                <div
-                        style={{position: "absolute", top: 0, display: "flex", justifyContent: "center", width: "393px", height: "852px"}}
-                    >
-                    <GuideContainer>
-                        <Guide text={guideText}/>
-                    </GuideContainer>
-                </div>
-            </div>
+            <Guide className="overlay" text={guideText} />
         )}
         </Container>
     );

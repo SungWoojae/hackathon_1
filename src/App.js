@@ -11,6 +11,8 @@ import Tut4_base from './tutorial/tut4_base';
 import Tut5 from './tutorial/tut5';
 import Tut6 from './tutorial/tut6';
 import Tut9 from './tutorial/tut9';
+import Tut10 from './tutorial/tut10';
+
 
 import Tut3map from './tutorial/tut3_base';
 import Maphome from './maphome';
@@ -65,7 +67,7 @@ function App() {
           <Route exact paht="/maphome"><MapHome /></Route>
         </Switch>
       </Router> */}
-      <Tut9/>
+      <Tut10/>
       {/* <Newmaphome/> */}
     </Container>
   );

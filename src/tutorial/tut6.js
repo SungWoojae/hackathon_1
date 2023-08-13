@@ -30,18 +30,6 @@ const Container = styled.div`
   z-index : 0;
 `;
 
-
-const GuideContainer = styled.div`
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-  position: absolute;
-  bottom: 0px; 
-  left: 0; 
-  width: 100%; 
-  z-index : 3;
-`;
-
 const Bold = styled.span`
   font-weight: bold;
 `;
@@ -76,27 +64,20 @@ function Tut6() {
             subtitle="1. 길 검색해서 찾기"
             />
             <div>
-                {/* 성공창 */}
-                {showNewImage && (
-                    <img
-                    src={Success} alt="새 이미지"
-                    style={{ display: "block", margin: 0, position: "absolute",top: "50%",left: "50%",transform: "translate(-50%, -50%)", // 정중앙으로 이동
-                    zIndex: 4}}
-                    className = "overlay"
-                    />
-                )}
-            </div>
-            <div>
                 <img src={Park} alt="검색결과" style={{ display: "block", margin: 0}}/>
                 <img src={Place} alt="장소버스 정류장" style={{ display: "block", margin: 0}}/>
             </div>
+
+            {/* 지도영역 */}
             <MapDiv
             style={{width: '100%',height: '800px', display: 'flex',justifyContent: 'center',}}
             >
                 <NaverMap />
             </MapDiv>
+
+            {/* 하단이미지 */}
             <div
-            style={{display: 'flex',justifyContent: 'center', zIndex:2,}}
+            style={{display: 'flex',justifyContent: 'center', zIndex:0,}}
             >
                 <img
                 src={SmallList}
@@ -105,11 +86,20 @@ function Tut6() {
                 className="overlay"
                 />
             </div>
-            <div
-                style={{position: "absolute", top: 0, display: "flex", justifyContent: "center", width: "393px", height: "852px"}}>
-                <GuideContainer>
-                    <Guide text={guideText}/>
-                </GuideContainer>
+
+            {/* 가이드 */}
+            <Guide className="overlay" text={guideText} />
+
+            {/* 성공창 */}
+            <div>
+                {showNewImage && (
+                    <img
+                    src={Success} alt="새 이미지"
+                    style={{ display: "block", margin: 0, position: "absolute",top: "50%",left: "50%",transform: "translate(-50%, -50%)", // 정중앙으로 이동
+                    zIndex: 4}}
+                    className = "overlay"
+                    />
+                )}
             </div>
         </Container>
     );
