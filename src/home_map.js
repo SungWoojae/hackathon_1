@@ -78,6 +78,7 @@ const BigBox = () => {
                     <MapHomeBox title="실습 2. 경로 찾기" time="예상 소요 시간 : 5분"/>
                 </Link>
                 <MapHomeBox title="실습 3. 추후 공개"/>
+                
 
             </div>
         </div>

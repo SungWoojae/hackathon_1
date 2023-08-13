@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Header2 from '../components/Header2';
 import ExerciseBox from '../components/exercise_direction_bottom';
 import mapfix1Image from '../images/exercise_direction_1_mapfix1.svg';
-import mapfix2Image from '../images/exercise_direction_1_mapfix2.svg'
+import mapfix2Image from '../images/exercise_direction_1_mapfix2.svg';
+import mapfix3Image from '../images/exercise_direction_1_mapfix3.svg';
+import mapfix4Image from '../images/exercise_direction_1_mapfix4.svg';
 import CircleImage from '../images/exercise_direction_1_circle.svg'; // Import your circle image
 import styled from 'styled-components';
+import success from '../images/alert_success.svg';
 import { useDeviceOrientation } from './useDeviceOrientation'; // Import the useDeviceOrientation hook
 
 const Container = styled.div`
@@ -32,6 +35,22 @@ const CircleOverlay2 = styled.img`
   position: absolute;
   top: 29%;
   left: 64%;
+  transform: translate(-50%, -50%) rotate(${props => props.rotation}deg);
+  pointer-events: none;
+`;
+
+const CircleOverlay3 = styled.img`
+  position: absolute;
+  top: 29%;
+  left: 39%;
+  transform: translate(-50%, -50%) rotate(${props => props.rotation}deg);
+  pointer-events: none;
+`;
+
+const CircleOverlay4 = styled.img`
+  position: absolute;
+  top: 29%;
+  left: 15%;
   transform: translate(-50%, -50%) rotate(${props => props.rotation}deg);
   pointer-events: none;
 `;
@@ -115,30 +134,77 @@ console.log(orientation)
 
   const [timing, setTiming] = useState(0);
   const [isActive, setIsActive] = useState(false);
-  const [shouldChangeImage, setShouldChangeImage]=useState(false);
-  
+  const [shouldChangeImage1, setShouldChangeImage1]=useState(false);
+  const [shouldChangeImage2, setShouldChangeImage2]=useState(false);
+  const [shouldChangeImage3, setShouldChangeImage3]=useState(false);
 
   useEffect(() => {
-    if (orientation && ((orientation.alpha >= 300 && orientation.alpha <= 360) || (orientation.alpha >= 0 && orientation.alpha <= 50))) {
-      setIsActive(true);
-      setTiming(0);
-
-      const interval = setInterval(() => {
-        setTiming(prevTiming => prevTiming + 100);
-      }, 100);
-
-      return () => {
-        clearInterval(interval);
-      };
+    if (!shouldChangeImage1) {
+      if (orientation && ((orientation.alpha >= 300 && orientation.alpha <= 360) || (orientation.alpha >= 0 && orientation.alpha <= 50))) {
+        setIsActive(true);
+        setTiming(0);
+  
+        const interval = setInterval(() => {
+          setTiming(prevTiming => prevTiming + 100);
+        }, 100);
+  
+        return () => {
+          clearInterval(interval);
+        };
+      } else {
+        setIsActive(false);
+        setTiming(0);
+      }
     } else {
-      setIsActive(false);
-      setTiming(0);
-    }
-  }, [orientation]);
+      if (!shouldChangeImage2) {
+        if (orientation && ((orientation.alpha >= 220 && orientation.alpha <= 320))) {
+          setIsActive(true);
+          setTiming(0);
+        
+          const interval = setInterval(() => {
+            setTiming(prevTiming => prevTiming + 100);
+          }, 100);
+        
+          return () => {
+            clearInterval(interval);
+          };
+        } else {
+          setIsActive(false);
+          setTiming(0);
+          }
+      } else {
+        if(!shouldChangeImage3) {
+          if (orientation && ((orientation.alpha >= 220 && orientation.alpha <= 320))) {
+            setIsActive(true);
+            setTiming(0);
+      
+            const interval = setInterval(() => {
+              setTiming(prevTiming => prevTiming + 100);
+            }, 100);
+          
+            return () => {
+              clearInterval(interval);
+            };
+          } else {
+            setIsActive(false);
+            setTiming(0);
+            }
+        }
+        }
+      }
+    }, [orientation]);
 
   useEffect(() => {
     if (isActive && timing === 3000) {
-      setShouldChangeImage(true);
+      if (!shouldChangeImage1) {
+        setShouldChangeImage1(true);
+      }
+      if (shouldChangeImage1 && !shouldChangeImage2) {
+        setShouldChangeImage2(true);
+      }
+      if (shouldChangeImage2 && !shouldChangeImage3) {
+        setShouldChangeImage3(true);
+      }
     }
   }, [isActive, timing]);
 
@@ -146,17 +212,31 @@ console.log(orientation)
   return (
     <Container>
       <Header2 title="실습1. 방향찾기" subtitle="1단계: ㄱ자 방향" />
-      {shouldChangeImage ? (
-        <img src={mapfix2Image} alt="" />
-      ) : (
-        <img src={mapfix1Image} alt="" />
+      {shouldChangeImage3 ? (
+        <img src={mapfix4Image} alt=""/>
+      ) : shouldChangeImage2 ? (
+          <img src={mapfix3Image} alt="" />
+        ) : shouldChangeImage1 ? (
+            <img src={mapfix2Image} alt=""/>
+          ) : (
+              <img src={mapfix1Image} alt=""/>
       )}
-      {shouldChangeImage ? (
-        <CircleOverlay2 src={CircleImage} rotation={calculateRotation()} />
-      ) : (
-        <CircleOverlay1 src={CircleImage} rotation={calculateRotation()} />
+
+      {shouldChangeImage3 ? (
+        <CircleOverlay4 src={CircleImage} rotation={calculateRotation()} />
+      ) : shouldChangeImage2 ? (
+        <CircleOverlay3 src={CircleImage} rotation={calculateRotation()} />
+        ) : shouldChangeImage1 ? (
+          <CircleOverlay2 src={CircleImage} rotation={calculateRotation()} />
+          ) : (
+            <CircleOverlay1 src={CircleImage} rotation={calculateRotation()} />
       )}
       
+      {shouldChangeImage3 ? (
+        <img src={success} alt="success" className='overlay' style={{ position: 'absolute', top: '40%', left: '50%', transform: 'translate(-50%, -50%)' }}/>
+      ): (null)
+      }
+           
       <ExerciseBox text={textList[textIndex]} />
       {textIndex !== textList.length - 1 && <NextButton onClick={handleNextClick}>다음</NextButton>}
       {textIndex !== 0 && <PrevButton onClick={handlePreviousClick}>이전</PrevButton>} 
