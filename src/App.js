@@ -4,12 +4,13 @@ import styled from 'styled-components';
 // import Tut1 from './tutorial/tut1';
 import Tut1 from './tutorial/tut1';
 import Tut2 from './tutorial/tut2';
-import Tut3 from './tutorial/tut3_error';
-import Tut3_1 from './tutorial/tut3_error';
-import Tut4 from './tutorial/tut4_1';
-import Tut4_1 from './tutorial/tut4_1';
+import Tut3 from './tutorial/tut3';
+import Tut3_base from './tutorial/tut3_base';
+import Tut4 from './tutorial/tut4';
+import Tut4_base from './tutorial/tut4_base';
 import Tut5 from './tutorial/tut5';
-import Tut3map from './tutorial/tut3';
+import Tut6 from './tutorial/tut6';
+import Tut3map from './tutorial/tut3_base';
 import Maphome from './maphome';
 import Newmaphome from './newmaphome';
 
@@ -48,7 +49,9 @@ function App() {
           <Route exact path="/tutorial1/tut1"><Tut1 /></Route> 
           <Route exact path="/tutorial1/tut2"><Tut2 /></Route> 
           <Route exact path="/tutorial1/tut3"><Tut3 /></Route> 
-          <Route exact path="/tutorial1/tut4"><Tut4 /></Route> 
+          <Route exact path="/tutorial1/tut4"><Tut4 /></Route>
+          <Route exact path="/tutorial1/tut5"><Tut5 /></Route> 
+          <Route exact path="/tutorial1/tut6"><Tut6 /></Route> 
           <Route exact path="/practice1"><ExerciseDirection1 /></Route>
           <Route exact path="/practice1/acting"><ExerciseDirection1Acting /></Route>
           <Route exact path="/practice2/exercise_road_1"><ExerciseRoad0 /></Route>
@@ -58,7 +61,7 @@ function App() {
           <Route exact paht="/maphome"><MapHome /></Route>
         </Switch>
       </Router> */}
-      <Tut5/>
+      <Tut6/>
       {/* <Newmaphome/> */}
     </Container>
   );

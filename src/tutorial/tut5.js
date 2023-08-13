@@ -55,17 +55,11 @@ const guideText = (
 );
 
 function Tut5() {
-
-
-    const history = useHistory(); // useHistory 초기화
-
-    
-
-
     const { naver } = window;
 
     // 요소 띄우기
     const [showElements, setShowElements] = useState(false);
+    const history = useHistory();
 
     useEffect(() => {
         // 가이드 표시
@@ -76,7 +70,7 @@ function Tut5() {
 
         // 페이지 전환
         const nextPageTimer = setTimeout(() => {
-            history.push("/tut6");
+            history.push("/tutorial1/tut6");
           }, 5000);
 
 

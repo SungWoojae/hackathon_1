@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import NaverMapAPI from "../components/NaverMapApi";
 import Header2 from "../components/Header2";
@@ -10,8 +10,7 @@ import { Container as MapDiv, NaverMap } from "react-naver-maps";
 import exercise_road1_bottom from '../images/exercise_road1_bottom.svg';
 import Guide from '../components/Guide'
 import Finger from '../images/finger.svg';
-
-
+import { useHistory } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -89,11 +88,23 @@ const GuideContainer = styled.div`
   z-index: 2;
 `;
 
-const guideText = "당신은 어느 공원에 갈지\n아직 정하지 않았어요.\n그렇다면 그냥 ‘공원’이라고 검색을\n해볼까요?";
 
 
 function Tut3() {
   const { naver } = window;
+  const [searchText, setSearchText] = useState(""); // 검색어 상태 관리
+  const [guideText, setGuideText] = useState("당신은 어느 공원에 갈지\n아직 정하지 않았어요.\n그렇다면 그냥 ‘공원’이라고 검색을\n해볼까요?"); // 상태 변수로 변
+  const history = useHistory();
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    
+    if (searchText.toLowerCase() === "공원") {
+      history.push("/tutorial1/tut4");
+    } else {
+      setGuideText("잘못 입력했어요!\n다시 한 번 입력해 볼까요?");
+    }
+  };
 
   return (
     <Container>
@@ -112,10 +123,12 @@ function Tut3() {
       >
         <Overlay>
           <SearchBox>
-            <form method="post" name="searchform"
-            >
+            <form method="post" name="searchform" onSubmit={handleSearchSubmit}>
               <Hamburger src={hamburger} alt="" />
-              <SearchInput type="text"  placeholder="장소, 버스, 지하철, 주소 검색" /> 
+              <SearchInput type="text"
+              placeholder="장소, 버스, 지하철, 주소 검색" 
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}/> 
             </form>
           </SearchBox>
           <SideIcon src={sideicon} alt=""/>

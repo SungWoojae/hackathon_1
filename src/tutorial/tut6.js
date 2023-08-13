@@ -9,6 +9,7 @@ import Place from "../images/place_bus_station.svg"
 import List from "../images/bottom_placelist.svg"
 import SmallList from "../images/bottomlistsmall.svg"
 import Finger from "../images/finger.svg"
+import Success from "../images/alert_success.svg"
 
 
 
@@ -50,63 +51,64 @@ const guideText = (
     </>
 );
 
-function Tut5() {
+function Tut6() {
     const { naver } = window;
 
-    // 요소 띄우기
-    const [showElements, setShowElements] = useState(false);
+    // 성공창 띄우기
+    const [showNewImage, setShowNewImage] = useState(false); // 상태 추가
 
-    useEffect(() => {
-        const elementsTimer = setTimeout(() => {
-            setShowElements(true);
-        }, 1500); // 1.5초 후에 가이드 표시
+    // 성공창 조건을 판단하고 처리하는 함수
+    const handleShowChange = () => {
+        setShowNewImage(true); // 이미지 변경 상태 업데이트
+    };
 
-        return () => {
-            clearTimeout(elementsTimer);
-        };
-    }, []);
+
 
     return (
-        <Container>
+        <Container onClick={handleShowChange}>
+        {/* 클릭함수 임시지정 */}
             <Header2
             title="지도 연습해보기"
             subtitle="1. 길 검색해서 찾기"
             />
-        <div>
-            <img src={Park} alt="검색결과" style={{ display: "block", margin: 0}}/>
-            <img src={Place} alt="장소버스 정류장" style={{ display: "block", margin: 0}}/>
-        </div>
-        <MapDiv
-        style={{width: '100%',height: '800px', display: 'flex',justifyContent: 'center',}}
-        >
-            <NaverMap />
-        </MapDiv>
-        <div
-        style={{display: 'flex',justifyContent: 'center', zIndex:2,}}
-        >
-            <img
-            src={SmallList}
-            alt="축소된검색리스트"
-            style={{display: "block", bottom : -8, margin : 0,padding : 0}}
-            className="overlay"
-            />
-        </div>
-
-        {/* 0.5초 지나고 */}
-        {showElements && (
-            <div style={{zIndex:4}} className="overlay">
-                <div
-                        style={{position: "absolute", top: 0, display: "flex", justifyContent: "center", width: "393px", height: "852px"}}
-                    >
-                    <GuideContainer>
-                        <Guide text={guideText}/>
-                    </GuideContainer>
-                </div>
+            <div>
+                {/* 성공창 */}
+                {showNewImage && (
+                    <img
+                    src={Success} alt="새 이미지"
+                    style={{ display: "block", margin: 0}}
+                    className = "overlay"
+                    />
+                )}
             </div>
-        )}
+            <div>
+                <img src={Park} alt="검색결과" style={{ display: "block", margin: 0}}/>
+                <img src={Place} alt="장소버스 정류장" style={{ display: "block", margin: 0}}/>
+            </div>
+            <MapDiv
+            style={{width: '100%',height: '800px', display: 'flex',justifyContent: 'center',}}
+            >
+                <NaverMap />
+            </MapDiv>
+            <div
+            style={{display: 'flex',justifyContent: 'center', zIndex:2,}}
+            >
+                <img
+                src={SmallList}
+                alt="축소된검색리스트"
+                style={{display: "block", bottom : -8, margin : 0,padding : 0}}
+                className="overlay"
+                />
+            </div>
+            <div
+                style={{position: "absolute", top: 0, display: "flex", justifyContent: "center", width: "393px", height: "852px"}}>
+                <GuideContainer>
+                    <Guide text={guideText}/>
+                </GuideContainer>
+            </div>
         </Container>
     );
        
 }
 
-export default Tut5;
+export default Tut6;
