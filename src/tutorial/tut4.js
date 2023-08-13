@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import NaverMapAPI from "../components/NaverMapApi";
-import { Container as MapDiv, NaverMap } from "react-naver-maps";
+import { Container as MapDiv, NaverMap, NavermapsProvider } from "react-naver-maps";
 import Header2 from "../components/Header2";
 import Guide from '../components/Guide'
 import Park from "../images/park_enter.svg"
@@ -9,7 +8,7 @@ import Place from "../images/place_bus_station.svg"
 import List from "../images/bottom_placelist.svg"
 import Finger from "../images/finger.svg"
 
-
+import { Marker, InfoWindow } from "react-naver-maps";
 
 
 const Container = styled.div`
@@ -85,13 +84,58 @@ function Tut4() {
             alt="장소버스 정류장"
             style={{ display: "block", margin: 0}}
             />
-        </div>
+        </div>   
+        <NavermapsProvider>
         <MapDiv
         style={{width: '100%',height: '800px', display: 'flex',justifyContent: 'center',
         }}
         >
-            <NaverMap />
+            <NaverMap 
+                zoom={13}
+                center={{lat:37.5250482, lng:126.9613142}}
+            >
+                <Marker 
+                      position={{lat:37.5450482,lng: 126.9603142}} // 효창
+                >
+                    <InfoWindow offset={new naver.maps.Point(0,-30)}>
+                        <div>효창공원</div>
+                    </InfoWindow>
+                </Marker>
+                <Marker
+                      position={{lat:37.5550482,lng: 126.9703142}}                      
+                >
+                    <InfoWindow offset={new naver.maps.Point(0,-30)}>
+                        <div>우제공원</div>
+                    </InfoWindow>
+
+                </Marker>
+                <Marker 
+                      position={{lat:37.5400482,lng: 126.9500142}}                      
+                >
+                    <InfoWindow offset={new naver.maps.Point(0,-30)}>
+                        <div>화진공원</div>
+                    </InfoWindow>
+
+                </Marker>
+                <Marker 
+                      position={{lat:37.5600482,lng: 126.9400142}}                      
+                >
+                    <InfoWindow offset={new naver.maps.Point(0,-30)}>
+                        <div>현진공원</div>
+                    </InfoWindow>
+
+                </Marker>
+                <Marker 
+                      position={{lat:37.5680482,lng: 126.98}}                      
+                >
+                    <InfoWindow offset={new naver.maps.Point(0,-30)}>
+                        <div>재은공원</div>
+                    </InfoWindow>
+                </Marker>
+
+            </NaverMap>
         </MapDiv>
+        </NavermapsProvider>
         <div
         style={{display: 'flex',justifyContent: 'center', zIndex:2,}}
         >

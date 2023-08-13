@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import NaverMapAPI from "../components/NaverMapApi";
 import { Container as MapDiv, NaverMap } from "react-naver-maps";
 import Header2 from "../components/Header2";
 import Park from "../images/park_enter.svg"
 import Place from "../images/place_bus_station.svg"
 import List from "../images/bottom_placelist.svg"
-import Finger from "../images/finger.svg"
+
 
 
 
@@ -30,7 +29,7 @@ const Container = styled.div`
 
 
 function Tut4() {
-    const { naver } = window;
+    
 
     return (
         <Container>
