@@ -171,10 +171,10 @@ const Exercise_road_3 = () => {
             </NavermapsProvider>
             <BottomImagesContainer>
                 
-                <Link to="/exercise_road_3">
+                <Link to="/practice2/exercise_road_3">
                   <BottomDetailImage src={exercise_road3_bottom_detail} alt="Bottom Detail"  />
                 </Link>
-                <Link to="/exercise_road_4">
+                <Link to="/practice2/exercise_road_4">
                   <FollowUpImage src={exercise_road3_bottom_follow} alt="Bottom Follow" />
                 </Link>
             </BottomImagesContainer>
