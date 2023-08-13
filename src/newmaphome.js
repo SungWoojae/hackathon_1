@@ -5,7 +5,7 @@ import Header2 from "./components/Header2";
 import Mission from "./components/Mission";
 import hamburger from "./images/hamburger.svg";
 // import navigation from "./images/navigation.png";
-import sideicon from "./images/side_icon.svg";
+// import sideicon from "./images/side_icon.svg";
 import { Container as MapDiv, NaverMap } from "react-naver-maps";
 
 const Container = styled.div`
@@ -85,7 +85,7 @@ function Newmaphome() {
               <SearchInput type="text"  placeholder="장소, 버스, 지하철, 주소 검색" /> 
             </form>
           </SearchBox>
-          <SideIcon src={sideicon} alt=""/>
+          {/* <SideIcon src={sideicon} alt=""/> */}
         </Overlay>
         <NaverMap />
         <Mission />
