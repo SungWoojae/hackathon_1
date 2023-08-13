@@ -141,7 +141,7 @@ const BottomBox = () => {
                 <DepartText>출발</DepartText>
             </DepartBox>
             <ArrivalBox>
-                <Link to="/exercise_road_3" style={{textDecoration:'none'}}>
+                <Link to="/practice2/exercise_road_3" style={{textDecoration:'none'}}>
                     <ArrivalText>도착</ArrivalText>
                 </Link>
             </ArrivalBox>

@@ -10,8 +10,7 @@ import { Container as MapDiv, NaverMap } from "react-naver-maps";
 import exercise_road1_bottom from '../images/exercise_road1_bottom.svg';
 import Guide from '../components/Guide'
 import Finger from '../images/finger.svg';
-
-
+import { useHistory } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -95,12 +94,13 @@ function Tut3() {
   const { naver } = window;
   const [searchText, setSearchText] = useState(""); // 검색어 상태 관리
   const [guideText, setGuideText] = useState("당신은 어느 공원에 갈지\n아직 정하지 않았어요.\n그렇다면 그냥 ‘공원’이라고 검색을\n해볼까요?"); // 상태 변수로 변
+  const history = useHistory();
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     
     if (searchText.toLowerCase() === "공원") {
-      setGuideText("정답");
+      history.push("/tutorial1/tut4");
     } else {
       setGuideText("잘못 입력했어요!\n다시 한 번 입력해 볼까요?");
     }

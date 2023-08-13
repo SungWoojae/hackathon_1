@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import NaverMapAPI from "../components/NaverMapApi";
 import { Container as MapDiv, NaverMap } from "react-naver-maps";
 import Header2 from "../components/Header2";
+import Guide from '../components/Guide'
 import Park from "../images/park_enter.svg"
 import Place from "../images/place_bus_station.svg"
 import List from "../images/bottom_placelist.svg"
+import SmallList from "../images/bottomlistsmall.svg"
 import Finger from "../images/finger.svg"
 
 
@@ -26,11 +29,62 @@ const Container = styled.div`
 `;
 
 
+const GuideContainer = styled.div`
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  position: absolute;
+  bottom: 0px; 
+  left: 0; 
+  width: 100%; 
+  z-index : 3;
+`;
 
+const Bold = styled.span`
+  font-weight: bold;
+`;
 
+const guideText = (
+    <>
+      이제 지도가 크게 보이네요!<br />
+      지도를 둘러보며 <Bold>‘효창공원’</Bold>을<br />
+      찾아 보아요.<br />
+      손가락으로 지도 보는 연습,<br />
+      지금 해볼게요!
+    </>
+);
 
 function Tut5() {
+
+
+    const history = useHistory(); // useHistory 초기화
+
+    
+
+
     const { naver } = window;
+
+    // 요소 띄우기
+    const [showElements, setShowElements] = useState(false);
+
+    useEffect(() => {
+        // 가이드 표시
+        const elementsTimer = setTimeout(() => {
+            setShowElements(true);
+        }, 1500);
+
+
+        // 페이지 전환
+        const nextPageTimer = setTimeout(() => {
+            history.push("/tut6");
+          }, 5000);
+
+
+        return () => {
+            clearTimeout(elementsTimer);  // 가이드 표시
+            clearTimeout(nextPageTimer);  // 페이지 전환
+        };
+    }, []);
 
     return (
         <Container>
@@ -39,35 +93,37 @@ function Tut5() {
             subtitle="1. 길 검색해서 찾기"
             />
         <div>
-            <img
-            src={Park}
-            alt="검색결과"
-            style={{ display: "block", margin: 0}}
-            />
-            <img
-            src={Place}
-            alt="장소버스 정류장"
-            style={{ display: "block", margin: 0}}
-            />
+            <img src={Park} alt="검색결과" style={{ display: "block", margin: 0}}/>
+            <img src={Place} alt="장소버스 정류장" style={{ display: "block", margin: 0}}/>
         </div>
         <MapDiv
-        style={{width: '100%',height: '800px', display: 'flex',justifyContent: 'center',
-        }}
+        style={{width: '100%',height: '800px', display: 'flex',justifyContent: 'center',}}
         >
-        <NaverMap />
+            <NaverMap />
         </MapDiv>
         <div
         style={{display: 'flex',justifyContent: 'center', zIndex:2,}}
         >
             <img
-            src={List}
-            alt="검색리스트"
+            src={SmallList}
+            alt="축소된검색리스트"
             style={{display: "block", bottom : -8, margin : 0,padding : 0}}
             className="overlay"
             />
         </div>
 
-
+        {/* 0.5초 지나고 */}
+        {showElements && (
+            <div style={{zIndex:4}} className="overlay">
+                <div
+                        style={{position: "absolute", top: 0, display: "flex", justifyContent: "center", width: "393px", height: "852px"}}
+                    >
+                    <GuideContainer>
+                        <Guide text={guideText}/>
+                    </GuideContainer>
+                </div>
+            </div>
+        )}
         </Container>
     );
        

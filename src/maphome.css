@@ -29,6 +29,8 @@
 
 .search::placeholder {
     color: #CACACA;
+    font-size: 16px;
+    padding-left: 5px;
 }
 
 .search-image {
@@ -68,4 +70,8 @@
 
 .location {
     align-self: flex-end;
+}
+
+.start-text {
+    font-size: 40;
 }

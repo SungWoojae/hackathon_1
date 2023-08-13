@@ -59,7 +59,7 @@ const BigBox = () => {
                     <div style={boldText}>이론</div> 
                     <div style={subTitle}>차근차근 배워봐요</div>
                 </div>
-                <Link to="/tut1_1" style={{ textDecoration: "none" }}>
+                <Link to="/tutorial1/tut1" style={{ textDecoration: "none" }}>
                     <MapHomeBox title="이론 1. 길 검색해서 찾기" time="예상 소요 시간 : 10분"/>
                 </Link>
                 <MapHomeBox title="이론 2. 추후 공개" />
@@ -74,7 +74,7 @@ const BigBox = () => {
                 <Link to="/practice1" style={{ textDecoration: "none" }}>
                     <MapHomeBox title="실습 1. 방향 찾기" time="예상 소요 시간 : 10분"/>
                 </Link>
-                <Link to="/exercise_road_1" style={{ textDecoration: "none" }}>
+                <Link to="/practice2/exercise_road_1" style={{ textDecoration: "none" }}>
                     <MapHomeBox title="실습 2. 경로 찾기" time="예상 소요 시간 : 5분"/>
                 </Link>
                 <MapHomeBox title="실습 3. 추후 공개"/>
