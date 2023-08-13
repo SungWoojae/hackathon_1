@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import NaverMapAPI from "../components/NaverMapApi";
 import { Container as MapDiv, NaverMap } from "react-naver-maps";
@@ -46,43 +45,24 @@ const Bold = styled.span`
 
 const guideText = (
     <>
-      이제 지도가 크게 보이네요!<br />
-      지도를 둘러보며 <Bold>‘효창공원’</Bold>을<br />
-      찾아 보아요.<br />
-      손가락으로 지도 보는 연습,<br />
-      지금 해볼게요!
+      한 손가락으로 지도를 움직이며<br />
+      주변을 둘러봐요.
     </>
 );
 
 function Tut5() {
-
-
-    const history = useHistory(); // useHistory 초기화
-
-    
-
-
     const { naver } = window;
 
     // 요소 띄우기
     const [showElements, setShowElements] = useState(false);
 
     useEffect(() => {
-        // 가이드 표시
         const elementsTimer = setTimeout(() => {
             setShowElements(true);
-        }, 1500);
-
-
-        // 페이지 전환
-        const nextPageTimer = setTimeout(() => {
-            history.push("/tut6");
-          }, 5000);
-
+        }, 1500); // 1.5초 후에 가이드 표시
 
         return () => {
-            clearTimeout(elementsTimer);  // 가이드 표시
-            clearTimeout(nextPageTimer);  // 페이지 전환
+            clearTimeout(elementsTimer);
         };
     }, []);
 
