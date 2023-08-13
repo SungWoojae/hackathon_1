@@ -2,19 +2,19 @@ import { useCallback, useEffect, useState } from 'react';
 
 export const useDeviceOrientation = () => {
   const [error, setError] = useState(null);
-  const [orientation, setOrientation] = useState(null);
+  const [orientation, setOrientation] = useState(0);
 
   const onDeviceOrientation = (event) => {
     setOrientation({
       alpha: event.alpha,
-      beta: event.beta,
-      gamma: event.gamma,
+      // beta: event.beta,
+      // gamma: event.gamma,
     });
   };
 
   const revokeAccessAsync = async () => {
     window.removeEventListener('deviceorientation', onDeviceOrientation);
-    setOrientation(null);
+    setOrientation(0);
   };
 
   const requestAccessAsync = async () => {

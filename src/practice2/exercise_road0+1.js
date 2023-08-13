@@ -36,13 +36,13 @@ function Exercise_road_0() {
         
         // Check if the search value matches "창천문화공원"
         if (searchValue === "창천문화공원") {
-            history.push("/exercise_road_2"); // Navigate to the excercise2 route
+            history.push("/practice2/exercise_road_2"); // Navigate to the excercise2 route
         }
     }
 
     return (
         <div className="container">
-            <Header2 title="지도 연습해보기" subtitle="1. 길 검색해서 찾기" />
+            <Header2 title="실습2. 경로찾기" subtitle="도보: 현재위치 -> 창천문화공원" />
             <MapDiv
                 className="map"
                 style={{

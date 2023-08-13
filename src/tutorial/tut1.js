@@ -8,7 +8,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #FFF2DE;
+  background-color: #E9EEF6;
   overflow-x: hidden;
   overflow-y: hidden;
   width: 393px;
@@ -25,7 +25,7 @@ const Body = styled.div`
   border-radius: 15px;
   background: #FFF;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  margin-top: 50px;
+  margin-top: 40px;
   padding: 30px 0px;
 `;
 
@@ -41,37 +41,33 @@ const Mission = styled.div`
 `;
 
 const Image = styled.img`
-  margin: 60px;
+  margin: 40px;
+  width: 240px;
 `;
 
 const StartBox = styled.div`
-    width: 80px;
-    height: 38px;
+    width: 140px;
+    height: 60px;
     flex-shrink: 0;
     border-radius: 10px;
-    background: #006BFF;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+    background: #5079F0;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none; 
-    
 `;
 
 const StartText = styled.p`
     color: #FFF;
     text-align: center;
     font-family: Inter;
-    font-size: 18px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     margin: 0;
     text-decoration: none; 
     border: none; 
-    
 `;
 
 
@@ -92,7 +88,7 @@ function Tut1() {
       </Body>
       <Image src={Halfegg}></Image>
       <StartBox>
-        <Link to="/tut2" style={{ textDecoration: "none" }}>
+        <Link to="/tutorial1/tut2" style={{ textDecoration: "none" }}>
             <StartText>시작하기</StartText>
         </Link>
       </StartBox>
