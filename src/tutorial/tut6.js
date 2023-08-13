@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from 'react';
 import styled from "styled-components";
 import NaverMapAPI from "../components/NaverMapApi";
-import { Container as MapDiv, NaverMap } from "react-naver-maps";
+import { Container as MapDiv, NaverMap, Marker } from "react-naver-maps";
+import { NavermapsProvider, Polyline } from 'react-naver-maps';
 import Header2 from "../components/Header2";
 import Guide from '../components/Guide'
+import exercise_road4_top from '../images/exercise_road4_top.svg';
 import Park from "../images/park_enter.svg"
 import Place from "../images/place_bus_station.svg"
 import List from "../images/bottom_placelist.svg"
@@ -51,6 +53,8 @@ const guideText = (
     </>
 );
 
+
+
 function Tut6() {
     const { naver } = window;
 
@@ -76,7 +80,8 @@ function Tut6() {
                 {showNewImage && (
                     <img
                     src={Success} alt="새 이미지"
-                    style={{ display: "block", margin: 0}}
+                    style={{ display: "block", margin: 0, position: "absolute",top: "50%",left: "50%",transform: "translate(-50%, -50%)", // 정중앙으로 이동
+                    zIndex: 4}}
                     className = "overlay"
                     />
                 )}

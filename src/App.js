@@ -10,6 +10,8 @@ import Tut4 from './tutorial/tut4';
 import Tut4_base from './tutorial/tut4_base';
 import Tut5 from './tutorial/tut5';
 import Tut6 from './tutorial/tut6';
+import Tut9 from './tutorial/tut9';
+
 import Tut3map from './tutorial/tut3_base';
 import Maphome from './maphome';
 import Newmaphome from './newmaphome';
@@ -52,6 +54,8 @@ function App() {
           <Route exact path="/tutorial1/tut4"><Tut4 /></Route>
           <Route exact path="/tutorial1/tut5"><Tut5 /></Route> 
           <Route exact path="/tutorial1/tut6"><Tut6 /></Route> 
+          <Route exact path="/tutorial1/tut9"><Tut9 /></Route>
+          <Route exact path="/tutorial1/tut10"><Tut10 /></Route>
           <Route exact path="/practice1"><ExerciseDirection1 /></Route>
           <Route exact path="/practice1/acting"><ExerciseDirection1Acting /></Route>
           <Route exact path="/practice2/exercise_road_1"><ExerciseRoad0 /></Route>
@@ -61,7 +65,7 @@ function App() {
           <Route exact paht="/maphome"><MapHome /></Route>
         </Switch>
       </Router> */}
-      <Tut6/>
+      <Tut9/>
       {/* <Newmaphome/> */}
     </Container>
   );

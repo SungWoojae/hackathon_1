@@ -48,6 +48,7 @@ const Test = () => {
     console.log(center)
     if (center._lng >= 126.9387624)
         isMoveRight(true);
+    
   }
 
   return (
