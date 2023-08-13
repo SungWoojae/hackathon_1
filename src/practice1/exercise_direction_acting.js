@@ -9,6 +9,7 @@ import CircleImage from '../images/exercise_direction_1_circle.svg'; // Import y
 import styled from 'styled-components';
 import success from '../images/alert_success.svg';
 import { useDeviceOrientation } from './useDeviceOrientation'; // Import the useDeviceOrientation hook
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -129,7 +130,7 @@ function Exercise_direction1() {
     return 0;
   };
 
-console.log(orientation)
+
 
 
   const [timing, setTiming] = useState(0);
@@ -142,15 +143,15 @@ console.log(orientation)
     if (!shouldChangeImage1) {
       if (orientation && ((orientation.alpha >= 300 && orientation.alpha <= 360) || (orientation.alpha >= 0 && orientation.alpha <= 50))) {
         setIsActive(true);
-        setTiming(0);
+        // setTiming(0);
   
-        const interval = setInterval(() => {
-          setTiming(prevTiming => prevTiming + 100);
-        }, 100);
+        // const interval = setInterval(() => {
+        //   setTiming(prevTiming => prevTiming + 100);
+        // }, 100);
   
-        return () => {
-          clearInterval(interval);
-        };
+        // return () => {
+        //   clearInterval(interval);
+        // };
       } else {
         setIsActive(false);
         setTiming(0);
@@ -159,15 +160,15 @@ console.log(orientation)
       if (!shouldChangeImage2) {
         if (orientation && ((orientation.alpha >= 220 && orientation.alpha <= 320))) {
           setIsActive(true);
-          setTiming(0);
+          // setTiming(0);
         
-          const interval = setInterval(() => {
-            setTiming(prevTiming => prevTiming + 100);
-          }, 100);
+          // const interval = setInterval(() => {
+          //   setTiming(prevTiming => prevTiming + 100);
+          // }, 100);
         
-          return () => {
-            clearInterval(interval);
-          };
+          // return () => {
+          //   clearInterval(interval);
+          // };
         } else {
           setIsActive(false);
           setTiming(0);
@@ -176,15 +177,15 @@ console.log(orientation)
         if(!shouldChangeImage3) {
           if (orientation && ((orientation.alpha >= 220 && orientation.alpha <= 320))) {
             setIsActive(true);
-            setTiming(0);
+            // setTiming(0);
       
-            const interval = setInterval(() => {
-              setTiming(prevTiming => prevTiming + 100);
-            }, 100);
+            // const interval = setInterval(() => {
+            //   setTiming(prevTiming => prevTiming + 100);
+            // }, 100);
           
-            return () => {
-              clearInterval(interval);
-            };
+            // return () => {
+            //   clearInterval(interval);
+            // };
           } else {
             setIsActive(false);
             setTiming(0);
@@ -195,15 +196,34 @@ console.log(orientation)
     }, [orientation]);
 
   useEffect(() => {
-    if (isActive && timing === 3000) {
+    if (isActive) {
+      const interval = setInterval(() => {
+          setTiming(prevTiming => prevTiming + 100);
+        }, 100);
+  
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  })
+
+  console.log(timing, orientation.alpha)
+ 
+  
+  
+  useEffect(() => {
+    if (timing === 3000) {
       if (!shouldChangeImage1) {
         setShouldChangeImage1(true);
+        setTiming(0);
       }
       if (shouldChangeImage1 && !shouldChangeImage2) {
         setShouldChangeImage2(true);
+        setTiming(0);
       }
       if (shouldChangeImage2 && !shouldChangeImage3) {
         setShouldChangeImage3(true);
+        setTiming(0);
       }
     }
   }, [isActive, timing]);
@@ -233,7 +253,9 @@ console.log(orientation)
       )}
       
       {shouldChangeImage3 ? (
+        <Link to="/">
         <img src={success} alt="success" className='overlay' style={{ position: 'absolute', top: '40%', left: '50%', transform: 'translate(-50%, -50%)' }}/>
+        </Link>
       ): (null)
       }
            
