@@ -74,7 +74,7 @@ const BigBox = () => {
                 <Link to="/practice1" style={{ textDecoration: "none" }}>
                     <MapHomeBox title="실습 1. 방향 찾기" time="예상 소요 시간 : 10분"/>
                 </Link>
-                <Link to="/practice2/exercise_road_1" style={{ textDecoration: "none" }}>
+                <Link to="/practice2/exercise_road_0+1" style={{ textDecoration: "none" }}>
                     <MapHomeBox title="실습 2. 경로 찾기" time="예상 소요 시간 : 5분"/>
                 </Link>
                 <MapHomeBox title="실습 3. 추후 공개"/>

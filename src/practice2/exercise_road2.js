@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import exercise_road2_bottombox from '../images/exercise_road2_bottombox.svg';
 import Header2 from '../components/Header2';

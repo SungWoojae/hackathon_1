@@ -31,7 +31,7 @@ function Exercise_road_0() {
     const [submitted, setSubmitted] = useState(false); // 양식 제출 여부를 저장할 상태
 
     const { naver } = window;
-    const { transcript } = useSpeechRecognition();
+    // const { transcript } = useSpeechRecognition();
 
     const handleImageClick = () => {
         setShowImage(false); // Hide the image when clicked
@@ -44,13 +44,8 @@ function Exercise_road_0() {
         // Check if the search value matches "창천문화공원"
         if (searchValue === "창천문화공원") {
             history.push("/exercise_road_2"); // Navigate to the excercise2 route
-        }  //else if (transcript) { // Check if there's a transcript from speech recognition
-        //     setSearchValue(transcript); // Set the transcript as the search value
-        // }
+        }  
     }
-
-    // const voiceRecognition = () => {
-        
         
     
     

@@ -62,7 +62,7 @@ function App() {
           <Route exact path="/tutorial1/tut10"><Tut10 /></Route>
           <Route exact path="/practice1"><ExerciseDirection1 /></Route>
           <Route exact path="/practice1/acting"><ExerciseDirection1Acting /></Route>
-          <Route exact path="/practice2/exercise_road_1"><ExerciseRoad0 /></Route>
+          <Route exact path="/practice2/exercise_road_0+1"><ExerciseRoad0 /></Route>
           <Route exact path="/practice2/exercise_road_2"><ExerciseRoad2/></Route> 
           <Route exact path="/practice2/exercise_road_3"><ExerciseRoad3/></Route> 
           <Route exact path="/practice2/exercise_road_4"><ExerciseRoad4/></Route> 
