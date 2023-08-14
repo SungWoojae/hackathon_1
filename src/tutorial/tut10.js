@@ -41,7 +41,7 @@ const guideText = (
     </>
 );
 
-function Tut5() {
+function Tut10() {
     const { naver } = window;
 
     return (
@@ -125,4 +125,4 @@ function Tut5() {
        
 }
 
-export default Tut5;
+export default Tut10;
