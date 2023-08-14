@@ -51,7 +51,7 @@ function App() {
   return (
     <Container>
       {/* <Exercise_direction1 /> */}
-      {/* <Router>
+      <Router>
         <Switch>
           <Route exact path="/"><BigBox /></Route> 
           <Route exact path="/tutorial1/tut1"><Tut1 /></Route> 
@@ -72,8 +72,8 @@ function App() {
           <Route exact path="/maphome"><MapHome /></Route>
           <Route exact path="/dict"><Dictaphone /></Route>
         </Switch>
-      </Router> */}
-      <Tut11/>
+      </Router>
+      {/* <Tut10/> */}
       {/* <Newmaphome/> */}
     </Container>
   );
