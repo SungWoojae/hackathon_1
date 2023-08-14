@@ -9,7 +9,7 @@ import List from "../images/bottom_placelist.svg"
 import Finger from "../images/finger.svg"
 
 import { Marker, InfoWindow } from "react-naver-maps";
-
+import { Link, useHistory } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -66,8 +66,15 @@ function Tut4() {
         };
     }, []);
 
+    const history = useHistory();
+
+    const handleMapClick = () => {
+        history.push("/tutorial1/tut5");
+    };
+
 
     return (
+        
         <Container>
             <Header2
             title="지도 연습해보기"
@@ -84,58 +91,62 @@ function Tut4() {
             alt="장소버스 정류장"
             style={{ display: "block", margin: 0}}
             />
-        </div>   
-        <NavermapsProvider>
-        <MapDiv
-        style={{width: '100%',height: '800px', display: 'flex',justifyContent: 'center',
-        }}
-        >
-            <NaverMap 
-                zoom={13}
-                center={{lat:37.5250482, lng:126.9613142}}
-            >
-                <Marker 
-                      position={{lat:37.5450482,lng: 126.9603142}} // 효창
+        </div>        
+            <NavermapsProvider>               
+            <MapDiv
+            style={{width: '100%',height: '800px', display: 'flex',justifyContent: 'center',
+            }}
+            onClick={handleMapClick}
+            >   
+                
+                <NaverMap 
+                    zoom={13}
+                    center={{lat:37.5250482, lng:126.9613142}}
                 >
-                    <InfoWindow offset={new naver.maps.Point(0,-30)}>
-                        <div>효창공원</div>
-                    </InfoWindow>
-                </Marker>
-                <Marker
-                      position={{lat:37.5550482,lng: 126.9703142}}                      
-                >
-                    <InfoWindow offset={new naver.maps.Point(0,-30)}>
-                        <div>우제공원</div>
-                    </InfoWindow>
+                    <Marker 
+                        position={{lat:37.5450482,lng: 126.9603142}} // 효창
+                    >
+                        <InfoWindow offset={new naver.maps.Point(0,-30)}>
+                            <div>효창공원</div>
+                        </InfoWindow>
+                    </Marker>
+                    <Marker
+                        position={{lat:37.5550482,lng: 126.9703142}}                      
+                    >
+                        <InfoWindow offset={new naver.maps.Point(0,-30)}>
+                            <div>우제공원</div>
+                        </InfoWindow>
 
-                </Marker>
-                <Marker 
-                      position={{lat:37.5400482,lng: 126.9500142}}                      
-                >
-                    <InfoWindow offset={new naver.maps.Point(0,-30)}>
-                        <div>화진공원</div>
-                    </InfoWindow>
+                    </Marker>
+                    <Marker 
+                        position={{lat:37.5400482,lng: 126.9500142}}                      
+                    >
+                        <InfoWindow offset={new naver.maps.Point(0,-30)}>
+                            <div>화진공원</div>
+                        </InfoWindow>
 
-                </Marker>
-                <Marker 
-                      position={{lat:37.5600482,lng: 126.9400142}}                      
-                >
-                    <InfoWindow offset={new naver.maps.Point(0,-30)}>
-                        <div>현진공원</div>
-                    </InfoWindow>
-
-                </Marker>
-                <Marker 
-                      position={{lat:37.5680482,lng: 126.98}}                      
-                >
-                    <InfoWindow offset={new naver.maps.Point(0,-30)}>
-                        <div>재은공원</div>
-                    </InfoWindow>
-                </Marker>
-
-            </NaverMap>
-        </MapDiv>
-        </NavermapsProvider>
+                    </Marker>
+                    <Marker 
+                        position={{lat:37.5600482,lng: 126.9400142}}                      
+                    >
+                        <InfoWindow offset={new naver.maps.Point(0,-30)}>
+                            <div>현진공원</div>
+                        </InfoWindow>
+                    </Marker>
+                    <Marker 
+                        position={{lat:37.5680482,lng: 126.98}}                      
+                    >
+                        <InfoWindow offset={new naver.maps.Point(0,-30)}>
+                            <div>재은공원</div>
+                        </InfoWindow>
+                    </Marker>
+                </NaverMap>
+                           
+            </MapDiv>            
+                 
+            </NavermapsProvider>
+        
+        
         <div
         style={{display: 'flex',justifyContent: 'center', zIndex:2,}}
         >
@@ -146,11 +157,12 @@ function Tut4() {
             className="overlay"
             />
         </div>
+        
 
 
         {/* 0.5초 지나고 */}
         {showElements && (
-                <div style={{zIndex:4}} className="overlay">
+                <div style={{zIndex:4, pointerEvents:"none"}} className="overlay">                    
                     <div
                         style={{position: "absolute", top: 0, display: "flex", justifyContent: "center", width: "393px", height: "852px"}}
                     >
@@ -162,12 +174,13 @@ function Tut4() {
                         <GuideContainer>
                         <Guide text={guideText}/>
                         </GuideContainer>
-                    </div>
-                </div>
+                    </div>                    
+                </div>                     
             )}
 
 
         </Container>
+        
     );
        
 }
