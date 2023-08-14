@@ -6,10 +6,7 @@ import { Container as MapDiv, NaverMap } from "react-naver-maps";
 import Header2 from "../components/Header2";
 import Guide from '../components/Guide'
 import Park from "../images/park_enter.svg"
-import Place from "../images/place_bus_station.svg"
-import List from "../images/bottom_placelist.svg"
-import SmallList from "../images/bottomlistsmall.svg"
-import Finger from "../images/finger.svg"
+import Hyochang from "../images/Hyochang.svg"
 
 
 
@@ -28,21 +25,24 @@ const Container = styled.div`
   z-index : 0;
 `;
 
+
 const Bold = styled.span`
   font-weight: bold;
 `;
 
 const guideText = (
     <>
-      이제 지도가 크게 보이네요!<br />
-      지도를 둘러보며 <Bold>‘효창공원’</Bold>을<br />
-      찾아 보아요.<br />
-      손가락으로 지도 보는 연습,<br />
-      지금 해볼게요!
+      <Bold>‘효창공원’</Bold>을 찾아 누르는 것까지<br />
+      성공했군요!<br /><br />
+      지금까지 검색하려는 곳의 이름을<br />
+      모를 때 지도에서 어떻게 찾는지<br />
+      알려드렸어요.<br />
     </>
 );
 
-function Tut5() {
+
+
+function Tut11() {
     const { naver } = window;
 
     // 요소 띄우기
@@ -53,18 +53,9 @@ function Tut5() {
         // 가이드 표시
         const elementsTimer = setTimeout(() => {
             setShowElements(true);
-        }, 1500);
-
-
-        // 페이지 전환
-        const nextPageTimer = setTimeout(() => {
-            history.push("/tutorial1/tut6");
-          }, 5000);
-
-
+        }, 2000);
         return () => {
             clearTimeout(elementsTimer);  // 가이드 표시
-            clearTimeout(nextPageTimer);  // 페이지 전환
         };
     }, []);
 
@@ -76,31 +67,35 @@ function Tut5() {
             />
             <div>
                 <img src={Park} alt="검색결과" style={{ display: "block", margin: 0}}/>
-                <img src={Place} alt="장소버스 정류장" style={{ display: "block", margin: 0}}/>
             </div>
+
+            {/* 지도영역 */}
             <MapDiv
             style={{width: '100%',height: '800px', display: 'flex',justifyContent: 'center',}}
             >
                 <NaverMap />
             </MapDiv>
+
+            {/* 하단이미지 */}
             <div
             style={{display: 'flex',justifyContent: 'center', zIndex:0,}}
             >
                 <img
-                src={SmallList}
+                src={Hyochang}
                 alt="축소된검색리스트"
                 style={{display: "block", bottom : -8, margin : 0,padding : 0}}
                 className="overlay"
                 />
             </div>
 
-            {/* 0.5초 지나고 */}
+            {/* 가이드 2.5초 지나고 */}
             {showElements && (
                 <Guide className="overlay" text={guideText} />
             )}
+
         </Container>
     );
        
 }
 
-export default Tut5;
+export default Tut11;
