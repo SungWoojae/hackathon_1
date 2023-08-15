@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Square = styled.div`
     width: 400px;
     height: 236px;
-    background: #000;
+    background: #CAD5EC;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,9 +13,9 @@ const Square = styled.div`
 
 const SquareText = styled.p`
     width: 300px;
-    color: #fff;
+    color: #000;
     text-align: center;
-    font-family: Inter;
+    font-family: Pretendard;
     font-size: 25px;
     font-style: normal;
     font-weight: 400;

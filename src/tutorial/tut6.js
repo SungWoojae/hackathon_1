@@ -74,7 +74,7 @@ const Tut6 = () => {
     if (showDirection) {
       setTimeout(() => {
         setShowDirection(false);
-      }, 2000);
+      }, 1500);
     }
   }, [showDirection]);
   useEffect(() => {
