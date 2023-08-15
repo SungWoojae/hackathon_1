@@ -1,7 +1,12 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import styled from 'styled-components';
-// import Tut1 from './tutorial/tut1';
+
+
+import Splash from './splash'
+import Home from './home_map';
+
 import Tut1 from './tutorial/tut1';
 import Tut2 from './tutorial/tut2';
 import Tut3 from './tutorial/tut3';
@@ -12,16 +17,6 @@ import Tut10 from './tutorial/tut10';
 import Tut11 from './tutorial/tut11';
 import Tut12 from './tutorial/tut12';
 
-
-
-
-import Maphome from './maphome';
-import Newmaphome from './newmaphome';
-
-
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
-import BigBox from './home_map';
 import ExerciseRoad3 from './practice2/exercise_road3';
 import ExerciseRoad4 from './practice2/exercise_road4';
 import ExerciseRoad0 from './practice2/exercise_road0+1';
@@ -30,8 +25,12 @@ import ExerciseDirection1 from './practice1/exercise_direction_explanation';
 import ExerciseDirection1Acting from './practice1/exercise_direction_acting';
 import MapHome from './maphome';
 import Dictaphone from './practice2/speech_recognition';
-// import Maphome from './maphome';
-// import MapHomeBox from './MapHomeBox';
+
+
+
+
+
+
 
 const Container = styled.div`
   display: flex;
@@ -50,10 +49,10 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
-      {/* <Exercise_direction1 /> */}
       <Router>
         <Switch>
-          <Route exact path="/"><BigBox /></Route> 
+          <Route exact path="/"><Splash /></Route>
+          <Route exact path="/Home"><Home /></Route> 
           <Route exact path="/tutorial1/tut1"><Tut1 /></Route> 
           <Route exact path="/tutorial1/tut2"><Tut2 /></Route> 
           <Route exact path="/tutorial1/tut3"><Tut3 /></Route> 
@@ -73,8 +72,6 @@ function App() {
           <Route exact path="/dict"><Dictaphone /></Route>
         </Switch>
       </Router>
-      {/* <Tut9/> */}
-      {/* <Newmaphome/> */}
     </Container>
   );
 }
