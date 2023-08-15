@@ -94,7 +94,9 @@ function Exercise_road_0() {
                     center={{lat: 37.558, lng: 126.9368}}
                 />
             </MapDiv>
-            <img src={exercise_road1_bottom} alt="" />
+            
+            <img src={exercise_road1_bottom} alt="" style={{width:'100%'}}/>
+            
         </div>
     );
 }

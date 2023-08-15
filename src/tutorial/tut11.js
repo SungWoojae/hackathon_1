@@ -65,7 +65,7 @@ function Tut11() {
             >
                 <NaverMap 
                         zoom={13}
-                        center={{lat:37.5250482, lng:126.9613142}}
+                        center={{lat:37.5800482, lng:126.9999142}}
                     >                           
                         <Marker 
                             position={{lat:37.5450482,lng: 126.9603142}} // 효창
