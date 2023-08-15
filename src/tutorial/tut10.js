@@ -27,23 +27,23 @@ const Container = styled.div`
   z-index : 0;
 `;
 
-const GuideContainer = styled.div`
-  width: 350px;
-  position: absolute;
-  bottom: 65px;
-`;
+
 
 const TextBox = styled.div`
   box-sizing: border-box;  
   width: 350px;
   border-radius: 10px;
   padding: 25px;
-  background-color: black;
-  color: white;
-  font-size: 18px;
-  font-weight: 400;
+  background-color: #CAD5EC;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 500;
   line-height: 150%;
   text-align: center;
+  width: 350px;
+  position: absolute;
+  bottom: 65px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 `;
 
 const TextContainer = styled.div`
@@ -52,15 +52,16 @@ const TextContainer = styled.div`
 
 
 const Button = styled.button`
-  margin-top: 15px;
+  margin-top: 10px;
   margin-left : 10px;
   margin-right :10px;
   padding: 10px 5px;
   width : 260px;
+  height:50px;
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   font-size : 20px;
   font-weight : 500;
@@ -151,23 +152,21 @@ function Tut10() {
                 />
             </div>
 
-            <GuideContainer style={{zIndex:4}} className="overlay">
-                <TextBox>
+                <TextBox className="overlay" style={{zIndex:4}}>
                     <TextContainer>{guideText}</TextContainer>
                     <div style={{display:'flex', flexDirection: 'column'}}>
                         <Link to="/tutorial1/tut11">
-                            <Button style={{ backgroundColor: '#1638E8'}}>
+                            <Button style={{ backgroundColor: '#182E5E', fontFamily : 'pretendard', letterSpacing: '1px', fontWeight:'300'}}>
                                 네, 충분히 됐어요.
                             </Button>
                         </Link>
                         <Link to="/tutorial1/tut6">
-                            <Button style={{ backgroundColor: '#808080'}}>
+                            <Button style={{ backgroundColor: '#808080',fontFamily : 'pretendard', letterSpacing: '1px', fontWeight:'300'}}>
                                 아니요, 한 번 더 해볼래요.
                             </Button>
                         </Link>
                     </div>
                 </TextBox>
-            </GuideContainer>
         </Container>
     );     
 }

@@ -90,10 +90,51 @@ const GuideContainer = styled.div`
 
 
 
+const TextBox = styled.div`
+  width: 350px;
+  position: absolute;
+  bottom: 65px;
+  box-sizing: border-box;  
+  width: 350px;
+  border-radius: 10px;
+  padding: 25px;
+  background-color: ${props => props.showError ? '#BA0C0C' : '#CAD5EC'};
+  color: ${props => props.showError ? '#FFFFFF' : '#000000'};
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 150%;
+  text-align: center;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+`;
+
+
+// const TextBox = styled.div`
+//   box-sizing: border-box;  
+//   width: 350px;
+//   border-radius: 10px;
+//   padding: 25px;
+//   background-color: #CAD5EC;
+//   color: #000000;
+//   font-size: 20px;
+//   font-weight: 500;
+//   line-height: 150%;
+//   text-align: center;
+//   width: 350px;
+//   position: absolute;
+//   bottom: 65px;
+//   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+// `;
+
+const TextContainer = styled.div`
+    white-space: pre-line;
+`;
+
+
 function Tut3() {
   const { naver } = window;
-  const [searchText, setSearchText] = useState(""); // 검색어 상태 관리
+  const [searchText, setSearchText] = useState("");
   const [guideText, setGuideText] = useState("당신은 어느 공원에 갈지\n아직 정하지 않았어요.\n그렇다면 그냥 ‘공원’이라고 검색을\n해볼까요?"); // 상태 변수로 변
+  const [showError, setShowError] = useState(false);
   const history = useHistory();
 
   const handleSearchSubmit = (event) => {
@@ -102,6 +143,7 @@ function Tut3() {
     if (searchText.toLowerCase() === "공원") {
       history.push("/tutorial1/tut4");
     } else {
+      setShowError(true);
       setGuideText("잘못 입력했어요!\n다시 한 번 입력해 볼까요?");
     }
   };
@@ -127,12 +169,14 @@ function Tut3() {
               <Hamburger src={hamburger} alt="" />
               <SearchInput type="text"
               placeholder="장소, 버스, 지하철, 주소 검색" 
+              style = {{fontFamily : 'pretendard', fontSize : '19px', fontWeight : '300'}}
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}/> 
             </form>
           </SearchBox>
           <SideIcon src={sideicon} alt=""/>
         </Overlay>
+        
         <img
           src={Finger}
           alt=""
@@ -145,12 +189,22 @@ function Tut3() {
         <NaverMap />
         <Mission />
       </MapDiv>
-      <img
-          src={exercise_road1_bottom}
-          alt=""
-        />
+
+      <div
+            style={{display: 'flex',justifyContent: 'center', zIndex:0, width:'100%'}}
+            >
+                <img
+                src={exercise_road1_bottom}
+                alt="하단이미지"
+                style={{display: "block", bottom : -8, margin : 0,padding : 0, width:'100%'}}
+                className="overlay"
+                />
+      </div>
+
       <GuideContainer>
-        <Guide text={guideText}/>
+        <TextBox showError={showError}>
+          <TextContainer>{guideText}</TextContainer>
+        </TextBox>
       </GuideContainer>
     </Container>
   );

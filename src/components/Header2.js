@@ -11,7 +11,7 @@ const HeaderWrapper = styled.header`
   box-sizing: border-box;  
   width: 393px;
   height: 115px;
-  background-color: #2C2C2C;
+  background-color: #182E5E;
   color: white;
   padding: 0px;
   text-align: center;
@@ -22,16 +22,16 @@ const HeaderWrapper = styled.header`
 
 // 제목
 const Title = styled.div`
-  font-size: 23px;
+  font-size: 25px;
   font-weight: 600;
   margin-bottom: 6px;
-  margin-top: 45px;
+  margin-top: 43px;
 `;
 
 // 부제
 const Subtitle = styled.div`
   font-size: 20px;
-  font-weight: normal;
+  font-weight: 300;
   margin-top: 0px;
   margin-bottom: 5px;
   padding-bottom:10px;

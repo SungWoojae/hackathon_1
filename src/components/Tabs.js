@@ -21,11 +21,10 @@ const Image = styled.img`
 `
 
 const Text = styled.p`
-    color: #000;
-    font-family: Inter;
-    font-size: 16px;
+    color: #222222;
+    font-size: 17px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: normal;
     padding-left: 5px;
 `

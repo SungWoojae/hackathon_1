@@ -5,9 +5,7 @@ import styled from 'styled-components';
 import Tut1 from './tutorial/tut1';
 import Tut2 from './tutorial/tut2';
 import Tut3 from './tutorial/tut3';
-import Tut3_base from './tutorial/tut3_base';
 import Tut4 from './tutorial/tut4';
-import Tut4_base from './tutorial/tut4_base';
 import Tut5 from './tutorial/tut5';
 import Tut6 from './tutorial/tut6';
 import Tut10 from './tutorial/tut10';
@@ -17,7 +15,6 @@ import Tut12 from './tutorial/tut12';
 
 
 
-import Tut3map from './tutorial/tut3_base';
 import Maphome from './maphome';
 import Newmaphome from './newmaphome';
 
