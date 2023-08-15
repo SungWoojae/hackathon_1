@@ -46,7 +46,8 @@ const guideText = (
       가까운 공원 중 가장 큰 공원인<br />
       <Bold>‘효창공원’</Bold>을 가볼게요.<br />
       우리는 지도로 공원을 찾을 거니까,<br />
-      지도를 한 번 눌러서 아래 목록을 <br/>없애 볼까요?
+      지도를 한 번 클릭해서 아래 목록을<br />
+      없애 볼까요?
     </>
 );
 
@@ -80,24 +81,25 @@ function Tut4() {
             title="지도 연습해보기"
             subtitle="1. 길 검색해서 찾기"
             />
-        <div>
-            <img
-            src={Park}
-            alt="검색결과"
-            style={{ display: "block", margin: 0}}
-            />
-            <img
-            src={Place}
-            alt="장소버스 정류장"
-            style={{ display: "block", margin: 0}}
-            />
-        </div>        
-        <NavermapsProvider>
+            <div>
+                <img
+                src={Park}
+                alt="검색결과"
+                style={{ display: "block", margin: 0}}
+                />
+                <img
+                src={Place}
+                alt="장소버스 정류장"
+                style={{ display: "block", margin: 0}}
+                />
+            </div>        
+            <NavermapsProvider>               
                 <MapDiv
                 style={{width: '100%',height: '800px', display: 'flex',justifyContent: 'center',
                 }}
                 onClick={handleMapClick}
-                >
+                >   
+                    
                     <NaverMap 
                         zoom={13}
                         center={{lat:37.5250482, lng:126.9613142}}
@@ -178,23 +180,23 @@ function Tut4() {
         
 
 
-        {/* 0.5초 지나고 */}
-        {showElements && (
-                <div style={{zIndex:4, pointerEvents:"none"}} className="overlay">                    
-                    <div
-                        style={{position: "absolute", top: 0, display: "flex", justifyContent: "center", width: "393px", height: "852px"}}
-                    >
-                        <img
-                            src={Finger}
-                            alt="Finger"
-                            style={{ display: "block", margin: 0, paddingTop: 300, width : '100px',height:'100px' }}
-                        />
-                        <GuideContainer>
-                        <Guide text={guideText}/>
-                        </GuideContainer>
-                    </div>                    
-                </div>                     
-            )}
+            {/* 0.5초 지나고 */}
+            {showElements && (
+                    <div style={{zIndex:4, pointerEvents:"none"}} className="overlay">                    
+                        <div
+                            style={{position: "absolute", top: 0, display: "flex", justifyContent: "center", width: "393px", height: "852px"}}
+                        >
+                            <img
+                                src={Finger}
+                                alt="Finger"
+                                style={{ display: "block", margin: 0, paddingTop: 300, width : '100px',height:'100px' }}
+                            />
+                            <GuideContainer>
+                            <Guide text={guideText}/>
+                            </GuideContainer>
+                        </div>                    
+                    </div>                     
+                )}
 
 
         </Container>

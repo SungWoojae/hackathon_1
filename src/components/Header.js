@@ -7,7 +7,7 @@ const HeaderWrapper = styled.header`
   box-sizing: border-box;  
   width: 393px;
   height: 100px;
-  background-color: #5079F5;
+  background-color: #2456C2;
   color: white;
   padding: 30px;
   font-size: 25px;
