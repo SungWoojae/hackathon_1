@@ -73,7 +73,7 @@ function Tut11() {
             <MapDiv
             style={{width: '100%',height: '800px', display: 'flex',justifyContent: 'center',}}
             >
-                <NaverMap />
+                <NaverMap center={{lat:37.5420482,lng: 126.9603142}}/>
             </MapDiv>
 
             {/* 하단이미지 */}

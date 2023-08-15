@@ -102,7 +102,7 @@ function Exercise_direction1() {
   }, []);
   const [textIndex, setTextIndex] = useState(0);
   const textList = [
-    "1. 휴대폰을 가고자하는 방향을 향해 들어주세요.",
+    "1. 휴대폰을 가고자하는 \n 방향을 향해 들어주세요.",
     "2. 화살표와 길의 방향이 일치할 경우 '시작' 버튼을 눌러주세요.",
     "3. 파란색 세모가 현재 방향을 나타냅니다.",
     "4. 3초가 지나면 파란 점이 이동하게 됩니다. 그때까지 방향을 유지해주세요.",
@@ -160,15 +160,6 @@ function Exercise_direction1() {
       if (!shouldChangeImage2) {
         if (orientation && ((orientation.alpha >= 220 && orientation.alpha <= 320))) {
           setIsActive(true);
-          // setTiming(0);
-        
-          // const interval = setInterval(() => {
-          //   setTiming(prevTiming => prevTiming + 100);
-          // }, 100);
-        
-          // return () => {
-          //   clearInterval(interval);
-          // };
         } else {
           setIsActive(false);
           setTiming(0);
@@ -177,15 +168,6 @@ function Exercise_direction1() {
         if(!shouldChangeImage3) {
           if (orientation && ((orientation.alpha >= 220 && orientation.alpha <= 320))) {
             setIsActive(true);
-            // setTiming(0);
-      
-            // const interval = setInterval(() => {
-            //   setTiming(prevTiming => prevTiming + 100);
-            // }, 100);
-          
-            // return () => {
-            //   clearInterval(interval);
-            // };
           } else {
             setIsActive(false);
             setTiming(0);
