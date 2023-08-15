@@ -155,7 +155,7 @@ function Tut10() {
                 <TextBox>
                     <TextContainer>{guideText}</TextContainer>
                     <div style={{display:'flex', flexDirection: 'column'}}>
-                        <Link to="/tutorial1/tut10">
+                        <Link to="/tutorial1/tut11">
                             <Button style={{ backgroundColor: '#1638E8'}}>
                                 네, 충분히 됐어요.
                             </Button>

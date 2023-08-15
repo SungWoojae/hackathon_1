@@ -10,9 +10,10 @@ import Tut4 from './tutorial/tut4';
 import Tut4_base from './tutorial/tut4_base';
 import Tut5 from './tutorial/tut5';
 import Tut6 from './tutorial/tut6';
-import Tut9 from './tutorial/tut10';
-import Tut10 from './tutorial/tut11';
-import Tut11 from './tutorial/tut12';
+import Tut10 from './tutorial/tut10';
+import Tut11 from './tutorial/tut11';
+import Tut12 from './tutorial/tut12';
+
 
 
 
@@ -62,9 +63,9 @@ function App() {
           <Route exact path="/tutorial1/tut4"><Tut4 /></Route>
           <Route exact path="/tutorial1/tut5"><Tut5 /></Route> 
           <Route exact path="/tutorial1/tut6"><Tut6 /></Route> 
-          <Route exact path="/tutorial1/tut9"><Tut9 /></Route>
           <Route exact path="/tutorial1/tut10"><Tut10 /></Route>
-          <Route exact path="/tutorial1/tut11"><Tut11 /></Route>          
+          <Route exact path="/tutorial1/tut11"><Tut11 /></Route>
+          <Route exact path="/tutorial1/tut12"><Tut12 /></Route>                    
           <Route exact path="/practice1"><ExerciseDirection1 /></Route>
           <Route exact path="/practice1/acting"><ExerciseDirection1Acting /></Route>
           <Route exact path="/practice2/exercise_road_0+1"><ExerciseRoad0 /></Route>
