@@ -10,9 +10,9 @@ import Tut4 from './tutorial/tut4';
 import Tut4_base from './tutorial/tut4_base';
 import Tut5 from './tutorial/tut5';
 import Tut6 from './tutorial/tut6';
-import Tut9 from './tutorial/tut9';
-import Tut10 from './tutorial/tut10';
-import Tut11 from './tutorial/tut11';
+import Tut9 from './tutorial/tut10';
+import Tut10 from './tutorial/tut11';
+import Tut11 from './tutorial/tut12';
 
 
 
@@ -45,6 +45,8 @@ const Container = styled.div`
   width: 393px;
   height: 852px;
   margin: 0;
+  font-family : Pretendard;
+  letter-spacing: 1px;
 `;
 
 function App() {
@@ -73,7 +75,7 @@ function App() {
           <Route exact path="/dict"><Dictaphone /></Route>
         </Switch>
       </Router>
-      {/* <Tut10/> */}
+      {/* <Tut9/> */}
       {/* <Newmaphome/> */}
     </Container>
   );

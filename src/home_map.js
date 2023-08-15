@@ -20,7 +20,6 @@ const BigBox = () => {
     const textStyle = {
         flexShrink: 0,
         color: '#000',
-        fontFamily: 'Inter',
         fontSize: '25px',
         fontStyle: 'normal',
         fontWeight: 400,
@@ -35,8 +34,8 @@ const BigBox = () => {
 
     const subTitle = {
         color: '#000',
-        fontFamily: 'Inter',
-        fontSize: '18px',
+        fontSize: '19px',
+        color : '#',
         fontStyle: 'normal',
         fontWeight: '400',
         lineHeight: 'normal',    
@@ -44,7 +43,6 @@ const BigBox = () => {
     
     const boldText = {
         color: '#000',
-        fontFamily: 'Inter',
         fontSize: '25px',
         fontStyle: 'normal',
         fontWeight: 700,

@@ -14,7 +14,7 @@ const TextBox = styled.div`
   padding: 25px;
   background-color: black;
   color: white;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 400;
   line-height: 150%;
   text-align: center;
