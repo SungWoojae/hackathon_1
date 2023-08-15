@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import NaverMapAPI from "../components/NaverMapApi";
 import { Container as MapDiv, NaverMap } from "react-naver-maps";
 import Header2 from "../components/Header2";
 import Guide from '../components/Guide'
 import Park from "../images/park_enter.svg"
-import Hyochang from "../images/Hyochang.svg"
+import Place from "../images/place_bus_station.svg"
+import List from "../images/bottom_placelist.svg"
+import SmallList from "../images/bottomlistsmall.svg"
+import Finger from "../images/finger.svg"
 
-
+import { Marker,InfoWindow } from "react-naver-maps";
 
 
 const Container = styled.div`
@@ -32,32 +35,17 @@ const Bold = styled.span`
 
 const guideText = (
     <>
-      <Bold>‘효창공원’</Bold>을 찾아 누르는 것까지<br />
-      성공했군요!<br /><br />
-      지금까지 검색하려는 곳의 이름을<br />
-      모를 때 지도에서 어떻게 찾는지<br />
-      알려드렸어요.<br />
+      당신은 <Bold>‘효창공원’</Bold>에 가야 해요.<br />
+      아까 배운 대로 지도를 둘러보며,<br />
+      <Bold>‘효창공원’</Bold>을 찾아 눌러 보아요.
     </>
 );
 
-
-
 function Tut11() {
     const { naver } = window;
+    const history=useHistory();
 
-    // 요소 띄우기
-    const [showElements, setShowElements] = useState(false);
-    const history = useHistory();
 
-    useEffect(() => {
-        // 가이드 표시
-        const elementsTimer = setTimeout(() => {
-            setShowElements(true);
-        }, 2000);
-        return () => {
-            clearTimeout(elementsTimer);  // 가이드 표시
-        };
-    }, []);
 
     return (
         <Container>
@@ -67,13 +55,80 @@ function Tut11() {
             />
             <div>
                 <img src={Park} alt="검색결과" style={{ display: "block", margin: 0}}/>
+                <img src={Place} alt="장소버스 정류장" style={{ display: "block", margin: 0}}/>
             </div>
 
             {/* 지도영역 */}
             <MapDiv
-            style={{width: '100%',height: '800px', display: 'flex',justifyContent: 'center',}}
+            style={{width: '100%',height: '800px', display: 'flex',justifyContent: 'center',
+            }}
             >
-                <NaverMap center={{lat:37.5420482,lng: 126.9603142}}/>
+                <NaverMap 
+                        zoom={13}
+                        center={{lat:37.5250482, lng:126.9613142}}
+                    >                           
+                        <Marker 
+                            position={{lat:37.5450482,lng: 126.9603142}} // 효창
+                            onClick={() => {
+                                history.push('/tutorial1/tut12');
+                            }}
+                        />
+                        <Marker 
+                            position={{lat:37.5450482,lng: 126.9603142}}
+                            icon={{
+                                content: `
+                                  <div style="background-color: white; padding: 8px; border-radius: 5px;">효창공원</div>',
+                                `
+                              }} // 효창
+                        />
+                        <Marker
+                            position={{lat:37.5550482,lng: 126.9703142}}                      
+                        ></Marker>
+                        <Marker
+                            position={{lat:37.5550482,lng: 126.9703142}}                      
+                            icon={{
+                                content: `
+                                  <div style="background-color: white; padding: 8px; border-radius: 5px;">우제공원</div>',
+                                `
+                              }}
+                        >
+                        </Marker>
+                        <Marker 
+                            position={{lat:37.5400482,lng: 126.9500142}} // 효창
+                        />
+                        <Marker 
+                            position={{lat:37.5400482,lng: 126.9500142}}
+                            icon={{
+                                content: `
+                                  <div style="background-color: white; padding: 8px; border-radius: 5px;">화진공원</div>',
+                                `
+                              }} // 효창
+                        />
+                        <Marker 
+                            position={{lat:37.5600482,lng: 126.9400142}} // 효창
+                        />
+                        <Marker 
+                            position={{lat:37.5600482,lng: 126.9400142}}
+                            icon={{
+                                content: `
+                                  <div style="background-color: white; padding: 8px; border-radius: 5px;">현진공원</div>',
+                                `
+                              }} // 효창
+                        />        
+                        <Marker 
+                            position={{lat:37.5680482,lng: 126.98}} // 효창
+                        />
+                        <Marker 
+                            position={{lat:37.5680482,lng: 126.98}}
+                            icon={{
+                                content: `
+                                  <div style="background-color: white; padding: 8px; border-radius: 5px;">재은공원</div>',
+                                `
+                              }} // 효창
+                        />                 
+                        
+
+                    </NaverMap>
             </MapDiv>
 
             {/* 하단이미지 */}
@@ -81,17 +136,15 @@ function Tut11() {
             style={{display: 'flex',justifyContent: 'center', zIndex:0,}}
             >
                 <img
-                src={Hyochang}
+                src={SmallList}
                 alt="축소된검색리스트"
                 style={{display: "block", bottom : -8, margin : 0,padding : 0}}
                 className="overlay"
                 />
             </div>
 
-            {/* 가이드 2.5초 지나고 */}
-            {showElements && (
-                <Guide className="overlay" text={guideText} />
-            )}
+            {/* 가이드 */}
+            <Guide className="overlay" text={guideText} />
 
         </Container>
     );

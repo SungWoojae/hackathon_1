@@ -13,9 +13,7 @@ import SmallList from "../images/bottomlistsmall.svg";
 import Finger from "../images/finger.svg";
 import Success from "../images/alert_success.svg";
 import { useHistory } from "react-router-dom";
-import Arrow from "../images/arrow_left.svg";
-import MapMarker from "../images/mapmarker.png";
-import "../App.css";
+import Arrow from "../images/arrow_down.svg";
 
 const Container = styled.div`
   display: flex;
@@ -52,24 +50,20 @@ const GuideContainer = styled.div`
   z-index: 2;
 `;
 
-const Tut6 = () => {
+const Tut7 = () => {
   const { naver } = window;
   const [showDirection, setShowDirection] = useState(true);
-  const [moveRight, isMoveRight] = useState(false);
+  const [moveUp, isMoveUp] = useState(false);
   const [guideText, setGuideText] = useState(
-    "한 손가락으로 지도를 \n오른쪽으로 움직여봐요."
+    "한 손가락으로 지도를 \n위쪽으로 움직여봐요."
   );
   const history = useHistory();
   const handleCenterChanged = (center) => {
     console.log(center);
-    if (center._lng >= 127) {
-      isMoveRight(true);
+    if (center._lat >= 37.57) {
+      isMoveUp(true);
     }
   };
-  // const handleMarkerClick = (marker) => {
-  //   console.log('hi');
-  //   marker.toggleInfoWindow();
-  // };
   useEffect(() => {
     if (showDirection) {
       setTimeout(() => {
@@ -78,18 +72,12 @@ const Tut6 = () => {
     }
   }, [showDirection]);
   useEffect(() => {
-    if (moveRight) {
+    if (moveUp) {
       setTimeout(() => {
-        history.push("/tutorial1/tut7");
+        history.push("/tutorial1/tut8");
       }, 2000);
     }
-  }, [moveRight, history]);
-  const CustomMarker = () => (
-    <div>
-      <img src={MapMarker} alt="" />
-      효창공원
-    </div>
-  );
+  }, [moveUp, history]);
   return (
     <Container>
       <Header2
@@ -131,7 +119,7 @@ const Tut6 = () => {
             center={{ lat: 37.5250482, lng: 126.9613142 }}
             onCenterChanged={handleCenterChanged}
           >
-            <Marker
+             <Marker
               position={{ lat: 37.5450482, lng: 126.9603142 }} // 효창
             >
             </Marker>
@@ -209,30 +197,30 @@ const Tut6 = () => {
                 className="overlay"
                 style={{
                   display: "flex",
-                  flexDirection: "row",
+                  flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
                   marginBottom: 400,
                   backgroundColor: "transparent",
                   zIndex: 2,
-                  margin: "200px 80px",
+                  margin: "150px 140px",
                 }}
               >
-                <img
-                  src={Arrow}
-                  alt=""
-                  style={{
-                    width: "98px",
-                    height: "58px",
-                  }}
-                />
                 <img
                   src={Finger}
                   alt=""
                   style={{
                     width: "100px",
                     height: "100px",
-                    marginLeft: "20px",
+                    marginBottom: "20px",
+                  }}
+                />
+                <img
+                  src={Arrow}
+                  alt=""
+                  style={{
+                    width: "58px",
+                    height: "98px",
                   }}
                 />
               </div>
@@ -252,7 +240,7 @@ const Tut6 = () => {
         <Guide text={guideText} />
       </GuideContainer>
       <div>
-        {moveRight && (
+        {moveUp && (
           <img
             src={Success}
             alt="새 이미지"
@@ -273,4 +261,4 @@ const Tut6 = () => {
   );
 };
 
-export default Tut6;
+export default Tut7;

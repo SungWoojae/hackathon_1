@@ -13,9 +13,8 @@ import SmallList from "../images/bottomlistsmall.svg";
 import Finger from "../images/finger.svg";
 import Success from "../images/alert_success.svg";
 import { useHistory } from "react-router-dom";
-import Arrow from "../images/arrow_left.svg";
-import MapMarker from "../images/mapmarker.png";
-import "../App.css";
+import ArrowUp from "../images/arrow_scaleIn_up.svg";
+import ArrowDown from "../images/arrow_scaleIn_down.svg";
 
 const Container = styled.div`
   display: flex;
@@ -52,24 +51,15 @@ const GuideContainer = styled.div`
   z-index: 2;
 `;
 
-const Tut6 = () => {
+const Tut8 = () => {
   const { naver } = window;
   const [showDirection, setShowDirection] = useState(true);
-  const [moveRight, isMoveRight] = useState(false);
+  const [zoom, changeZoom] = useState(0);
+  const [zoomIn, isZoomedIn] = useState(false);
   const [guideText, setGuideText] = useState(
-    "한 손가락으로 지도를 \n오른쪽으로 움직여봐요."
+    "두 손가락을 동시에 갖다 대고 \n벌려서 지도를 크게 봐요."
   );
   const history = useHistory();
-  const handleCenterChanged = (center) => {
-    console.log(center);
-    if (center._lng >= 127) {
-      isMoveRight(true);
-    }
-  };
-  // const handleMarkerClick = (marker) => {
-  //   console.log('hi');
-  //   marker.toggleInfoWindow();
-  // };
   useEffect(() => {
     if (showDirection) {
       setTimeout(() => {
@@ -77,19 +67,20 @@ const Tut6 = () => {
       }, 2000);
     }
   }, [showDirection]);
+  const handleZoomChanged = (zoom) => {
+    changeZoom(zoom);
+    console.log(zoom);
+    if (zoom >= 15 && zoom <= 20) {
+      isZoomedIn(true);
+    }
+  };
   useEffect(() => {
-    if (moveRight) {
+    if (zoomIn) {
       setTimeout(() => {
-        history.push("/tutorial1/tut7");
+        history.push("/tutorial1/tut9");
       }, 2000);
     }
-  }, [moveRight, history]);
-  const CustomMarker = () => (
-    <div>
-      <img src={MapMarker} alt="" />
-      효창공원
-    </div>
-  );
+  }, [zoomIn, history]);
   return (
     <Container>
       <Header2
@@ -129,9 +120,9 @@ const Tut6 = () => {
             }}
             zoom={13}
             center={{ lat: 37.5250482, lng: 126.9613142 }}
-            onCenterChanged={handleCenterChanged}
+            onZoomChanged={handleZoomChanged}
           >
-            <Marker
+                       <Marker
               position={{ lat: 37.5450482, lng: 126.9603142 }} // 효창
             >
             </Marker>
@@ -209,21 +200,24 @@ const Tut6 = () => {
                 className="overlay"
                 style={{
                   display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginBottom: 400,
+                  flexDirection: "column",
                   backgroundColor: "transparent",
                   zIndex: 2,
-                  margin: "200px 80px",
+                  margin: "120px 80px",
+                  width: "260px",
+                  height: "240px",
+                  position: "relative",
                 }}
               >
                 <img
-                  src={Arrow}
+                  src={ArrowUp}
                   alt=""
                   style={{
-                    width: "98px",
-                    height: "58px",
+                    width: "120px",
+                    height: "70px",
+                    position: "absolute",
+                    right: 0, 
+                    top: 0, 
                   }}
                 />
                 <img
@@ -232,7 +226,17 @@ const Tut6 = () => {
                   style={{
                     width: "100px",
                     height: "100px",
-                    marginLeft: "20px",
+                  }}
+                />
+                <img
+                  src={ArrowDown}
+                  alt=""
+                  style={{
+                    width: "120px",
+                    height: "70px",
+                    position: "absolute",
+                    left: 0, 
+                    bottom: 0, 
                   }}
                 />
               </div>
@@ -252,7 +256,7 @@ const Tut6 = () => {
         <Guide text={guideText} />
       </GuideContainer>
       <div>
-        {moveRight && (
+        {zoomIn && (
           <img
             src={Success}
             alt="새 이미지"
@@ -273,4 +277,4 @@ const Tut6 = () => {
   );
 };
 
-export default Tut6;
+export default Tut8;

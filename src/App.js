@@ -10,9 +10,13 @@ import Tut4 from './tutorial/tut4';
 import Tut4_base from './tutorial/tut4_base';
 import Tut5 from './tutorial/tut5';
 import Tut6 from './tutorial/tut6';
+import Tut7 from './tutorial/tut7';
+import Tut8 from './tutorial/tut8';
 import Tut9 from './tutorial/tut9';
 import Tut10 from './tutorial/tut10';
 import Tut11 from './tutorial/tut11';
+import Tut12 from './tutorial/tut12';
+
 
 
 
@@ -32,6 +36,7 @@ import ExerciseDirection1 from './practice1/exercise_direction_explanation';
 import ExerciseDirection1Acting from './practice1/exercise_direction_acting';
 import MapHome from './maphome';
 import Dictaphone from './practice2/speech_recognition';
+
 // import Maphome from './maphome';
 // import MapHomeBox from './MapHomeBox';
 
@@ -45,6 +50,8 @@ const Container = styled.div`
   width: 393px;
   height: 852px;
   margin: 0;
+  font-family : Pretendard;
+  letter-spacing: 1px;
 `;
 
 function App() {
@@ -60,9 +67,12 @@ function App() {
           <Route exact path="/tutorial1/tut4"><Tut4 /></Route>
           <Route exact path="/tutorial1/tut5"><Tut5 /></Route> 
           <Route exact path="/tutorial1/tut6"><Tut6 /></Route> 
-          <Route exact path="/tutorial1/tut9"><Tut9 /></Route>
+          <Route exact path="/tutorial1/tut7"><Tut7 /></Route>
+          <Route exact path="/tutorial1/tut8"><Tut8 /></Route> 
+          <Route exact path="/tutorial1/tut9"><Tut9 /></Route> 
           <Route exact path="/tutorial1/tut10"><Tut10 /></Route>
-          <Route exact path="/tutorial1/tut11"><Tut11 /></Route>          
+          <Route exact path="/tutorial1/tut11"><Tut11 /></Route>
+          <Route exact path="/tutorial1/tut12"><Tut12 /></Route>                    
           <Route exact path="/practice1"><ExerciseDirection1 /></Route>
           <Route exact path="/practice1/acting"><ExerciseDirection1Acting /></Route>
           <Route exact path="/practice2/exercise_road_0+1"><ExerciseRoad0 /></Route>
@@ -73,7 +83,7 @@ function App() {
           <Route exact path="/dict"><Dictaphone /></Route>
         </Switch>
       </Router>
-      {/* <Tut10/> */}
+      {/* <Tut9/> */}
       {/* <Newmaphome/> */}
     </Container>
   );

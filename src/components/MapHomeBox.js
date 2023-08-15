@@ -19,10 +19,10 @@ const TaskBox = styled.div`
 
 const Title = styled.div`
     color: #000;
-    font-family: Inter;
-    font-size: 20px;
+    font-size: 21px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
+    padding-top : 5px;
     line-height: normal;
 `
 
@@ -35,11 +35,11 @@ const Context = styled.div`
 
 const Time = styled.div`
     color: #000;
-    font-family: Inter;
     font-size: 18px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 200;
     line-height: normal;
+    padding-top : 5px;
 
 `
 

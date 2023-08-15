@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import NaverMapAPI from "../components/NaverMapApi";
 import { Container as MapDiv, NaverMap } from "react-naver-maps";
 import Header2 from "../components/Header2";
-import Guide from '../components/Guide'
 import Park from "../images/park_enter.svg"
 import Place from "../images/place_bus_station.svg"
-import List from "../images/bottom_placelist.svg"
 import SmallList from "../images/bottomlistsmall.svg"
 import Finger from "../images/finger.svg"
 
-import { Marker,InfoWindow } from "react-naver-maps";
+import { NavermapsProvider, Marker, InfoWindow } from "react-naver-maps";
 
 
 const Container = styled.div`
@@ -28,6 +27,44 @@ const Container = styled.div`
   z-index : 0;
 `;
 
+const GuideContainer = styled.div`
+  width: 350px;
+  position: absolute;
+  bottom: 65px;
+`;
+
+const TextBox = styled.div`
+  box-sizing: border-box;  
+  width: 350px;
+  border-radius: 10px;
+  padding: 25px;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: center;
+`;
+
+const TextContainer = styled.div`
+    white-space: pre-line;
+`;
+
+
+const Button = styled.button`
+  margin-top: 15px;
+  margin-left : 10px;
+  margin-right :10px;
+  padding: 10px 5px;
+  width : 260px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size : 20px;
+  font-weight : 500;
+`;
 
 const Bold = styled.span`
   font-weight: bold;
@@ -35,9 +72,7 @@ const Bold = styled.span`
 
 const guideText = (
     <>
-      당신은 <Bold>‘효창공원’</Bold>에 가야 해요.<br />
-      아까 배운 대로 지도를 둘러보며,<br />
-      <Bold>‘효창공원’</Bold>을 찾아 눌러 보아요.
+      지도 보는 연습이 충분히 되었나요?
     </>
 );
 
@@ -54,12 +89,11 @@ function Tut10() {
                 <img src={Park} alt="검색결과" style={{ display: "block", margin: 0}}/>
                 <img src={Place} alt="장소버스 정류장" style={{ display: "block", margin: 0}}/>
             </div>
-
-            {/* 지도영역 */}
-            <MapDiv
-            style={{width: '100%',height: '800px', display: 'flex',justifyContent: 'center',
-            }}
-            >
+            <NavermapsProvider>
+                <MapDiv
+                style={{width: '100%',height: '800px', display: 'flex',justifyContent: 'center',
+                }}
+                >
                <NaverMap 
                         zoom={13}
                         center={{lat:37.5250482, lng:126.9613142}}
@@ -123,11 +157,11 @@ function Tut10() {
                         
 
                     </NaverMap>
-            </MapDiv>
-
-            {/* 하단이미지 */}
+            
+        </MapDiv>
+        </NavermapsProvider>
             <div
-            style={{display: 'flex',justifyContent: 'center', zIndex:0,}}
+            style={{display: 'flex',justifyContent: 'center', zIndex:2,}}
             >
                 <img
                 src={SmallList}
@@ -137,12 +171,25 @@ function Tut10() {
                 />
             </div>
 
-            {/* 가이드 */}
-            <Guide className="overlay" text={guideText} />
-
+            <GuideContainer style={{zIndex:4}} className="overlay">
+                <TextBox>
+                    <TextContainer>{guideText}</TextContainer>
+                    <div style={{display:'flex', flexDirection: 'column'}}>
+                        <Link to="/tutorial1/tut11">
+                            <Button style={{ backgroundColor: '#1638E8'}}>
+                                네, 충분히 됐어요.
+                            </Button>
+                        </Link>
+                        <Link to="/tutorial1/tut6">
+                            <Button style={{ backgroundColor: '#808080'}}>
+                                아니요, 한 번 더 해볼래요.
+                            </Button>
+                        </Link>
+                    </div>
+                </TextBox>
+            </GuideContainer>
         </Container>
-    );
-       
+    );     
 }
 
 export default Tut10;

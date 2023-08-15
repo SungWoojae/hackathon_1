@@ -143,15 +143,6 @@ function Exercise_direction1() {
     if (!shouldChangeImage1) {
       if (orientation && ((orientation.alpha >= 300 && orientation.alpha <= 360) || (orientation.alpha >= 0 && orientation.alpha <= 50))) {
         setIsActive(true);
-        // setTiming(0);
-  
-        // const interval = setInterval(() => {
-        //   setTiming(prevTiming => prevTiming + 100);
-        // }, 100);
-  
-        // return () => {
-        //   clearInterval(interval);
-        // };
       } else {
         setIsActive(false);
         setTiming(0);
@@ -180,14 +171,14 @@ function Exercise_direction1() {
   useEffect(() => {
     if (isActive) {
       const interval = setInterval(() => {
-          setTiming(prevTiming => prevTiming + 100);
-        }, 100);
+          setTiming(prevTiming => prevTiming + 50);
+        },50);
   
       return () => {
         clearInterval(interval);
       };
     }
-  })
+  }, [isActive])
 
   console.log(timing, orientation.alpha)
  

@@ -96,6 +96,7 @@ function Tut4() {
                 <MapDiv
                 style={{width: '100%',height: '800px', display: 'flex',justifyContent: 'center',
                 }}
+                onClick={handleMapClick}
                 >
                     <NaverMap 
                         zoom={13}
