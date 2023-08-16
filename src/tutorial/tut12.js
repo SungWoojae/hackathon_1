@@ -52,7 +52,7 @@ function Tut12() {
         // 3초 후에 바바이 표시
         const goodbyeTimer = setTimeout(() => {
             setShowGoodbye(true);
-        }, 3000);
+        }, 5000);
 
         return () => {
             clearTimeout(elementsTimer);  // 가이드 표시

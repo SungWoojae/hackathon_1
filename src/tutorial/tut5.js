@@ -52,13 +52,13 @@ function Tut5() {
         // 가이드 표시
         const elementsTimer = setTimeout(() => {
             setShowElements(true);
-        }, 100);
+        }, 1000);
 
 
         // 페이지 전환
         const nextPageTimer = setTimeout(() => {
             history.push("/tutorial1/tut6");
-          }, 2000);
+          }, 3000);
 
 
         return () => {
