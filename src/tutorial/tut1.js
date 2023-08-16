@@ -86,11 +86,13 @@ function Tut1() {
         </Mission>
       </Body>
       <Image src={Halfegg}></Image>
+      <Link to="/tutorial1/tut2" style={{ textDecoration: "none" }}>
       <StartBox>
-        <Link to="/tutorial1/tut2" style={{ textDecoration: "none" }}>
+        
             <StartText>시작하기</StartText>
-        </Link>
+        
       </StartBox>
+      </Link>
     </Container>
   );
 };
