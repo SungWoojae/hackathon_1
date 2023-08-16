@@ -24,7 +24,7 @@ const HeaderWrapper = styled.header`
 // 제목
 const Title = styled.div`
   font-size: 25px;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 6px;
   margin-top: 43px;
 `;
@@ -63,7 +63,11 @@ function Header2({ title, subtitle }) {
         <Subtitle>{subtitle}</Subtitle>
         {/* X 버튼 */}
         <CloseButton>
+<<<<<<< HEAD
+        <Link to="Home">
+=======
         <Link to="/Home">
+>>>>>>> f7ae6410d611aface48d9dab7ee2c4cf06d3020b
         <Icon />
         </Link>
         </CloseButton>

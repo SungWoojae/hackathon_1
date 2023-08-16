@@ -30,15 +30,7 @@ const Bold = styled.span`
   font-weight: bold;
 `;
 
-const guideText = (
-    <>
-      <Bold>‘효창공원’</Bold>을 찾아 누르는 것까지
-      성공했군요!<br/><br />
-      지금까지 검색하려는 곳의 이름을
-      모를 때 지도에서 어떻게 찾는지
-      알려드렸어요.
-    </>
-);
+
 
 
 
@@ -47,6 +39,8 @@ function Tut12() {
 
     // 요소 띄우기
     const [showElements, setShowElements] = useState(false);
+    const [showGoodbye, setShowGoodbye] = useState(false); // 상태 추가
+
     const history = useHistory();
 
     useEffect(() => {
@@ -54,10 +48,27 @@ function Tut12() {
         const elementsTimer = setTimeout(() => {
             setShowElements(true);
         }, 2000);
+
+        // 3초 후에 바바이 표시
+        const goodbyeTimer = setTimeout(() => {
+            setShowGoodbye(true);
+        }, 3000);
+
         return () => {
             clearTimeout(elementsTimer);  // 가이드 표시
+            clearTimeout(goodbyeTimer); // 바바이
         };
     }, []);
+
+    const guideText = showGoodbye ? "이걸로 오늘의 레슨은 끝이에요.\n다음 시간에는 대중교통 이용하는\n 법을 알아볼게요!\n\n 윗쪽의 X를 눌러 밖으로 나가요." : (
+        <>
+          <Bold>‘효창공원’</Bold>을 찾아 누르는 것까지<br />
+          성공했군요!<br/><br />
+          지금까지 검색하려는 곳의 이름을<br />
+          모를 때 지도에서 어떻게 찾는지<br />
+          알려드렸어요.
+        </>
+    );
 
     return (
         <Container>

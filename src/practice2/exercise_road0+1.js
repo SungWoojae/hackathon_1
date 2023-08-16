@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styled from 'styled-components';
 import { useHistory } from "react-router-dom";
 import NaverMapAPI from "../components/NaverMapApi";
 import Header2 from "../components/Header2";
@@ -22,13 +23,48 @@ import Bedroom from "../images/maphome_Bedroom.svg";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 393px;
+  height: 852px;
+  margin: 0;
+  position: relative;
+  z-index : 0;
+`;
+
+const TextBox = styled.div`
+  box-sizing: border-box;  
+  width: 350px;
+  border-radius: 10px;
+  padding: 25px;
+  background-color: #BA0C0C;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 150%;
+  text-align: center;
+  width: 350px;
+  position: absolute;
+  bottom: 65px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+`;
+
+const TextContainer = styled.div`
+    white-space: pre-line;
+  `;
 
 
 function Exercise_road_0() {
     const [showImage, setShowImage] = useState(true); // State to track whether to show the image or not
     const history = useHistory();
     const [searchValue, setSearchValue] = useState(""); // 입력된 내용을 저장할 상태
-        
+    const [showErrorBox, setShowErrorBox] = useState(false);
+    
     const {transcript, listening } = useSpeechRecognition();
     // const { transcript } = useSpeechRecognition();
 
@@ -43,7 +79,9 @@ function Exercise_road_0() {
         // Check if the search value matches "창천문화공원"
         if (inputValue === "창천문화공원") {
             history.push("/practice2/exercise_road_2"); // Navigate to the excercise2 route
-        } 
+        } else {
+            setShowErrorBox(true); // Show the error box
+        }
     }
     
 
@@ -56,8 +94,8 @@ function Exercise_road_0() {
         
 
     return (
-        <div className="container">
-            <Header2 title="지도 연습해보기" subtitle="1. 길 검색해서 찾기" />
+        <Container className="container">
+            <Header2 title="실습2. 경로찾기" subtitle="도보로 '창천문화공원'가기" />
             <MapDiv
                 className="map"
                 style={{
@@ -80,14 +118,18 @@ function Exercise_road_0() {
                         <Tabs name="주유소" image={Gas}></Tabs>
                         <Tabs name="펜션" image={Bedroom}></Tabs>
                     </div>
+                    
+                </div>
+                <div className="overlay">
                     {showImage && (
                         <img
                             src={exercise_road0_alert}
                             alt=""
-                            style={{ cursor: "pointer", zIndex: 4 }}
+                            style={{ cursor: "pointer", zIndex: 4 ,bottom:'0'}}
                             onClick={handleImageClick}
                         />
                     )}
+                    
                 </div>
                    
                 <NaverMap 
@@ -97,7 +139,12 @@ function Exercise_road_0() {
             
             <img src={exercise_road1_bottom} alt="" style={{width:'100%'}}/>
             
-        </div>
+            {showErrorBox && (
+                <TextBox>
+                    <TextContainer>잘못 입력했어요!<br/>다시 입력해주세요.</TextContainer>
+                </TextBox>
+            )} 
+        </Container>
     );
 }
 

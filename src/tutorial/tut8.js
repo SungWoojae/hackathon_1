@@ -1,14 +1,12 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import exercise_road4_top from "../images/exercise_road4_top.svg";
 import Header2 from "../components/Header2";
-import { NavermapsProvider, Polyline, InfoWindow } from "react-naver-maps";
+import { NavermapsProvider} from "react-naver-maps";
 import { Container as MapDiv, NaverMap, Marker } from "react-naver-maps";
-import Mission from "../components/Mission";
 import Guide from "../components/Guide";
 import Park from "../images/park_enter.svg";
 import Place from "../images/place_bus_station.svg";
-import List from "../images/bottom_placelist.svg";
 import SmallList from "../images/bottomlistsmall.svg";
 import Finger from "../images/finger.svg";
 import Success from "../images/alert_success.svg";

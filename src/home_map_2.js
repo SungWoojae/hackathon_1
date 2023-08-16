@@ -65,10 +65,10 @@ const BigBox = () => {
                     <div style={subTitle}>차근차근 배워봐요</div>
                 </div>
                 <Link to="/tutorial1/tut1" style={{ textDecoration: "none" }}>
-                    <MapHomeBox title="1. 길 검색해서 찾기" time="예상 소요 시간 : 10분" img = {Icon1}/>
+                    <MapHomeBox title="1. 길 검색해서 찾기" time="예상 소요 시간 : 10분"/>
                 </Link>
-                <MapHomeBox title="2. 대중교통 이용하기" time="예상 소요 시간 : 5분" img = {Icon2}/>
-                <MapHomeBox title="3. 즐겨찾기 설정하기" time="예상 소요 시간 : 7분" img = {Icon3}/>
+                <MapHomeBox title="2. 대중교통 이용하기" time="예상 소요 시간 : 5분"/>
+                <MapHomeBox title="3. 즐겨찾기 설정하기" time="예상 소요 시간 : 7분"/>
 
             </div>
             <div style={box}>
@@ -77,12 +77,12 @@ const BigBox = () => {
                     <div style={subTitle}>혼자 직접 해봐요</div>
                 </div>
                 <Link to="/practice1" style={{ textDecoration: "none" }}>
-                    <MapHomeBox title="1. 방향 찾기" time="예상 소요 시간 : 10분" img = {Icon4}/>
+                    <MapHomeBox title="1. 방향 찾기" time="예상 소요 시간 : 10분"/>
                 </Link>
                 <Link to="/practice2/exercise_road_0+1" style={{ textDecoration: "none" }}>
-                    <MapHomeBox title="2. 경로 찾기" time="예상 소요 시간 : 5분" img = {Icon5}/>
+                    <MapHomeBox title="2. 경로 찾기" time="예상 소요 시간 : 5분"/>
                 </Link>
-                <MapHomeBox title="3. 자주 가는 장소 찾아가기" time="예상 소요 시간 : 3분" img = {Icon6}/>
+                <MapHomeBox title="3. 자주 가는 장소 찾아가기" time="예상 소요 시간 : 3분"/>
                 
 
             </div>
