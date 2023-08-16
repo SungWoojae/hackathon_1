@@ -58,7 +58,7 @@ const BigBox = () => {
 
     return (
         <div style={bigBoxStyle}>
-            <Header title="지도 연습해보기" />
+            <Header title="지도 앱 익히기" />
             <div style={box}>
                 <div style={textStyle}>
                     <div style={boldText}>이론</div> 
