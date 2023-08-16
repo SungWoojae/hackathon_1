@@ -60,7 +60,7 @@ function Tut12() {
         };
     }, []);
 
-    const guideText = showGoodbye ? "이걸로 오늘의 레슨은 끝이에요.\n다음 시간에는 대중교통 이용하는\n 법을 알아볼게요!\n\n 윗쪽의 X를 눌러 밖으로 나가요." : (
+    const guideText = showGoodbye ? "'길 검색해서 찾기' 과정은 \n여기서 끝이에요.\n\n다음 시간에는 대중교통 이용하는\n 방법을 알아볼게요!\n\n 윗쪽의 X를 눌러서 \n첫 화면으로 돌아가세요." : (
         <>
           <Bold>‘효창공원’</Bold>을 찾아 누르는 것까지<br />
           성공했군요!<br/><br />
