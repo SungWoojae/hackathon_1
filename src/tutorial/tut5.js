@@ -52,13 +52,13 @@ function Tut5() {
         // 가이드 표시
         const elementsTimer = setTimeout(() => {
             setShowElements(true);
-        }, 1500);
+        }, 100);
 
 
         // 페이지 전환
         const nextPageTimer = setTimeout(() => {
             history.push("/tutorial1/tut6");
-          }, 5000);
+          }, 2000);
 
 
         return () => {
@@ -82,48 +82,68 @@ function Tut5() {
             }}
             >
                 <NaverMap 
-                    zoom={13}
-                    center={{lat:37.5250482, lng:126.9613142}}
-                >
-                    <Marker 
-                        position={{lat:37.5450482,lng: 126.9603142}} // 효창
+                        zoom={13}
+                        center={{lat:37.5250482, lng:126.9613142}}
                     >
-                        <InfoWindow offset={new naver.maps.Point(0,-30)}>
-                            <div>효창공원</div>
-                        </InfoWindow>
-                    </Marker>
-                    <Marker
-                        position={{lat:37.5550482,lng: 126.9703142}}                      
-                    >
-                        <InfoWindow offset={new naver.maps.Point(0,-30)}>
-                            <div>우제공원</div>
-                        </InfoWindow>
+                        <Marker 
+                            position={{lat:37.5450482,lng: 126.9603142}} // 효창
+                        />
+                        <Marker 
+                            position={{lat:37.5450482,lng: 126.9603142}}
+                            icon={{
+                                content: `
+                                  <div style="background-color: white; padding: 8px; border-radius: 5px;">효창공원</div>',
+                                `
+                              }} // 효창
+                        />
+                        <Marker
+                            position={{lat:37.5550482,lng: 126.9703142}}                      
+                        ></Marker>
+                        <Marker
+                            position={{lat:37.5550482,lng: 126.9703142}}                      
+                            icon={{
+                                content: `
+                                  <div style="background-color: white; padding: 8px; border-radius: 5px;">우제공원</div>',
+                                `
+                              }}
+                        >
+                        </Marker>
+                        <Marker 
+                            position={{lat:37.5400482,lng: 126.9500142}} // 효창
+                        />
+                        <Marker 
+                            position={{lat:37.5400482,lng: 126.9500142}}
+                            icon={{
+                                content: `
+                                  <div style="background-color: white; padding: 8px; border-radius: 5px;">화진공원</div>',
+                                `
+                              }} // 효창
+                        />
+                        <Marker 
+                            position={{lat:37.5600482,lng: 126.9400142}} // 효창
+                        />
+                        <Marker 
+                            position={{lat:37.5600482,lng: 126.9400142}}
+                            icon={{
+                                content: `
+                                  <div style="background-color: white; padding: 8px; border-radius: 5px;">현진공원</div>',
+                                `
+                              }} // 효창
+                        />        
+                        <Marker 
+                            position={{lat:37.5680482,lng: 126.98}} // 효창
+                        />
+                        <Marker 
+                            position={{lat:37.5680482,lng: 126.98}}
+                            icon={{
+                                content: `
+                                  <div style="background-color: white; padding: 8px; border-radius: 5px;">재은공원</div>',
+                                `
+                              }} // 효창
+                        />                 
+                        
 
-                    </Marker>
-                    <Marker 
-                        position={{lat:37.5400482,lng: 126.9500142}}                      
-                    >
-                        <InfoWindow offset={new naver.maps.Point(0,-30)}>
-                            <div>화진공원</div>
-                        </InfoWindow>
-
-                    </Marker>
-                    <Marker 
-                        position={{lat:37.5600482,lng: 126.9400142}}                      
-                    >
-                        <InfoWindow offset={new naver.maps.Point(0,-30)}>
-                            <div>현진공원</div>
-                        </InfoWindow>
-
-                    </Marker>
-                    <Marker 
-                        position={{lat:37.5680482,lng: 126.98}}                      
-                    >
-                        <InfoWindow offset={new naver.maps.Point(0,-30)}>
-                            <div>재은공원</div>
-                        </InfoWindow>
-                    </Marker>
-                </NaverMap>
+                    </NaverMap>
             </MapDiv>
             <div
             style={{display: 'flex',justifyContent: 'center', zIndex:0,}}

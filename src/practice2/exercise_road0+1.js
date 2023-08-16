@@ -28,9 +28,8 @@ function Exercise_road_0() {
     const [showImage, setShowImage] = useState(true); // State to track whether to show the image or not
     const history = useHistory();
     const [searchValue, setSearchValue] = useState(""); // 입력된 내용을 저장할 상태
-    const [submitted, setSubmitted] = useState(false); // 양식 제출 여부를 저장할 상태
-
-    const { naver } = window;
+        
+    const {transcript, listening } = useSpeechRecognition();
     // const { transcript } = useSpeechRecognition();
 
     const handleImageClick = () => {
@@ -39,17 +38,20 @@ function Exercise_road_0() {
 
     const handleSearch = (event) => {
         event.preventDefault(); // Prevent form submission
-        const searchValue = event.target.elements.search.value;
+        const inputValue = event.target.elements.search.value;
         
         // Check if the search value matches "창천문화공원"
-        if (searchValue === "창천문화공원") {
-            history.push("/exercise_road_2"); // Navigate to the excercise2 route
-        }  
+        if (inputValue === "창천문화공원") {
+            history.push("/practice2/exercise_road_2"); // Navigate to the excercise2 route
+        } 
     }
-        
     
-    
- 
+
+    useEffect(() => {
+        if (transcript) {
+            setSearchValue(transcript);
+        }
+    }, [transcript])
         
         
 
@@ -66,7 +68,8 @@ function Exercise_road_0() {
                 <div className="overlay">           
                     <div className="search-box">
                         <form onSubmit={handleSearch} name="searchform">    
-                            <input type="text" className="search" name="search" placeholder="장소, 버스, 지하철, 주소 검색" value={searchValue}/>                            <img src={hamburger} alt="" className="search-image"></img>
+                            <input type="text" className="search" name="search" placeholder="장소, 버스, 지하철, 주소 검색" value={searchValue} onChange={(e) => setSearchValue(e.target.value)}/>
+                            <img src={hamburger} alt="" className="search-image"></img>
                             <img src={stt_icon} alt="" className="stt" onClick={SpeechRecognition.startListening}></img>
                         </form>
                     </div>
@@ -91,7 +94,9 @@ function Exercise_road_0() {
                     center={{lat: 37.558, lng: 126.9368}}
                 />
             </MapDiv>
-            <img src={exercise_road1_bottom} alt="" />
+            
+            <img src={exercise_road1_bottom} alt="" style={{width:'100%'}}/>
+            
         </div>
     );
 }

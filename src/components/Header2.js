@@ -5,6 +5,7 @@ import styled from 'styled-components';
 // import YourSVGComponent from './your-svg-file.svg'; // SVG 파일을 컴포넌트로 불러옴
 // import Header_X from './header_X.svg';
 import Icon from './header_X';
+import { Link } from 'react-router-dom';
 
 // 헤더박스
 const HeaderWrapper = styled.header`
@@ -62,7 +63,9 @@ function Header2({ title, subtitle }) {
         <Subtitle>{subtitle}</Subtitle>
         {/* X 버튼 */}
         <CloseButton>
+        <Link to="/">
         <Icon />
+        </Link>
         </CloseButton>
       </HeaderWrapper>
     );

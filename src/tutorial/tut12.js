@@ -32,11 +32,11 @@ const Bold = styled.span`
 
 const guideText = (
     <>
-      <Bold>‘효창공원’</Bold>을 찾아 누르는 것까지<br />
-      성공했군요!<br /><br />
-      지금까지 검색하려는 곳의 이름을<br />
-      모를 때 지도에서 어떻게 찾는지<br />
-      알려드렸어요.<br />
+      <Bold>‘효창공원’</Bold>을 찾아 누르는 것까지
+      성공했군요!<br/><br />
+      지금까지 검색하려는 곳의 이름을
+      모를 때 지도에서 어떻게 찾는지
+      알려드렸어요.
     </>
 );
 
@@ -73,7 +73,7 @@ function Tut12() {
             <MapDiv
             style={{width: '100%',height: '800px', display: 'flex',justifyContent: 'center',}}
             >
-                <NaverMap />
+                <NaverMap center={{lat:37.5420482,lng: 126.9603142}}/>
             </MapDiv>
 
             {/* 하단이미지 */}
