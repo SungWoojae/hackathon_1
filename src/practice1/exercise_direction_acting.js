@@ -226,7 +226,7 @@ function Exercise_direction1() {
       )}
       
       {shouldChangeImage3 ? (
-        <Link to="/">
+        <Link to="/Home">
         <img src={success} alt="success" className='overlay' style={{ position: 'absolute', top: '40%', left: '50%', transform: 'translate(-50%, -50%)' }}/>
         </Link>
       ): (null)

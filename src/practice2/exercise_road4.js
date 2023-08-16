@@ -67,7 +67,7 @@ const Exercise_road_4 = () => {
   return (
     <Container>
       <Header2 title="실습2. 경로찾기" subtitle="도보로 '창천문화공원'가기" className="overlay"/>      
-      <Link to="/">
+      <Link to="/Home">
       <AlertSuccess visible={showAlert} className='overlay'/>      
       </Link>
       <Road4Top className='overlay'/>
