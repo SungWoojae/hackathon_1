@@ -93,10 +93,10 @@ const PrevButton = styled.button`
 function Exercise_direction1() {
   const [textIndex, setTextIndex] = useState(0);
   const textList = [
-    "1. 휴대폰을 가고자하는 방향을 향해 들어주세요.",
-    "2. 파란색 세모가 현재 방향을 나타냅니다.",
-    "3. 3초가 지나면 파란 점이 이동하게 됩니다. 그때까지 방향을 유지해주세요.",
-    "4. 빨간표시가 도착점입니다. 파란길을 따라 도착지를 향해가세요!",
+    "1. 휴대폰을 가고자하는\n방향을 향해 들어주세요.",
+    "2. 파란색 세모가\n현재 방향을 나타냅니다.",
+    "3. 3초가 지나면 파란 점이\n이동하게 됩니다. 그때까지\n방향을 유지해주세요.",
+    "4. 빨간표시가 도착점입니다.\n파란길을 따라\n도착지를 향해 가세요!",
   ];
 
   const handleNextClick = () => {

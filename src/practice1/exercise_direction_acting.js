@@ -101,27 +101,11 @@ function Exercise_direction1() {
     requestAccess();
   }, []);
   const [textIndex, setTextIndex] = useState(0);
-  const textList = [
-    "1. 휴대폰을 가고자하는 \n 방향을 향해 들어주세요.",
-    "2. 파란색 세모가 현재 방향을 나타냅니다.",
-    "3. 3초가 지나면 파란 점이 이동하게 됩니다. 그때까지 방향을 유지해주세요.",
-    "4. 빨간표시가 도착점입니다. 파란길을 따라 도착지를 향해가세요!",
-  ];
-  const infoText = "지도에 나온 길에 맞춰 휴대폰 방향을 돌리며 빨간색 목적지까지 도착해 보아요!";
+  const infoText = "지도에 나온 길에 맞춰 \n휴대폰 방향을 돌리며 \n빨간색 목적지까지 \n도착해 보아요!";
 
   const { orientation, requestAccess, revokeAccess, error } = useDeviceOrientation(); // Use the useDeviceOrientation hook
 
-  const handleNextClick = () => {
-    if (textIndex < textList.length - 1) {
-      setTextIndex(textIndex + 1);
-    }
-  };
-
-  const handlePreviousClick = () => {
-    if (textIndex > 0) {
-      setTextIndex(textIndex - 1);
-    }
-  };
+ 
 
   const calculateRotation = () => {
     if (orientation && orientation.alpha != null) {
@@ -232,7 +216,7 @@ function Exercise_direction1() {
       ): (null)
       }
            
-      <ExerciseBox text={infoText} />
+      <ExerciseBox text={infoText} /> 
     </Container>
   );
 }
