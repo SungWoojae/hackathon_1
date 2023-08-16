@@ -1,8 +1,10 @@
 {
   "files": {
     "main.css": "/hackathon_1/static/css/main.b00cd72d.css",
-    "main.js": "/hackathon_1/static/js/main.c5dc3af0.js",
+    "main.js": "/hackathon_1/static/js/main.01cf5139.js",
+    "static/media/Hyochang.svg": "/hackathon_1/static/media/Hyochang.f44f0983661451e169dce73daac6763d.svg",
     "static/media/Pretendard-Regular.otf": "/hackathon_1/static/media/Pretendard-Regular.8c2bcf220fa6ced26fc0.otf",
+    "static/media/splash_back.svg": "/hackathon_1/static/media/splash_back.178ef25da1e7bc5ddbb98ef985736502.svg",
     "static/media/exercise_direction_1_mapfix1.svg": "/hackathon_1/static/media/exercise_direction_1_mapfix1.95cc26692b9636e3e3c06976ca5b8739.svg",
     "static/media/exercise_direction_1_mapfix2.svg": "/hackathon_1/static/media/exercise_direction_1_mapfix2.dc3252e76c619d8a8f4dc3052feea7c9.svg",
     "static/media/exercise_direction_1_mapfix3.svg": "/hackathon_1/static/media/exercise_direction_1_mapfix3.97b8cb65765ccba3faac157492d83356.svg",
@@ -10,6 +12,7 @@
     "static/media/exercise_road1_bottom.svg": "/hackathon_1/static/media/exercise_road1_bottom.218a6f0711c3ee8c29c7f17ef453f095.svg",
     "static/media/finger.svg": "/hackathon_1/static/media/finger.790e9c26d89582d684b7e2e9a28f9682.svg",
     "static/media/halfegg.svg": "/hackathon_1/static/media/halfegg.8481a245f198be78a939242a0dffca74.svg",
+    "static/media/splash_egg.svg": "/hackathon_1/static/media/splash_egg.f20f85e4162e2d23c81562fc8e5a25be.svg",
     "static/media/exercise_direction_1_alert_end.svg": "/hackathon_1/static/media/exercise_direction_1_alert_end.604b20202f63b51f9c066014c555f280.svg",
     "static/media/exercise_direction_1_alert_ing.svg": "/hackathon_1/static/media/exercise_direction_1_alert_ing.d93f56445663c9310d04adceedb04e4d.svg",
     "static/media/alert_success.svg": "/hackathon_1/static/media/alert_success.e6e429f4c48592eff77d72f69611ed55.svg",
@@ -17,13 +20,13 @@
     "static/media/exercise_road0_alert.svg": "/hackathon_1/static/media/exercise_road0_alert.fa631cbbef1175fe64c99fe082d7c7fa.svg",
     "static/media/exercise_road2_bottombox.svg": "/hackathon_1/static/media/exercise_road2_bottombox.ac644e1b4666ac553c8cb2603a518d3e.svg",
     "static/media/bottom_placelist.svg": "/hackathon_1/static/media/bottom_placelist.878902ca08f87696a9078e41c2012304.svg",
-    "static/media/Hyochang.svg": "/hackathon_1/static/media/Hyochang.a443ce835c07a5bdbd4f10d651ad5770.svg",
+    "static/media/splash_title.svg": "/hackathon_1/static/media/splash_title.bcbecb726c91185078ad86dc59bdb4c6.svg",
     "static/media/exercise_road3_rec.svg": "/hackathon_1/static/media/exercise_road3_rec.05d594e16f55d134f5868aa118cd76eb.svg",
     "static/media/exercise_road3_top.svg": "/hackathon_1/static/media/exercise_road3_top.af5a7a65311b39946e7e61e1e25d3df2.svg",
     "static/media/exercise_road4_top.svg": "/hackathon_1/static/media/exercise_road4_top.7ba5801704175168617629ddede5dc20.svg",
     "static/media/place_bus_station.svg": "/hackathon_1/static/media/place_bus_station.c0df8b29d6c5a0aead3d6542c856ca57.svg",
     "static/media/bottomlistsmall.svg": "/hackathon_1/static/media/bottomlistsmall.4c53cfc99b6d2de8f82e7f3a572fb128.svg",
-    "static/media/homemap_lock.svg": "/hackathon_1/static/media/homemap_lock.3af21762b3b30f455e8dddac58d5b1c8.svg",
+    "static/media/homemap_lock.svg": "/hackathon_1/static/media/homemap_lock.8153d94cfb2b013793426be0f620ec5b.svg",
     "static/media/exercise_road3_bottom_detail.svg": "/hackathon_1/static/media/exercise_road3_bottom_detail.dcea1d7f1d82fbb5ca6adbd09587f361.svg",
     "static/media/exercise_road3_bottom_follow.svg": "/hackathon_1/static/media/exercise_road3_bottom_follow.ae486efc9c7a7f53c8de3d99d2b945e0.svg",
     "static/media/side_icon.svg": "/hackathon_1/static/media/side_icon.c181f16c168af6ed166c977f0bd3f196.svg",
@@ -32,23 +35,23 @@
     "static/media/location.svg": "/hackathon_1/static/media/location.7621ec40af60458b36560aada1d0d265.svg",
     "static/media/maphome_Cup.svg": "/hackathon_1/static/media/maphome_Cup.f2996ccecb27e3f3ef53d18c896130d8.svg",
     "static/media/maphome_Bedroom.svg": "/hackathon_1/static/media/maphome_Bedroom.9006cd3bc68a6aeeaaca1ac1e0282883.svg",
+    "static/media/arrow_scaleIn_down.svg": "/hackathon_1/static/media/arrow_scaleIn_down.ca4006b982448ed2af5e1b957a757604.svg",
     "static/media/exercise_direction_1_circle.svg": "/hackathon_1/static/media/exercise_direction_1_circle.71553be4c8ecab424a0ce7b81abb26fe.svg",
-    "static/media/arrow_scaleIn_down.svg": "/hackathon_1/static/media/arrow_scaleIn_down.d2e3e4a4dfa431167ab599e0b32bd5a0.svg",
-    "static/media/arrow_scaleIn_up.svg": "/hackathon_1/static/media/arrow_scaleIn_up.c923223e725f2912818e0043a8f11187.svg",
-    "static/media/arrow_scaleOut_down.svg": "/hackathon_1/static/media/arrow_scaleOut_down.52423c86f4e0564499425cd50fbe9b95.svg",
-    "static/media/arrow_scaleOut_up.svg": "/hackathon_1/static/media/arrow_scaleOut_up.2cbf863d565242cce42dcf5f9e1efee3.svg",
-    "static/media/arrow_down.svg": "/hackathon_1/static/media/arrow_down.d0245970d540020c4cf253ed22ec8217.svg",
+    "static/media/arrow_scaleIn_up.svg": "/hackathon_1/static/media/arrow_scaleIn_up.4a1b4d4115a5a55b2f162e997187050f.svg",
+    "static/media/arrow_scaleOut_down.svg": "/hackathon_1/static/media/arrow_scaleOut_down.512a30d42af504a5b56415fe4a324d99.svg",
+    "static/media/arrow_scaleOut_up.svg": "/hackathon_1/static/media/arrow_scaleOut_up.c2a30a789908fd855c866bf0f5d526bd.svg",
+    "static/media/arrow_down.svg": "/hackathon_1/static/media/arrow_down.f13c92ab699019c9a97aa4fdaf051f12.svg",
+    "static/media/arrow_left.svg": "/hackathon_1/static/media/arrow_left.bd65df97c28bfb6df8ae74452223e74e.svg",
     "static/media/maphome_Gas.svg": "/hackathon_1/static/media/maphome_Gas.07e7a5eb4760ea5c8bf1d49fe73cbc38.svg",
-    "static/media/arrow_left.svg": "/hackathon_1/static/media/arrow_left.27771d33ff4b6b337f8ecd066a558d08.svg",
     "index.html": "/hackathon_1/index.html",
-    "static/media/exercise0_mic.svg": "/hackathon_1/static/media/exercise0_mic.885119435ddd276a49be050c0affc792.svg",
+    "static/media/exercise0_mic.svg": "/hackathon_1/static/media/exercise0_mic.fc1e4fb0ea0a30988b0501b7d2cbadd0.svg",
     "static/media/hamburger.svg": "/hackathon_1/static/media/hamburger.3f370474dd8b18068c9b017b4e39b83a.svg",
     "static/media/header_X.svg": "/hackathon_1/static/media/header_X.65a50e83604ab2b3589529d1465b1ef7.svg",
     "main.b00cd72d.css.map": "/hackathon_1/static/css/main.b00cd72d.css.map",
-    "main.c5dc3af0.js.map": "/hackathon_1/static/js/main.c5dc3af0.js.map"
+    "main.01cf5139.js.map": "/hackathon_1/static/js/main.01cf5139.js.map"
   },
   "entrypoints": [
     "static/css/main.b00cd72d.css",
-    "static/js/main.c5dc3af0.js"
+    "static/js/main.01cf5139.js"
   ]
 }
