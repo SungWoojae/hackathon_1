@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import NaverMapAPI from "./components/NaverMapApi";
 import Header2 from "./components/Header2";
 import Mission from "./components/Mission";
 import hamburger from "./images/hamburger.svg";

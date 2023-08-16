@@ -1,10 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import exercise_road4_top from '../images/exercise_road4_top.svg';
-import alert_success from '../images/alert_success.svg';
 import Header2 from '../components/Header2';
-import { NavermapsProvider, Polyline } from 'react-naver-maps';
-import { Container as MapDiv, NaverMap, Marker } from 'react-naver-maps';
+import { NavermapsProvider } from 'react-naver-maps';
+import { Container as MapDiv, NaverMap } from 'react-naver-maps';
 import Mission from '../components/Mission';
 
 const Container = styled.div`
@@ -35,7 +34,6 @@ const Test = () => {
   const [zoom, changeZoom] = useState(0);
   const [init, setInit] = useState(true);
   const [zoomIn, isZoomedIn] = useState(false);
-  const [zoomOut, isZoomedOut] = useState(false);
   const [moveRight, isMoveRight] = useState(false);
   const handleZoomChanged = (zoom) => {
     changeZoom(zoom);

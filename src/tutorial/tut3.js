@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import NaverMapAPI from "../components/NaverMapApi";
 import Header2 from "../components/Header2";
 import Mission from "../components/Mission";
 import hamburger from "../images/hamburger.svg";
@@ -8,7 +7,6 @@ import hamburger from "../images/hamburger.svg";
 import sideicon from "../images/side_icon.svg";
 import { Container as MapDiv, NaverMap } from "react-naver-maps";
 import exercise_road1_bottom from '../images/exercise_road1_bottom.svg';
-import Guide from '../components/Guide'
 import Finger from '../images/finger.svg';
 import { useHistory } from "react-router-dom";
 
@@ -131,7 +129,6 @@ const TextContainer = styled.div`
 
 
 function Tut3() {
-  const { naver } = window;
   const [searchText, setSearchText] = useState("");
   const [guideText, setGuideText] = useState("당신은 어느 공원에 갈지\n아직 정하지 않았어요.\n그렇다면 그냥 ‘공원’이라고 검색을\n해볼까요?"); // 상태 변수로 변
   const [showError, setShowError] = useState(false);
