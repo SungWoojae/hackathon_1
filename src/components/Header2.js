@@ -63,7 +63,7 @@ function Header2({ title, subtitle }) {
         <Subtitle>{subtitle}</Subtitle>
         {/* X 버튼 */}
         <CloseButton>
-        <Link to="/">
+        <Link to="/Home">
         <Icon />
         </Link>
         </CloseButton>
