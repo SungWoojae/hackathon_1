@@ -32,7 +32,6 @@ const Road3Top = styled.div`
 
 const TopImage = styled.img`
   width: 100%;
-  height: 139px;
   flex-shrink: 0;
   margin: 0;
   padding: 0;
@@ -73,8 +72,8 @@ const Exercise_road_3 = () => {
   
     return (
         <Container>
-            <Header2 title="실습2. 경로찾기" subtitle="도보: 현재위치 -> 창천문화공원" />
-            <TopImage src={exercise_road3_top} alt="Exercise Road 3 Top" />
+            <Header2 title="실습2. 경로찾기" subtitle="도보로 '창천문화공원'가기" />
+            <TopImage src={exercise_road3_top} alt="Exercise Road 3 Top" style={{width:'100%',zIndex:'4'}} className='ovelay'/>
             <NavermapsProvider
               ncpClientId={process.env.REACT_APP_NAVERMAP_API_KEY}
               error={<p>Maps Load Error</p>}
@@ -87,6 +86,7 @@ const Exercise_road_3 = () => {
                 width: '100%',
               }}
               >
+
                 <NaverMap 
                   mapDivId={'maps-getting-started-uncontrolled'} // default: react-naver-map
                   style={{

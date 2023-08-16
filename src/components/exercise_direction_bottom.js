@@ -19,15 +19,19 @@ const SquareText = styled.p`
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
-    line-height: 140%;
+    line-height: 50%;
+    margin-bottom:50px;
 `;
 
 const ExcerciseBox = (props) => {
+    const paragraphs = props.text.split('\n');
     return (
         <div>
             <Square>
                 <SquareText>
-                    {props.text}
+                    {paragraphs.map((paragraph, index) => (
+                        <p key={index}>{paragraph}</p>
+                    ))}
                 </SquareText>
             </Square>
         </div>

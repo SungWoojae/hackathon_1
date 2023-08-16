@@ -8,7 +8,6 @@ import hamburger from "../images/hamburger.svg";
 import sideicon from "../images/side_icon.svg";
 import { Container as MapDiv, NaverMap } from "react-naver-maps";
 import exercise_road1_bottom from '../images/exercise_road1_bottom.svg';
-import Guide from '../components/Guide'
 import Finger from '../images/finger.svg';
 import { useHistory } from "react-router-dom";
 

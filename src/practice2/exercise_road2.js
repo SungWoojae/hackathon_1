@@ -5,6 +5,7 @@ import Header2 from '../components/Header2';
 import { NavermapsProvider } from 'react-naver-maps';
 import { Container as MapDiv, NaverMap, Marker } from 'react-naver-maps';
 import { Link } from 'react-router-dom';
+import X from '../images/Xicon.svg'
 
 const Container = styled.div`
   display: flex;
@@ -51,21 +52,21 @@ const InnerBox = styled.div`
    
 `;
 
-const CloseIcon = styled.div`
-    color: #000;
-    text-align: center;
-    font-family: Inter;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 200;
-    line-height: normal;
-    cursor: pointer;
-    padding-left: 20px;
-`;
+// const CloseIcon = styled.div`
+//     color: #000;
+//     text-align: center;
+//     font-family: Inter;
+//     font-size: 50px;
+//     font-style: normal;
+//     font-weight: 200;
+//     line-height: normal;
+//     cursor: pointer;
+//     padding-left: 20px;
+// `;
 
 const StyledBottomBox = styled.div`
-    width: 404px; 
-    height: 208px;
+    width: 100%; 
+    height: 200px;
     flex-shrink: 0;
     border-radius: 20px 10px 0px 0px;
     background: #fff;
@@ -152,12 +153,12 @@ const BottomBox = () => {
 const Exercise_road_2 = () => {
     return (
         <Container>
-            <Header2 title="실습2. 경로찾기" subtitle="도보: 현재위치 -> 창천문화공원" />
+            <Header2 title="실습2. 경로찾기" subtitle="도보로 '창천문화공원'가기" />
             <TextBox>
                 <InnerBox>
                     창천문화공원
                 </InnerBox>
-                <CloseIcon>x</CloseIcon>
+                <img src={X} style={{margin:'20px'}}/>
             </ TextBox>
             <NavermapsProvider 
                 ncpClientId={process.env.REACT_APP_NAVERMAP_API_KEY}

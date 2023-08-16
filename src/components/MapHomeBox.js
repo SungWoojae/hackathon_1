@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import LockImg from '../images/homemap_lock.svg';
 
 const TaskBox = styled.div`
     width: 330px;
@@ -44,21 +43,18 @@ const Time = styled.div`
 
 `
 
-const Lock = styled.img`
-    width: 30px;
-    height: 63px;
-    padding-left : 25px;
-    flex-shrink: 0;
-`
-
 function MapHomeBox(props) {
+    const LockTitle = props.title.includes('찾아가기');
+
     return (
-        <TaskBox>
+        <TaskBox style = {{display:'flex', alignItems: 'center',justifyContent: 'space-between', }}>
             <Context>
-                <Title>{props.title}</Title>
-                <Time>{props.time}</Time>
+                <Title style={{ color: LockTitle ? '#B9B9B9' : '#000' }}>{props.title}</Title>
+                <Time style={{ color: LockTitle ? '#B9B9B9' : '#000' }}>{props.time}</Time>
             </Context>
-            {props.title.includes('자주 가는') && <Lock src={LockImg} alt="Lock" />}
+            <div>
+                <img src={props.img}  style = {{paddingRight:'15px', paddingLeft:'0', width:'45px'}} />
+            </div>
         </TaskBox>
     );
 }
