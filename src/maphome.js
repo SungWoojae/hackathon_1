@@ -1,23 +1,17 @@
 import React, { useState, useEffect } from "react";
-import NaverMapAPI  from "./components/NaverMapApi";
 import Header2 from "./components/Header2";
 import Tabs from "./components/Tabs";
 import Mission from './components/Mission'
 import './maphome.css';
 import hamburger from "./images/hamburger.svg";
 import navigation from "./images/navigation.png";
-import location from "./images/location.svg";
-import { Link } from "react-router-dom";
 import { Container as MapDiv, NaverMap, NavermapsProvider } from 'react-naver-maps';
-import { NaverMapsProvider } from 'react-naver-maps';
 import Food from "./images/maphome_Food.svg";
 import Cup from "./images/maphome_Cup.svg";
 import Gas from "./images/maphome_Gas.svg";
 import Bedroom from "./images/maphome_Bedroom.svg";
 
 function Maphome() {
-  const { naver } = window;
-
   return (
     <div className="container">
       <Header2 title="지도 연습해보기" subtitle="1. 길 검색해서 찾기"/>  

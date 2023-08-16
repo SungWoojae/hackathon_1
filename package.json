@@ -23,7 +23,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://sungwoojae.github.io/hackathon_1/",
+ 
 
   "eslintConfig": {
     "extends": [
@@ -43,9 +43,8 @@
       "last 1 safari version"
     ]
   },
-  
-  
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/navermaps": "^3.6.5",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.26",
@@ -53,4 +52,3 @@
     "react-scripts": "^5.0.1"
   }
 }
-

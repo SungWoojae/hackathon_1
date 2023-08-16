@@ -8,7 +8,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #FFFFFF;
+  background-color: #F7F1DE;
   overflow-x: hidden;
   overflow-y: hidden;
   width: 393px;
