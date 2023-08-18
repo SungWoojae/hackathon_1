@@ -22,11 +22,11 @@ const Image = styled.img`
 
 const Text = styled.p`
     color: #222222;
-    font-size: 17px;
+    font-size: 13px;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    padding-left: 5px;
+    padding-left: 3px;
 `
 
 function Tabs(props) {

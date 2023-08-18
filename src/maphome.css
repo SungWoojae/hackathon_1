@@ -13,19 +13,19 @@
 .search-box {
     position: relative;
     margin-top: 10px;
+    width: 90%;
 }
 
 .stt {
     position: absolute;
-    left: 330px;
+    right: 10px;
     top: 14px;
     width: 20px;
     height: 25px;
-
 }
 
 .search {
-    width: 325px;
+    width: 90%;
     height: 50px;
     flex-shrink: 0;
     outline: none;  

@@ -103,7 +103,7 @@ function Exercise_road_0() {
                     height: '800px',
                 }}
             >
-                <div className="overlay" style={{margin:"auto"}}>           
+                <div className="overlay" style={{margin:"auto", padding: '0', width: '100%'}}>           
                     <div className="search-box" >
                         <form onSubmit={handleSearch} name="searchform">    
                             <input type="text" className="search" name="search" placeholder="장소, 버스, 지하철, 주소 검색" value={searchValue} onChange={(e) => setSearchValue(e.target.value)}/>
