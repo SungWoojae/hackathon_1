@@ -6,14 +6,20 @@ import { Link } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   background-color: #F7F1DE;
   overflow-x: hidden;
   overflow-y: hidden;
-  width: 393px;
-  height: 852px;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
+`;
+
+const Wrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Body = styled.div`
@@ -73,26 +79,28 @@ const StartText = styled.p`
 function Tut1() {
   return (
     <Container>
-      <Header2 title="지도 연습해보기" subtitle="1. 길 검색해서 찾기" 
-        style={{marginTop : 0, top : 0, paddingTop : 0,}}
-      />
-      <Body>
-        <Mission>
-          당신은 지금 <strong>‘신촌역’</strong>에서
-          출발해,<br/>친구와 근처
-          공원에서 만나기로<br/>했어요.
-          공원까지 길을 찾아가는<br/>
-          연습을 해 보아요.
-        </Mission>
-      </Body>
-      <Image src={Halfegg}></Image>
-      <Link to="/tutorial1/tut2" style={{ textDecoration: "none" }}>
-      <StartBox>
-        
-            <StartText>시작하기</StartText>
-        
-      </StartBox>
-      </Link>
+      <Wrapper>
+        <Header2 title="지도 연습해보기" subtitle="1. 길 검색해서 찾기" 
+          style={{marginTop : 0, top : 0, paddingTop : 0,}}
+        />
+        <Body>
+          <Mission>
+            당신은 지금 <strong>‘신촌역’</strong>에서
+            출발해,<br/>친구와 근처
+            공원에서 만나기로<br/>했어요.
+            공원까지 길을 찾아가는<br/>
+            연습을 해 보아요.
+          </Mission>
+        </Body>
+        <Image src={Halfegg}></Image>
+        <Link to="/tutorial1/tut2" style={{ textDecoration: "none" }}>
+        <StartBox>
+          
+              <StartText>시작하기</StartText>
+          
+        </StartBox>
+        </Link>
+      </Wrapper>
     </Container>
   );
 };

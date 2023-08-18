@@ -2,12 +2,13 @@
 
 :root {
   --vh: 100%;
+  --vw: 100%;
 }
 
 
 .app-container {
     width: 393px; 
-    height: 852px; 
+    height: calc(var(--vh, 1vh) * 100);
     background-color: #fff2f2;
     font-family: Pretendard;
   }

@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 // 헤더박스
 const HeaderWrapper = styled.header`
   box-sizing: border-box;  
-  width: 393px;
+  width: 100%;
   height: 115px;
   background-color: #182E5E;
   color: white;
@@ -19,6 +19,7 @@ const HeaderWrapper = styled.header`
   display: flex;
   flex-direction: column;
   z-index : 1;
+  position: relative;
 `;
 
 // 제목
@@ -46,7 +47,7 @@ const CloseButton = styled.button`
   color: white;
   position: absolute;
   top: 68px;
-  left: 345px;
+  right: 10px;
 `;
 
 

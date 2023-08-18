@@ -32,34 +32,42 @@ import Dictaphone from './practice2/speech_recognition';
 // import Maphome from './maphome';
 // import MapHomeBox from './MapHomeBox';
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #ffffff;;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  width: 393px;
-  height: 852px;
-  margin: 0;
-  font-family : Pretendard;
-  letter-spacing: 1px;
-`;
+// const Container = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   background-color: #ffffff;;
+//   overflow-x: hidden;
+//   overflow-y: hidden;
+//   width: 393px;
+//   height: 852px; // calc(var(--vh, 1vh) * 100);
+//   margin: 0;
+//   font-family : Pretendard;
+//   letter-spacing: 1px;
+// `;
 
 
 
 function App() {
 
-  function setScreenSize() {
+  function setScreenHeight() {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   }
   useEffect(() => {
-    setScreenSize();
+    setScreenHeight();
+  });
+
+  function setScreenWidth() {
+    let vw = window.innerWidth * 0.01;
+    document.documentElement.style.setProperty("--vw", `${vw}px`);
+  }
+  useEffect(() => {
+    setScreenWidth();
   });
 
   return (
-    <Container>
+    // <Container>
       <Router>
         <Switch>
           <Route exact path="/"><Splash /></Route>
@@ -86,7 +94,7 @@ function App() {
           <Route exact path="/dict"><Dictaphone /></Route>
         </Switch>
       </Router>
-    </Container>
+    // </Container>
   );
 }
 

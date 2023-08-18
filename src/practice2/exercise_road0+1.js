@@ -30,8 +30,8 @@ const Container = styled.div`
   background-color: #ffffff;
   overflow-x: hidden;
   overflow-y: hidden;
-  width: 393px;
-  height: 852px;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
   margin: 0;
   position: relative;
   z-index : 0;
@@ -48,7 +48,7 @@ const TextBox = styled.div`
   font-weight: 500;
   line-height: 150%;
   text-align: center;
-  width: 350px;
+  width: 100;
   position: absolute;
   bottom: 65px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
@@ -103,8 +103,8 @@ function Exercise_road_0() {
                     height: '800px',
                 }}
             >
-                <div className="overlay">           
-                    <div className="search-box">
+                <div className="overlay" style={{margin:"auto"}}>           
+                    <div className="search-box" >
                         <form onSubmit={handleSearch} name="searchform">    
                             <input type="text" className="search" name="search" placeholder="장소, 버스, 지하철, 주소 검색" value={searchValue} onChange={(e) => setSearchValue(e.target.value)}/>
                             <img src={hamburger} alt="" className="search-image"></img>
@@ -118,14 +118,13 @@ function Exercise_road_0() {
                         <Tabs name="주유소" image={Gas}></Tabs>
                         <Tabs name="펜션" image={Bedroom}></Tabs>
                     </div>
-                    
                 </div>
                 <div className="overlay">
                     {showImage && (
                         <img
                             src={exercise_road0_alert}
                             alt=""
-                            style={{ cursor: "pointer", zIndex: 4 ,bottom:'0'}}
+                            style={{ cursor: "pointer", zIndex: 4 ,bottom:'0',width:'100vw',height:'100%'}}
                             onClick={handleImageClick}
                         />
                     )}
