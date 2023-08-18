@@ -11,15 +11,16 @@ const Container = styled.div`
   overflow-x: hidden;
   overflow-y: hidden;
   width: 100vw;
-  height: 100vh;
   margin: 0;
 `;
 
 const Wrapper = styled.div`
   width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 40px;
 `;
 
 const Body = styled.div`

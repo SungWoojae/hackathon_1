@@ -13,7 +13,7 @@ const Container = styled.div`
   background-color: #ffffff;
   overflow-x: hidden;
   overflow-y: hidden;
-  width: 393px;
+  width: 100vw;
   height: calc(var(--vh, 1vh) * 100);
   margin: 0;
   position: relative;
