@@ -31,7 +31,7 @@ const Container = styled.div`
   overflow-x: hidden;
   overflow-y: hidden;
   width: 393px;
-  height: calc(var(--vh, 1vh) * 100);
+  height: 852px;
   margin: 0;
   position: relative;
   z-index : 0;
