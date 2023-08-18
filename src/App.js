@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import styled from 'styled-components';
@@ -40,13 +40,24 @@ const Container = styled.div`
   overflow-x: hidden;
   overflow-y: hidden;
   width: 393px;
-  height: 852px;
+  height: calc(var(--vh, 1vh) * 100);
   margin: 0;
   font-family : Pretendard;
   letter-spacing: 1px;
 `;
 
+
+
 function App() {
+
+  function setScreenSize() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }
+  useEffect(() => {
+    setScreenSize();
+  });
+
   return (
     <Container>
       <Router>

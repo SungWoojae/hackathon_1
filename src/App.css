@@ -1,5 +1,10 @@
 /* 전체 프레임 */
 
+:root {
+  --vh: 100%;
+}
+
+
 .app-container {
     width: 393px; 
     height: 852px; 
