@@ -14,6 +14,7 @@ const Container = styled.div`
   width: 393px;
   height: 852px;
   margin: 0;
+  position:relative;
 `;
 
 
