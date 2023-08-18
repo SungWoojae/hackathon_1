@@ -6,22 +6,16 @@ import { Link } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background-color: #F7F1DE;
   overflow-x: hidden;
   overflow-y: hidden;
-  width: 100vw;
+  width: 393px;
+  height: 852px;
   margin: 0;
 `;
 
-const Wrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 40px;
-`;
 
 const Body = styled.div`
   display: flex;
@@ -80,7 +74,6 @@ const StartText = styled.p`
 function Tut1() {
   return (
     <Container>
-      <Wrapper>
         <Header2 title="지도 연습해보기" subtitle="1. 길 검색해서 찾기" 
           style={{marginTop : 0, top : 0, paddingTop : 0,}}
         />
@@ -101,7 +94,6 @@ function Tut1() {
           
         </StartBox>
         </Link>
-      </Wrapper>
     </Container>
   );
 };
